@@ -1,11 +1,12 @@
 using Microsoft.VisualBasic.ApplicationServices;
 using System.DirectoryServices;
+using WinFormsApp1;
 
 namespace LoginPage
 {
-    public partial class Form1 : Form
+    public partial class RegForm : Form
     {
-        public Form1()
+        public RegForm()
         {
             InitializeComponent();
         }
@@ -23,23 +24,27 @@ namespace LoginPage
                 if (name[i] >= '0' && name[i] <= '9')
                     sum++;
             }
-            if (sum > 2) { alert1.Visible = true; alert2.Visible = false;  return; };
+            if (sum > 2) { alert1.Visible = true; alert2.Visible = false; return; };
             if (password.Length < 8 || password.Length > 10) { alert1.Visible = false; alert2.Visible = true; ; return; }
             int charSum = 0, digitSum = 0, spacielSum = 0;
             for (int i = 0; i < password.Length; i++)
             {
-                if (password[i] >= '0' && password[i] <='9')
+                if (password[i] >= '0' && password[i] <= '9')
                 {
                     digitSum++;
                 }
                 else if (password[i] >= 'a' && password[i] <= 'z' || password[i] >= 'A' && password[i] <= 'Z')
-                    {
+                {
                     charSum++;
                 }
                 else
                     spacielSum++;
             }
             if (charSum == 0 || digitSum == 0 || spacielSum == 0) { alert1.Visible = false; alert2.Visible = true; ; return; }
+            Hide();
+            using (LoginForm form2 = new LoginForm())
+                form2.ShowDialog();
+            Show();
 
         }
 

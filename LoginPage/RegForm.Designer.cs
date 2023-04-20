@@ -1,6 +1,6 @@
 ﻿namespace LoginPage
 {
-    partial class Form1
+    partial class RegForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -42,10 +42,10 @@
             // 
             // RegLabel
             // 
-            RegLabel.Font = new Font("David", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
-            RegLabel.Location = new Point(102, 44);
+            RegLabel.Font = new Font("David", 27.75F, FontStyle.Regular, GraphicsUnit.Point);
+            RegLabel.Location = new Point(102, 33);
             RegLabel.Name = "RegLabel";
-            RegLabel.Size = new Size(123, 30);
+            RegLabel.Size = new Size(206, 42);
             RegLabel.TabIndex = 0;
             RegLabel.Text = "Register";
             RegLabel.TextAlign = ContentAlignment.MiddleCenter;
@@ -130,10 +130,11 @@
             alert2.Text = "The password should contain 8-10 characters and at least one number, letter and special character";
             alert2.Visible = false;
             // 
-            // Form1
+            // RegForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(402, 450);
             Controls.Add(alert2);
             Controls.Add(alert1);
@@ -145,7 +146,7 @@
             Controls.Add(RegPassVal);
             Controls.Add(RegNameVal);
             Controls.Add(RegLabel);
-            Name = "Form1";
+            Name = "RegForm";
             Text = "Form1";
             ResumeLayout(false);
             PerformLayout();
