@@ -53,3 +53,7 @@ C:\Users\aviv1\Desktop\Project C#\LoginPage\obj\Debug\net7.0-windows\refint\Logi
 C:\Users\aviv1\Desktop\Project C#\LoginPage\obj\Debug\net7.0-windows\LoginPage.pdb
 C:\Users\aviv1\Desktop\Project C#\LoginPage\obj\Debug\net7.0-windows\LoginPage.genruntimeconfig.cache
 C:\Users\aviv1\Desktop\Project C#\LoginPage\obj\Debug\net7.0-windows\ref\LoginPage.dll
+C:\Users\aviv1\Desktop\Project C#\LoginPage\obj\Debug\net7.0-windows\Interop.Microsoft.Office.Core.dll
+C:\Users\aviv1\Desktop\Project C#\LoginPage\obj\Debug\net7.0-windows\LoginPage.csproj.ResolveComReference.cache
+C:\Users\aviv1\Desktop\Project C#\LoginPage\obj\Debug\net7.0-windows\Interop.Microsoft.Office.Interop.Excel.dll
+C:\Users\aviv1\Desktop\Project C#\LoginPage\obj\Debug\net7.0-windows\LoginPage.Properties.Resources.resources

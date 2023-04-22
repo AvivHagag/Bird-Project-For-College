@@ -56,6 +56,7 @@
             RegNameVal.Name = "RegNameVal";
             RegNameVal.Size = new Size(100, 23);
             RegNameVal.TabIndex = 1;
+            RegNameVal.TextChanged += RegNameVal_TextChanged;
             // 
             // RegPassVal
             // 
