@@ -34,3 +34,22 @@ C:\Users\aviv1\Source\Repos\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-
 C:\Users\aviv1\Source\Repos\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windows\ref\LoginPage.dll
 C:\Users\aviv1\Source\Repos\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windows\LoginPage.MainPage.resources
 C:\Users\aviv1\Source\Repos\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windows\WinFormsApp1.LoginForm.resources
+C:\Users\aviv1\Desktop\Project C#\LoginPage\bin\Debug\net7.0-windows\LoginPage.exe
+C:\Users\aviv1\Desktop\Project C#\LoginPage\bin\Debug\net7.0-windows\LoginPage.deps.json
+C:\Users\aviv1\Desktop\Project C#\LoginPage\bin\Debug\net7.0-windows\LoginPage.runtimeconfig.json
+C:\Users\aviv1\Desktop\Project C#\LoginPage\bin\Debug\net7.0-windows\LoginPage.dll
+C:\Users\aviv1\Desktop\Project C#\LoginPage\bin\Debug\net7.0-windows\LoginPage.pdb
+C:\Users\aviv1\Desktop\Project C#\LoginPage\obj\Debug\net7.0-windows\LoginPage.csproj.AssemblyReference.cache
+C:\Users\aviv1\Desktop\Project C#\LoginPage\obj\Debug\net7.0-windows\WinFormsApp1.LoginForm.resources
+C:\Users\aviv1\Desktop\Project C#\LoginPage\obj\Debug\net7.0-windows\LoginPage.MainPage.resources
+C:\Users\aviv1\Desktop\Project C#\LoginPage\obj\Debug\net7.0-windows\LoginPage.RegForm.resources
+C:\Users\aviv1\Desktop\Project C#\LoginPage\obj\Debug\net7.0-windows\LoginPage.csproj.GenerateResource.cache
+C:\Users\aviv1\Desktop\Project C#\LoginPage\obj\Debug\net7.0-windows\LoginPage.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\aviv1\Desktop\Project C#\LoginPage\obj\Debug\net7.0-windows\LoginPage.AssemblyInfoInputs.cache
+C:\Users\aviv1\Desktop\Project C#\LoginPage\obj\Debug\net7.0-windows\LoginPage.AssemblyInfo.cs
+C:\Users\aviv1\Desktop\Project C#\LoginPage\obj\Debug\net7.0-windows\LoginPage.csproj.CoreCompileInputs.cache
+C:\Users\aviv1\Desktop\Project C#\LoginPage\obj\Debug\net7.0-windows\LoginPage.dll
+C:\Users\aviv1\Desktop\Project C#\LoginPage\obj\Debug\net7.0-windows\refint\LoginPage.dll
+C:\Users\aviv1\Desktop\Project C#\LoginPage\obj\Debug\net7.0-windows\LoginPage.pdb
+C:\Users\aviv1\Desktop\Project C#\LoginPage\obj\Debug\net7.0-windows\LoginPage.genruntimeconfig.cache
+C:\Users\aviv1\Desktop\Project C#\LoginPage\obj\Debug\net7.0-windows\ref\LoginPage.dll
