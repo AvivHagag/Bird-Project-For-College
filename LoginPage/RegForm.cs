@@ -11,8 +11,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Reflection;
+using System.IO;
+
 namespace LoginPage
 {
     public partial class RegForm : Form
@@ -33,16 +36,18 @@ namespace LoginPage
                 Excel.Application application;
                 Excel.Workbook workbook;
                 Excel.Worksheet worksheet;
-
+                
                 // Start Excel and get Application object.
                 application = new Excel.Application();
                 application.Visible = false;
-
+                
                 // Open the workbook
-                workbook = application.Workbooks.Open(@"C:\Users\aviv1\Desktop\Users.xlsx");
+                workbook = application.Workbooks.Open(@"C:\Users\aviv1\Desktop\Users2.xlsx");            
                 worksheet = (Excel.Worksheet)workbook.Sheets[1];
+
                 // Get the last row number
                 int lastRow = worksheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell).Row;
+
                 // Check if the user already exists
                 bool userExists = false;
 
@@ -63,34 +68,40 @@ namespace LoginPage
                     }
                 }
 
-                if (!userExists)
-                {
+                if (!userExists) {
                     int newRow = lastRow + 1;
                     worksheet.Cells[newRow, 1] = userName;
                     worksheet.Cells[newRow, 2] = Password;
                     worksheet.Cells[newRow, 3] = Id;
                     workbook.Save();
                     MessageBox.Show("משתמש נרשם בהצלחה");
-                    Hide();
-                    using (LoginForm form2 = new LoginForm())
-                        form2.ShowDialog();
+                    this.Hide();
+                    RegNameVal.Text = null;
+                    RegPassVal.Text = null;
+                    RegIdVal.Text = null;
+                    // Close the workbook and release the objects
+                    workbook.Close();
+                    application.Quit();
+
+                    //close system runtime-app
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
+
+                    using (LoginForm FormLog = new LoginForm())
+                        FormLog.ShowDialog();
                     Show();
                 }
-                else
-                {
+                else {
                     MessageBox.Show("משתמש כבר קיים במערכת");
+                    // Close the workbook and release the objects
+                    workbook.Close();
+                    application.Quit();                    
+                    //close system runtime-app
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
                 }
-
-                // Close the workbook and release the objects
-                workbook.Close();
-                application.Quit();
-                //close system runtime-app
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
-                worksheet = null;
-                workbook = null;
-                application = null;
             }
 
         }

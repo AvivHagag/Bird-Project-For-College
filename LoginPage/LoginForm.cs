@@ -39,7 +39,7 @@ namespace WinFormsApp1
             application = new Excel.Application();
             application.Visible = false;
             // Open the workbook
-            workbook = application.Workbooks.Open(@"C:\Users\aviv1\Desktop\Users.xlsx");
+            workbook = application.Workbooks.Open(@"C:\Users\aviv1\Desktop\Users2.xlsx");
             worksheet = (Excel.Worksheet)workbook.Sheets[1];
             string userName = usernameBox.Text;
             string password = passwordBox.Text;
@@ -105,7 +105,9 @@ namespace WinFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            new RegForm().Show();
+            using (RegForm formReg = new RegForm())
+                formReg.ShowDialog();
+            Show();
         }
 
         private void usernameBox_TextChanged_1(object sender, EventArgs e)
