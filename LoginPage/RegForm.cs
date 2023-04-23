@@ -15,6 +15,7 @@ using System.Runtime.InteropServices;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Reflection;
 using System.IO;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace LoginPage
 {
@@ -36,13 +37,13 @@ namespace LoginPage
                 Excel.Application application;
                 Excel.Workbook workbook;
                 Excel.Worksheet worksheet;
-                
+
                 // Start Excel and get Application object.
                 application = new Excel.Application();
                 application.Visible = false;
-                
+
                 // Open the workbook
-                workbook = application.Workbooks.Open(@"C:\Users\aviv1\Desktop\Users2.xlsx");            
+                workbook = application.Workbooks.Open(@"C:\Users\aviv1\Desktop\Users2.xlsx");
                 worksheet = (Excel.Worksheet)workbook.Sheets[1];
 
                 // Get the last row number
@@ -68,7 +69,8 @@ namespace LoginPage
                     }
                 }
 
-                if (!userExists) {
+                if (!userExists)
+                {
                     int newRow = lastRow + 1;
                     worksheet.Cells[newRow, 1] = userName;
                     worksheet.Cells[newRow, 2] = Password;
@@ -92,11 +94,12 @@ namespace LoginPage
                         FormLog.ShowDialog();
                     Show();
                 }
-                else {
+                else
+                {
                     MessageBox.Show("משתמש כבר קיים במערכת");
                     // Close the workbook and release the objects
                     workbook.Close();
-                    application.Quit();                    
+                    application.Quit();
                     //close system runtime-app
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
@@ -154,5 +157,15 @@ namespace LoginPage
 
         }
 
+        private void BackBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RegNameVal.Text = null;
+            RegPassVal.Text = null;
+            RegIdVal.Text = null;
+            using (LoginForm FormLog = new LoginForm())
+                FormLog.ShowDialog();
+            Show();
+        }
     }
 }

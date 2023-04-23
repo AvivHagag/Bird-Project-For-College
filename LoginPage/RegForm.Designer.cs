@@ -38,6 +38,7 @@
             alert2 = new Label();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
+            BackBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -135,12 +136,24 @@
             pictureBox2.TabStop = false;
             pictureBox2.Click += pictureBox2_Click;
             // 
+            // BackBtn
+            // 
+            BackBtn.ForeColor = Color.Black;
+            BackBtn.Location = new Point(153, 360);
+            BackBtn.Name = "BackBtn";
+            BackBtn.Size = new Size(102, 23);
+            BackBtn.TabIndex = 10;
+            BackBtn.Text = "Back to Login";
+            BackBtn.UseVisualStyleBackColor = true;
+            BackBtn.Click += BackBtn_Click;
+            // 
             // RegForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(402, 450);
+            Controls.Add(BackBtn);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(alert2);
@@ -170,5 +183,6 @@
         private Label alert2;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
+        private Button BackBtn;
     }
 }
