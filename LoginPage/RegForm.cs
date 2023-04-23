@@ -22,12 +22,11 @@ namespace LoginPage
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
             String userName = RegNameVal.Text;
             String Password = RegPassVal.Text;
             String Id = RegIdVal.Text;
-            MessageBox.Show(userName + Password + Id);
             if (CheckReg(userName, Password))
             {
                 //open system runtime-app
@@ -47,21 +46,25 @@ namespace LoginPage
                 // Check if the user already exists
                 bool userExists = false;
 
-                for (int i = 2; i <= lastRow; i++) {
+                for (int i = 2; i <= lastRow; i++)
+                {
                     // Start from 2 to skip the header row
                     Excel.Range userCell = worksheet.Cells[i, 1];
-                    if (userCell.Value != null && userCell.Value.ToString() == userName) {
+                    if (userCell.Value != null && userCell.Value.ToString() == userName)
+                    {
                         userExists = true;
                         break;
                     }
                     Excel.Range idCell = worksheet.Cells[i, 3];
-                    if (idCell.Value != null && idCell.Value.ToString() == Id) {
+                    if (idCell.Value != null && idCell.Value.ToString() == Id)
+                    {
                         userExists = true;
                         break;
                     }
                 }
 
-                if (!userExists) {
+                if (!userExists)
+                {
                     int newRow = lastRow + 1;
                     worksheet.Cells[newRow, 1] = userName;
                     worksheet.Cells[newRow, 2] = Password;
@@ -73,7 +76,8 @@ namespace LoginPage
                         form2.ShowDialog();
                     Show();
                 }
-                else {
+                else
+                {
                     MessageBox.Show("משתמש כבר קיים במערכת");
                 }
 
@@ -84,16 +88,19 @@ namespace LoginPage
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
                 System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
-
+                worksheet = null;
+                workbook = null;
+                application = null;
             }
-            
+
         }
 
         private void RegNameVal_TextChanged(object sender, EventArgs e)
         {
 
         }
-        private Boolean CheckReg(String name,String password) {
+        private Boolean CheckReg(String name, String password)
+        {
             if (name.Length < 6 || name.Length > 8) { alert1.Visible = true; alert2.Visible = false; return false; }
             int sum = 0;
             for (int i = 0; i < name.Length; i++)
@@ -120,5 +127,21 @@ namespace LoginPage
             if (charSum == 0 || digitSum == 0 || spacielSum == 0) { alert1.Visible = false; alert2.Visible = true; ; return false; }
             return true;
         }
+
+        private void RegLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void alert1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
