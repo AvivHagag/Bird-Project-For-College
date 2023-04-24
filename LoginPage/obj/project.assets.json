@@ -8,19 +8,19 @@
     "net7.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\aviv1\\.nuget\\packages\\": {}
+    "C:\\Users\\Aviv\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aviv1\\Desktop\\Project C#\\LoginPage\\LoginPage.csproj",
+      "projectUniqueName": "C:\\Users\\Aviv\\Desktop\\Project\\LoginPage\\LoginPage.csproj",
       "projectName": "LoginPage",
-      "projectPath": "C:\\Users\\aviv1\\Desktop\\Project C#\\LoginPage\\LoginPage.csproj",
-      "packagesPath": "C:\\Users\\aviv1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aviv1\\Desktop\\Project C#\\LoginPage\\obj\\",
+      "projectPath": "C:\\Users\\Aviv\\Desktop\\Project\\LoginPage\\LoginPage.csproj",
+      "packagesPath": "C:\\Users\\Aviv\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Aviv\\Desktop\\Project\\LoginPage\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\aviv1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Aviv\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -1,4 +1,4 @@
-using Microsoft.VisualBasic.ApplicationServices;
+ן»¿using Microsoft.VisualBasic.ApplicationServices;
 using System.DirectoryServices;
 using WinFormsApp1;
 using System;
@@ -43,7 +43,7 @@ namespace LoginPage
                 application.Visible = false;
 
                 // Open the workbook
-                workbook = application.Workbooks.Open(@"C:\Users\aviv1\Desktop\Users2.xlsx");
+                workbook = application.Workbooks.Open(@"C:\Users\Aviv\Desktop\users1.xlsx");
                 worksheet = (Excel.Worksheet)workbook.Sheets[1];
 
                 // Get the last row number
@@ -76,7 +76,7 @@ namespace LoginPage
                     worksheet.Cells[newRow, 2] = Password;
                     worksheet.Cells[newRow, 3] = Id;
                     workbook.Save();
-                    MessageBox.Show("משתמש נרשם בהצלחה");
+                    MessageBox.Show("The user has successfully registered");
                     this.Hide();
                     RegNameVal.Text = null;
                     RegPassVal.Text = null;
@@ -96,7 +96,7 @@ namespace LoginPage
                 }
                 else
                 {
-                    MessageBox.Show("משתמש כבר קיים במערכת");
+                    MessageBox.Show("User already exists");
                     // Close the workbook and release the objects
                     workbook.Close();
                     application.Quit();

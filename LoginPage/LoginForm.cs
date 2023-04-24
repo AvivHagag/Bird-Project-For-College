@@ -44,7 +44,7 @@ namespace WinFormsApp1
             application = new Excel.Application();
             application.Visible = false;
             // Open the workbook
-            workbook = application.Workbooks.Open(@"C:\Users\aviv1\Desktop\Users2.xlsx");
+            workbook = application.Workbooks.Open(@"C:\Users\Aviv\Desktop\Users1.xlsx");
             worksheet = (Excel.Worksheet)workbook.Sheets[1];
              userName = usernameBox.Text;
              password = passwordBox.Text;
@@ -75,7 +75,7 @@ namespace WinFormsApp1
             {
                 // התחברת בהצלחה
                 this.Hide();
-                MessageBox.Show("משתמש התחבר בהצלחה");
+                MessageBox.Show("User has logged in");
                 new MainPage().Show();
             }
             // Close the workbook and release the objects

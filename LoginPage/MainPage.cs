@@ -18,7 +18,7 @@ namespace LoginPage
     {
         public MainPage()
         {
-            MessageBox.Show(((LoginForm)Application.OpenForms["LoginForm"]).getid() + " was logged in! "); // get the id from the login form 
+            //MessageBox.Show(((LoginForm)Application.OpenForms["LoginForm"]).getid() + " was logged in! "); // get the id from the login form 
             InitializeComponent();
         }
 
@@ -85,7 +85,7 @@ namespace LoginPage
                 application.Visible = false;
 
                 // Open the workbook
-                workbook = application.Workbooks.Open(@"C:\Users\aviv1\Desktop\Users2.xlsx");
+                workbook = application.Workbooks.Open(@"C:\Users\Aviv\Desktop\Users1.xlsx");
                 worksheet = (Excel.Worksheet)workbook.Sheets[2];
 
                 // Get the last row number
@@ -94,12 +94,13 @@ namespace LoginPage
                 {
                     // Start from 2 to skip the header row
                     Excel.Range userCell = worksheet.Cells[i, 1];
-                    if (userCell.Value != motherserialnumber.Text)
+                    if (userCell.Value.ToString() == motherserialnumber.Text)
                     {
                         Excel.Range GenderCell = worksheet.Cells[i, 4];
-                        if (userCell.Value == "Female")
+                        if (GenderCell.Value.ToString() == "Female")
                         {
                             motherSerial = true;
+                            MessageBox.Show("female");
                             break;
                         }
                     }
@@ -107,13 +108,15 @@ namespace LoginPage
                 for (int i = 2; i <= lastRow; i++)
                 {
                     // Start from 2 to skip the header row
-                    Excel.Range userCell = worksheet.Cells[i, 1];
-                    if (userCell.Value != motherserialnumber.Text)
+                    Excel.Range user2Cell = worksheet.Cells[i, 1];
+                    if (user2Cell.Value.ToString() == fatherserialnumber.Text)
                     {
-                        Excel.Range GenderCell = worksheet.Cells[i, 5];
-                        if (userCell.Value == "Male")
+                        Excel.Range Gender2Cell = worksheet.Cells[i, 4];
+                        MessageBox.Show(Gender2Cell.Value.ToString());
+                        if (Gender2Cell.Value.ToString() == "Male")
                         {
                             fatherSerial = true;
+                            MessageBox.Show("male");
                             break;
                         }
                     }
@@ -127,18 +130,26 @@ namespace LoginPage
                     worksheet.Cells[newRow, 3] = SubspeciescomboBox.Text;
                     worksheet.Cells[newRow, 4] = GendercomboBox.Text;
                     if (motherSerial == true)
+                    {
                         worksheet.Cells[newRow, 5] = motherserialnumber.Text;
+                    }
                     else
+                    {
                         worksheet.Cells[newRow, 5] = null;
+                    }
                     if (fatherSerial == true)
+                    {
                         worksheet.Cells[newRow, 6] = fatherserialnumber.Text;
+                    }
                     else
+                    {
                         worksheet.Cells[newRow, 5] = null;
+                    }
                     worksheet.Cells[newRow, 7] = selectedDate;
                     worksheet.Cells[newRow, 8] = cagenumber.Text;
+                    worksheet.Cells[newRow, 9] = ((LoginForm)Application.OpenForms["LoginForm"]).getid();
                     workbook.Save();
                     MessageBox.Show("Bird was added successfully");
-                    this.Hide();
 
                     SpeciescomboBox.Text = null;
                     SubspeciescomboBox.Text = null;
@@ -147,7 +158,6 @@ namespace LoginPage
                     fatherserialnumber.Text = null;
                     cagenumber.Text = null;
                     selectedDate = DateTime.Today;
-
                     // Close the workbook and release the objects
                     workbook.Close();
                     application.Quit();
@@ -156,17 +166,24 @@ namespace LoginPage
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
+
+
                 }
                 else
                     MessageBox.Show("Bird was added successfully");
             }
             else
-                MessageBox.Show("Bird was added successfully");
+                MessageBox.Show("Error, enter all details about the bird");
         }
 
-            private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void motherserialnumber_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -34,6 +34,7 @@
             SearchBbtn = new Button();
             SearchCbtn = new Button();
             Addbirdgroupbox = new GroupBox();
+            dateTimePicker1 = new DateTimePicker();
             FinalAddbtn = new Button();
             GendercomboBox = new ComboBox();
             fatherserialnumber = new TextBox();
@@ -48,7 +49,6 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
-            dateTimePicker1 = new DateTimePicker();
             Addbirdgroupbox.SuspendLayout();
             SuspendLayout();
             // 
@@ -131,6 +131,14 @@
             Addbirdgroupbox.Visible = false;
             Addbirdgroupbox.Enter += Addbirdgroupbox_Enter;
             // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(304, 16);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(180, 23);
+            dateTimePicker1.TabIndex = 17;
+            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
+            // 
             // FinalAddbtn
             // 
             FinalAddbtn.BackColor = Color.CornflowerBlue;
@@ -176,6 +184,7 @@
             motherserialnumber.Name = "motherserialnumber";
             motherserialnumber.Size = new Size(51, 23);
             motherserialnumber.TabIndex = 11;
+            motherserialnumber.TextChanged += motherserialnumber_TextChanged;
             // 
             // SpeciescomboBox
             // 
@@ -266,14 +275,6 @@
             label2.Size = new Size(67, 15);
             label2.TabIndex = 1;
             label2.Text = "subspecies:";
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(304, 16);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(180, 23);
-            dateTimePicker1.TabIndex = 17;
-            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // MainPage
             // 
