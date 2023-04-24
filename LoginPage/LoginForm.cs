@@ -11,6 +11,7 @@ using Microsoft.Office.Interop.Excel;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Reflection;
 using LoginPage;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace WinFormsApp1
 {
@@ -20,6 +21,10 @@ namespace WinFormsApp1
         {
             InitializeComponent();
         }
+        private string userName;
+        private string password;
+        private String id;
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -41,8 +46,8 @@ namespace WinFormsApp1
             // Open the workbook
             workbook = application.Workbooks.Open(@"C:\Users\aviv1\Desktop\Users2.xlsx");
             worksheet = (Excel.Worksheet)workbook.Sheets[1];
-            string userName = usernameBox.Text;
-            string password = passwordBox.Text;
+             userName = usernameBox.Text;
+             password = passwordBox.Text;
 
             // Get the last row number
             int lastRow = worksheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell).Row;
@@ -53,9 +58,11 @@ namespace WinFormsApp1
 
                 Excel.Range userCell = worksheet.Cells[i, 1];
                 Excel.Range PassCell = worksheet.Cells[i, 2];
+                Excel.Range idCell = worksheet.Cells[i, 3];
                 if (userCell.Value != null && userCell.Value.ToString() == userName && PassCell.Value != null && PassCell.Value.ToString() == password)
                 {
                     LoginSuccess = true;
+                    id = idCell.Value.ToString();
                 }
             }
 
@@ -79,8 +86,21 @@ namespace WinFormsApp1
             System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
             System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
             System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
+            
         }
-
+         // get user name amd password,id from the  login form 
+        public String getusername() 
+        {
+            return userName;
+        }
+        public String getpassword()
+        {
+            return password;
+        }
+        public String getid()
+        {
+            return id;
+        }
 
         private void usernameBox_TextChanged(object sender, EventArgs e)
         {
