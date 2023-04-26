@@ -43,7 +43,7 @@ namespace LoginPage
                 application.Visible = false;
 
                 // Open the workbook
-                workbook = application.Workbooks.Open(@"C:\Users\Aviv\Desktop\users1.xlsx");
+                workbook = application.Workbooks.Open(@"C:\Users\aviv1\Desktop\users4.xlsx");
                 worksheet = (Excel.Worksheet)workbook.Sheets[1];
 
                 // Get the last row number
@@ -76,23 +76,28 @@ namespace LoginPage
                     worksheet.Cells[newRow, 2] = Password;
                     worksheet.Cells[newRow, 3] = Id;
                     workbook.Save();
+                    
                     MessageBox.Show("The user has successfully registered");
                     this.Hide();
                     RegNameVal.Text = null;
                     RegPassVal.Text = null;
                     RegIdVal.Text = null;
+
                     // Close the workbook and release the objects
                     workbook.Close();
                     application.Quit();
 
-                    //close system runtime-app
+                    // Release COM objects
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
+                    worksheet = null;
+                    workbook = null;
+                    application = null;
 
-                    using (LoginForm FormLog = new LoginForm())
-                        FormLog.ShowDialog();
-                    Show();
+
+
+                    new LoginForm().Show();
                 }
                 else
                 {
@@ -100,10 +105,15 @@ namespace LoginPage
                     // Close the workbook and release the objects
                     workbook.Close();
                     application.Quit();
-                    //close system runtime-app
+
+                    // Release COM objects
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
+                    worksheet = null;
+                    workbook = null;
+                    application = null;
+
                 }
             }
 

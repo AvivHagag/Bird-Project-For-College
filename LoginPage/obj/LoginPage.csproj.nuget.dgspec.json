@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Aviv\\Desktop\\Project\\LoginPage\\LoginPage.csproj": {}
+    "C:\\Users\\aviv1\\Desktop\\t\\LoginPage\\LoginPage.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Aviv\\Desktop\\Project\\LoginPage\\LoginPage.csproj": {
+    "C:\\Users\\aviv1\\Desktop\\t\\LoginPage\\LoginPage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Aviv\\Desktop\\Project\\LoginPage\\LoginPage.csproj",
+        "projectUniqueName": "C:\\Users\\aviv1\\Desktop\\t\\LoginPage\\LoginPage.csproj",
         "projectName": "LoginPage",
-        "projectPath": "C:\\Users\\Aviv\\Desktop\\Project\\LoginPage\\LoginPage.csproj",
-        "packagesPath": "C:\\Users\\Aviv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Aviv\\Desktop\\Project\\LoginPage\\obj\\",
+        "projectPath": "C:\\Users\\aviv1\\Desktop\\t\\LoginPage\\LoginPage.csproj",
+        "packagesPath": "C:\\Users\\aviv1\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\aviv1\\Desktop\\t\\LoginPage\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Aviv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\aviv1\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
