@@ -28,80 +28,85 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Mplabel = new Label();
-            AddBbtn = new Button();
-            Addcbtn = new Button();
-            SearchBbtn = new Button();
-            SearchCbtn = new Button();
-            SuspendLayout();
+            this.Mplabel = new System.Windows.Forms.Label();
+            this.AddBbtn = new System.Windows.Forms.Button();
+            this.Addcbtn = new System.Windows.Forms.Button();
+            this.SearchBbtn = new System.Windows.Forms.Button();
+            this.SearchCbtn = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // Mplabel
             // 
-            Mplabel.Font = new Font("David", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            Mplabel.Location = new Point(31, 23);
-            Mplabel.Margin = new Padding(2, 0, 2, 0);
-            Mplabel.Name = "Mplabel";
-            Mplabel.Size = new Size(96, 37);
-            Mplabel.TabIndex = 0;
-            Mplabel.Text = "Main Page";
+            this.Mplabel.Font = new System.Drawing.Font("David", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.Mplabel.Location = new System.Drawing.Point(31, 23);
+            this.Mplabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.Mplabel.Name = "Mplabel";
+            this.Mplabel.Size = new System.Drawing.Size(96, 37);
+            this.Mplabel.TabIndex = 0;
+            this.Mplabel.Text = "Main Page";
             // 
             // AddBbtn
             // 
-            AddBbtn.Location = new Point(31, 62);
-            AddBbtn.Margin = new Padding(2, 2, 2, 2);
-            AddBbtn.Name = "AddBbtn";
-            AddBbtn.Size = new Size(85, 30);
-            AddBbtn.TabIndex = 1;
-            AddBbtn.Text = "Add Bird";
-            AddBbtn.UseVisualStyleBackColor = true;
-            AddBbtn.Click += AddBbtn_Click;
+            this.AddBbtn.Location = new System.Drawing.Point(31, 62);
+            this.AddBbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.AddBbtn.Name = "AddBbtn";
+            this.AddBbtn.Size = new System.Drawing.Size(85, 30);
+            this.AddBbtn.TabIndex = 1;
+            this.AddBbtn.Text = "Add Bird";
+            this.AddBbtn.UseVisualStyleBackColor = true;
+            this.AddBbtn.Click += new System.EventHandler(this.AddBbtn_Click);
             // 
             // Addcbtn
             // 
-            Addcbtn.Location = new Point(147, 62);
-            Addcbtn.Margin = new Padding(2, 2, 2, 2);
-            Addcbtn.Name = "Addcbtn";
-            Addcbtn.Size = new Size(89, 30);
-            Addcbtn.TabIndex = 2;
-            Addcbtn.Text = "Add Cage";
-            Addcbtn.UseVisualStyleBackColor = true;
-            Addcbtn.Click += Addcbtn_Click;
+            this.Addcbtn.Location = new System.Drawing.Point(147, 62);
+            this.Addcbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.Addcbtn.Name = "Addcbtn";
+            this.Addcbtn.Size = new System.Drawing.Size(89, 30);
+            this.Addcbtn.TabIndex = 2;
+            this.Addcbtn.Text = "Add Cage";
+            this.Addcbtn.UseVisualStyleBackColor = true;
+            this.Addcbtn.Click += new System.EventHandler(this.Addcbtn_Click);
+
             // 
             // SearchBbtn
             // 
-            SearchBbtn.Location = new Point(262, 62);
-            SearchBbtn.Margin = new Padding(2, 2, 2, 2);
-            SearchBbtn.Name = "SearchBbtn";
-            SearchBbtn.Size = new Size(87, 30);
-            SearchBbtn.TabIndex = 3;
-            SearchBbtn.Text = "Search Bird";
-            SearchBbtn.UseVisualStyleBackColor = true;
+            this.SearchBbtn.Location = new System.Drawing.Point(262, 62);
+            this.SearchBbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.SearchBbtn.Name = "SearchBbtn";
+            this.SearchBbtn.Size = new System.Drawing.Size(87, 30);
+            this.SearchBbtn.TabIndex = 3;
+            this.SearchBbtn.Text = "Search Bird";
+            this.SearchBbtn.UseVisualStyleBackColor = true;
+            this.SearchBbtn.Click += new System.EventHandler(this.SearchBbtn_Click);
             // 
             // SearchCbtn
             // 
-            SearchCbtn.Location = new Point(382, 62);
-            SearchCbtn.Margin = new Padding(2, 2, 2, 2);
-            SearchCbtn.Name = "SearchCbtn";
-            SearchCbtn.Size = new Size(89, 30);
-            SearchCbtn.TabIndex = 4;
-            SearchCbtn.Text = "Search Cage";
-            SearchCbtn.UseVisualStyleBackColor = true;
+            this.SearchCbtn.Location = new System.Drawing.Point(382, 62);
+            this.SearchCbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.SearchCbtn.Name = "SearchCbtn";
+            this.SearchCbtn.Size = new System.Drawing.Size(89, 30);
+            this.SearchCbtn.TabIndex = 4;
+            this.SearchCbtn.Text = "Search Cage";
+            this.SearchCbtn.UseVisualStyleBackColor = true;
+            this.SearchCbtn.Click += new System.EventHandler(this.SearchCbtn_Click);
+
             // 
             // MainPage
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(512, 450);
-            Controls.Add(SearchCbtn);
-            Controls.Add(SearchBbtn);
-            Controls.Add(Addcbtn);
-            Controls.Add(AddBbtn);
-            Controls.Add(Mplabel);
-            Name = "MainPage";
-            Text = "Main Page";
-            Load += MainPage_Load;
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(512, 450);
+            this.Controls.Add(this.SearchCbtn);
+            this.Controls.Add(this.SearchBbtn);
+            this.Controls.Add(this.Addcbtn);
+            this.Controls.Add(this.AddBbtn);
+            this.Controls.Add(this.Mplabel);
+            this.Name = "MainPage";
+            this.Text = "Main Page";
+            this.Load += new System.EventHandler(this.MainPage_Load_1);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

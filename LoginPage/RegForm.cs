@@ -10,20 +10,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Microsoft.Office.Interop.Excel;
 using System.Runtime.InteropServices;
 using Excel = Microsoft.Office.Interop.Excel;
 using System.Reflection;
 using System.IO;
-using static System.Net.Mime.MediaTypeNames;
+using System.Diagnostics;
 
 namespace LoginPage
 {
     public partial class RegForm : Form
     {
+
         public RegForm()
         {
             InitializeComponent();
+
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -31,19 +32,20 @@ namespace LoginPage
             String userName = RegNameVal.Text;
             String Password = RegPassVal.Text;
             String Id = RegIdVal.Text;
-            if (CheckReg(userName, Password))
-            {
-                //open system runtime-app
-                Excel.Application application;
+            string fileName = "birds.xlsx";
+
+            string projectDirectory = System.IO.Path.GetDirectoryName(Application.StartupPath);
+            string dataFolder = Path.Combine(projectDirectory, "Data");
+            string filePath = System.IO.Path.Combine(dataFolder, fileName);
+            bool fileExists = File.Exists(filePath);
+                Excel.Application application = new Excel.Application();
                 Excel.Workbook workbook;
                 Excel.Worksheet worksheet;
+                application.DisplayAlerts = false;
+            if (CheckReg(userName, Password))
+            {
 
-                // Start Excel and get Application object.
-                application = new Excel.Application();
-                application.Visible = false;
-
-                // Open the workbook
-                workbook = application.Workbooks.Open(@"C:\Users\aviv1\Desktop\users4.xlsx");
+                workbook = application.Workbooks.Open(filePath);
                 worksheet = (Excel.Worksheet)workbook.Sheets[1];
 
                 // Get the last row number
@@ -85,15 +87,22 @@ namespace LoginPage
 
                     // Close the workbook and release the objects
                     workbook.Close();
+                    Marshal.ReleaseComObject(workbook);
+
                     application.Quit();
+                    Marshal.ReleaseComObject(application);
+                    Process[] pro = Process.GetProcessesByName("excel");
+
+                    pro[0].Kill();
+                    pro[0].WaitForExit();
+                    GC.Collect();
+                    GC.WaitForPendingFinalizers();
 
                     // Release COM objects
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
-                    worksheet = null;
-                    workbook = null;
-                    application = null;
+
 
 
 
@@ -104,15 +113,22 @@ namespace LoginPage
                     MessageBox.Show("User already exists");
                     // Close the workbook and release the objects
                     workbook.Close();
+                    Marshal.ReleaseComObject(workbook);
+
                     application.Quit();
+                    Marshal.ReleaseComObject(application);
+                    Process[] pro = Process.GetProcessesByName("excel");
+
+                    pro[0].Kill();
+                    pro[0].WaitForExit();
+                    GC.Collect();
+                    GC.WaitForPendingFinalizers();
 
                     // Release COM objects
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
-                    worksheet = null;
-                    workbook = null;
-                    application = null;
+
 
                 }
             }

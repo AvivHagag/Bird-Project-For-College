@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
+
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -13,17 +15,19 @@ using static System.Windows.Forms.DataFormats;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using Microsoft.VisualBasic.ApplicationServices;
 using System.Security.Cryptography.X509Certificates;
+using System.Runtime.InteropServices;
 
 namespace LoginPage
 {
     public partial class Addbird : Form
     {
+
         public Addbird()
         {
             InitializeComponent();
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void SpeciescomboBox_SelectedIndex(object sender, EventArgs e)
         {
             if (SpeciescomboBox.Text == "American Gouldian")
             {
@@ -41,7 +45,6 @@ namespace LoginPage
             if (SpeciescomboBox.Text == "Australian Gouldian")
             {
                 SubspeciescomboBox.Items.Clear();
-                SubspeciescomboBox.Items.Clear();
                 SubspeciescomboBox.Items.Add("Central Australia");
                 SubspeciescomboBox.Items.Add("Coastal cities");
             }
@@ -53,19 +56,20 @@ namespace LoginPage
             Boolean fatherSerial = false;
             if (SpeciescomboBox.Text != "" && SubspeciescomboBox.Text != "" && GendercomboBox.Text != "")
             {
-                DateTime selectedDate = dateTimePicker1.Value;
+                DateTime selectedDate = dateTimePicker1.Value.Date;
                 //open system runtime-app
-                Excel.Application application;
+                string fileName = "birds.xlsx";
+                string projectDirectory = System.IO.Path.GetDirectoryName(Application.StartupPath);
+                string dataFolder = Path.Combine(projectDirectory, "Data");
+                string filePath = System.IO.Path.Combine(dataFolder, fileName);
+                bool fileExists = File.Exists(filePath);
+
+                Excel.Application application = new Excel.Application();
                 Excel.Workbook workbook;
                 Excel.Worksheet worksheet;
-
-                // Start Excel and get Application object.
-                application = new Excel.Application();
-                application.Visible = false;
-
-                // Open the workbook
-                workbook = application.Workbooks.Open(@"C:\Users\aviv1\Desktop\users4.xlsx");
-                worksheet = (Excel.Worksheet)workbook.Sheets[2];
+                application.DisplayAlerts = false;
+                workbook = application.Workbooks.Open(filePath);
+                worksheet = workbook.Sheets[2]; // Get the second worksheet in the workbook
 
                 // Get the last row number
                 int lastRow = worksheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell).Row;
@@ -130,7 +134,16 @@ namespace LoginPage
 
                     // Close the workbook and release the objects
                     workbook.Close();
+                    Marshal.ReleaseComObject(workbook);
+
                     application.Quit();
+                    Marshal.ReleaseComObject(application);
+                    Process[] pro = Process.GetProcessesByName("excel");
+
+                    pro[0].Kill();
+                    pro[0].WaitForExit();
+                    GC.Collect();
+                    GC.WaitForPendingFinalizers();
 
                     // Release COM objects
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
@@ -151,6 +164,16 @@ namespace LoginPage
             using (MainPage FormMain = new MainPage())
                 FormMain.ShowDialog();
             Show();
+        }
+
+        private void SubspeciescomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

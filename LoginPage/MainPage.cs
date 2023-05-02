@@ -38,7 +38,24 @@ namespace LoginPage
             Show();
         }
 
-        private void MainPage_Load(object sender, EventArgs e)
+
+        private void SearchBbtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (Searchbird searchbird = new Searchbird())
+                searchbird.ShowDialog();
+            Show();
+        }
+        private void SearchCbtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (SearchCage searchcage = new SearchCage())
+                searchcage.ShowDialog();
+            Show();
+        }
+
+
+        private void MainPage_Load_1(object sender, EventArgs e)
         {
 
         }
