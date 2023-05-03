@@ -28,27 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Mplabel = new Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
             AddBbtn = new Button();
             Addcbtn = new Button();
             SearchBbtn = new Button();
             SearchCbtn = new Button();
             mainExit = new Button();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // Mplabel
-            // 
-            Mplabel.Font = new Font("David", 14F, FontStyle.Regular, GraphicsUnit.Point);
-            Mplabel.Location = new Point(31, 23);
-            Mplabel.Margin = new Padding(2, 0, 2, 0);
-            Mplabel.Name = "Mplabel";
-            Mplabel.Size = new Size(96, 37);
-            Mplabel.TabIndex = 0;
-            Mplabel.Text = "Main Page";
             // 
             // AddBbtn
             // 
-            AddBbtn.Location = new Point(31, 62);
+            AddBbtn.Location = new Point(31, 297);
             AddBbtn.Margin = new Padding(2);
             AddBbtn.Name = "AddBbtn";
             AddBbtn.Size = new Size(85, 30);
@@ -59,7 +51,7 @@
             // 
             // Addcbtn
             // 
-            Addcbtn.Location = new Point(147, 62);
+            Addcbtn.Location = new Point(147, 297);
             Addcbtn.Margin = new Padding(2);
             Addcbtn.Name = "Addcbtn";
             Addcbtn.Size = new Size(89, 30);
@@ -70,7 +62,7 @@
             // 
             // SearchBbtn
             // 
-            SearchBbtn.Location = new Point(262, 62);
+            SearchBbtn.Location = new Point(262, 297);
             SearchBbtn.Margin = new Padding(2);
             SearchBbtn.Name = "SearchBbtn";
             SearchBbtn.Size = new Size(87, 30);
@@ -81,7 +73,7 @@
             // 
             // SearchCbtn
             // 
-            SearchCbtn.Location = new Point(382, 62);
+            SearchCbtn.Location = new Point(382, 297);
             SearchCbtn.Margin = new Padding(2);
             SearchCbtn.Name = "SearchCbtn";
             SearchCbtn.Size = new Size(89, 30);
@@ -100,31 +92,43 @@
             mainExit.UseVisualStyleBackColor = true;
             mainExit.Click += mainExit_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(1, 19);
+            pictureBox1.Margin = new Padding(0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(513, 276);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 6;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click_1;
+            // 
             // MainPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(512, 450);
+            Controls.Add(pictureBox1);
             Controls.Add(mainExit);
             Controls.Add(SearchCbtn);
             Controls.Add(SearchBbtn);
             Controls.Add(Addcbtn);
             Controls.Add(AddBbtn);
-            Controls.Add(Mplabel);
             Name = "MainPage";
             Text = "Main Page";
             Load += MainPage_Load_1;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Label Mplabel;
         private Button AddBbtn;
         private Button Addcbtn;
         private Button SearchBbtn;
         private Button SearchCbtn;
         private Button mainExit;
+        private PictureBox pictureBox1;
     }
 }

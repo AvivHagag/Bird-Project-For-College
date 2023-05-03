@@ -35,12 +35,14 @@
             heightColumn = new DataGridViewTextBoxColumn();
             materialColumn = new DataGridViewTextBoxColumn();
             searchGroup = new GroupBox();
+            cageSearchExitBtn = new Button();
             cageSearchMenuBtn = new Button();
             idTextBox = new TextBox();
             materialListBox = new ComboBox();
             searchBtn = new Button();
             cageSearchBox = new ComboBox();
-            cageSearchExitBtn = new Button();
+            searchLabel = new Label();
+            addChickLabels = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridCages).BeginInit();
             searchGroup.SuspendLayout();
             SuspendLayout();
@@ -51,7 +53,7 @@
             dataGridCages.AllowUserToResizeColumns = false;
             dataGridCages.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridCages.Columns.AddRange(new DataGridViewColumn[] { cageIDColumn, lengthColumn, widthColumn, heightColumn, materialColumn });
-            dataGridCages.Location = new Point(214, 4);
+            dataGridCages.Location = new Point(224, 26);
             dataGridCages.Name = "dataGridCages";
             dataGridCages.RowTemplate.Height = 25;
             dataGridCages.Size = new Size(543, 391);
@@ -84,6 +86,8 @@
             // 
             // searchGroup
             // 
+            searchGroup.Controls.Add(addChickLabels);
+            searchGroup.Controls.Add(searchLabel);
             searchGroup.Controls.Add(cageSearchExitBtn);
             searchGroup.Controls.Add(cageSearchMenuBtn);
             searchGroup.Controls.Add(idTextBox);
@@ -93,10 +97,20 @@
             searchGroup.Controls.Add(dataGridCages);
             searchGroup.Location = new Point(12, 18);
             searchGroup.Name = "searchGroup";
-            searchGroup.Size = new Size(754, 388);
+            searchGroup.Size = new Size(767, 417);
             searchGroup.TabIndex = 2;
             searchGroup.TabStop = false;
             searchGroup.Text = "Search Cage";
+            // 
+            // cageSearchExitBtn
+            // 
+            cageSearchExitBtn.Location = new Point(67, 250);
+            cageSearchExitBtn.Name = "cageSearchExitBtn";
+            cageSearchExitBtn.Size = new Size(75, 23);
+            cageSearchExitBtn.TabIndex = 6;
+            cageSearchExitBtn.Text = "Exit";
+            cageSearchExitBtn.UseVisualStyleBackColor = true;
+            cageSearchExitBtn.Click += cageSearchExitBtn_Click;
             // 
             // cageSearchMenuBtn
             // 
@@ -146,21 +160,30 @@
             cageSearchBox.TabIndex = 0;
             cageSearchBox.SelectedIndexChanged += cageSearchBox_SelectedIndexChanged;
             // 
-            // cageSearchExitBtn
+            // searchLabel
             // 
-            cageSearchExitBtn.Location = new Point(67, 250);
-            cageSearchExitBtn.Name = "cageSearchExitBtn";
-            cageSearchExitBtn.Size = new Size(75, 23);
-            cageSearchExitBtn.TabIndex = 6;
-            cageSearchExitBtn.Text = "Exit";
-            cageSearchExitBtn.UseVisualStyleBackColor = true;
-            cageSearchExitBtn.Click += cageSearchExitBtn_Click;
+            searchLabel.AutoSize = true;
+            searchLabel.Location = new Point(45, 77);
+            searchLabel.Name = "searchLabel";
+            searchLabel.Size = new Size(91, 15);
+            searchLabel.TabIndex = 3;
+            searchLabel.Text = "Choose to filter:";
+            // 
+            // addChickLabels
+            // 
+            addChickLabels.AutoSize = true;
+            addChickLabels.ForeColor = SystemColors.Highlight;
+            addChickLabels.Location = new Point(382, 8);
+            addChickLabels.Name = "addChickLabels";
+            addChickLabels.Size = new Size(201, 15);
+            addChickLabels.TabIndex = 7;
+            addChickLabels.Text = "Double click to add chick to the bird.";
             // 
             // SearchCage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(768, 425);
+            ClientSize = new Size(791, 447);
             Controls.Add(searchGroup);
             Name = "SearchCage";
             Text = "SearchCage";
@@ -185,5 +208,7 @@
         private ComboBox cageSearchBox;
         private Button cageSearchMenuBtn;
         private Button cageSearchExitBtn;
+        private Label addChickLabels;
+        private Label searchLabel;
     }
 }

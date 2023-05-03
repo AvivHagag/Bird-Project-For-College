@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Tomer\\Source\\Repos\\Bird-Project-For-College\\LoginPage\\LoginPage.csproj": {}
+    "C:\\Users\\Tomer\\source\\repos\\Bird-Project-For-College\\LoginPage\\LoginPage.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Tomer\\Source\\Repos\\Bird-Project-For-College\\LoginPage\\LoginPage.csproj": {
+    "C:\\Users\\Tomer\\source\\repos\\Bird-Project-For-College\\LoginPage\\LoginPage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Tomer\\Source\\Repos\\Bird-Project-For-College\\LoginPage\\LoginPage.csproj",
+        "projectUniqueName": "C:\\Users\\Tomer\\source\\repos\\Bird-Project-For-College\\LoginPage\\LoginPage.csproj",
         "projectName": "LoginPage",
-        "projectPath": "C:\\Users\\Tomer\\Source\\Repos\\Bird-Project-For-College\\LoginPage\\LoginPage.csproj",
+        "projectPath": "C:\\Users\\Tomer\\source\\repos\\Bird-Project-For-College\\LoginPage\\LoginPage.csproj",
         "packagesPath": "C:\\Users\\Tomer\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Tomer\\Source\\Repos\\Bird-Project-For-College\\LoginPage\\obj\\",
+        "outputPath": "C:\\Users\\Tomer\\source\\repos\\Bird-Project-For-College\\LoginPage\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

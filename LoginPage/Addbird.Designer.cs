@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             groupBox1 = new GroupBox();
+            birdExitBtn = new Button();
             BackBtn = new Button();
             FinalAddbtn = new Button();
             dateTimePicker1 = new DateTimePicker();
@@ -45,7 +46,6 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            birdExitBtn = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -76,6 +76,17 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Add Bird";
+            groupBox1.Enter += groupBox1_Enter;
+            // 
+            // birdExitBtn
+            // 
+            birdExitBtn.Location = new Point(334, 192);
+            birdExitBtn.Name = "birdExitBtn";
+            birdExitBtn.Size = new Size(138, 23);
+            birdExitBtn.TabIndex = 16;
+            birdExitBtn.Text = "Exit";
+            birdExitBtn.UseVisualStyleBackColor = true;
+            birdExitBtn.Click += birdExitBtn_Click;
             // 
             // BackBtn
             // 
@@ -225,16 +236,6 @@
             label1.Size = new Size(62, 23);
             label1.TabIndex = 0;
             label1.Text = "species:";
-            // 
-            // birdExitBtn
-            // 
-            birdExitBtn.Location = new Point(334, 192);
-            birdExitBtn.Name = "birdExitBtn";
-            birdExitBtn.Size = new Size(138, 23);
-            birdExitBtn.TabIndex = 16;
-            birdExitBtn.Text = "Exit";
-            birdExitBtn.UseVisualStyleBackColor = true;
-            birdExitBtn.Click += birdExitBtn_Click;
             // 
             // Addbird
             // 

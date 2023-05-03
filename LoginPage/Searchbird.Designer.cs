@@ -30,6 +30,7 @@
         {
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             searchGroup = new GroupBox();
+            exitBtn = new Button();
             birdMainMenuBtn = new Button();
             idTextBox = new TextBox();
             datePicker = new DateTimePicker();
@@ -46,7 +47,6 @@
             dateColumn = new DataGridViewTextBoxColumn();
             cageColumn = new DataGridViewTextBoxColumn();
             userColumn = new DataGridViewTextBoxColumn();
-            exitBtn = new Button();
             searchGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridBirds).BeginInit();
             SuspendLayout();
@@ -68,6 +68,16 @@
             searchGroup.TabStop = false;
             searchGroup.Text = "Search bird";
             searchGroup.Enter += searchGroup_Enter;
+            // 
+            // exitBtn
+            // 
+            exitBtn.Location = new Point(60, 266);
+            exitBtn.Name = "exitBtn";
+            exitBtn.Size = new Size(95, 23);
+            exitBtn.TabIndex = 6;
+            exitBtn.Text = "Exit";
+            exitBtn.UseVisualStyleBackColor = true;
+            exitBtn.Click += exitBtn_Click;
             // 
             // birdMainMenuBtn
             // 
@@ -139,6 +149,7 @@
             dataGridBirds.Size = new Size(944, 384);
             dataGridBirds.TabIndex = 5;
             dataGridBirds.CellContentClick += dataGridView1_CellContentClick;
+            dataGridBirds.CellDoubleClick += dataGridBirds_CellDoubleClick;
             // 
             // birdIDColumn
             // 
@@ -184,16 +195,6 @@
             // 
             userColumn.HeaderText = "User ID";
             userColumn.Name = "userColumn";
-            // 
-            // exitBtn
-            // 
-            exitBtn.Location = new Point(60, 266);
-            exitBtn.Name = "exitBtn";
-            exitBtn.Size = new Size(95, 23);
-            exitBtn.TabIndex = 6;
-            exitBtn.Text = "Exit";
-            exitBtn.UseVisualStyleBackColor = true;
-            exitBtn.Click += exitBtn_Click;
             // 
             // Searchbird
             // 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LoginPage.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -237,6 +238,53 @@ namespace LoginPage
         {
             Application.Exit();
 
+        }
+
+        private void dataGridBirds_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Get the row that was double-clicked.
+            int chosenRow = e.RowIndex;
+
+            // Get the data for the row.
+
+            string species = dataGridBirds.Rows[chosenRow].Cells[1].Value.ToString();
+            string gender = dataGridBirds.Rows[chosenRow].Cells[3].Value.ToString();
+
+            string subSpecies = dataGridBirds.Rows[chosenRow].Cells[2].Value.ToString();
+            string cageID = dataGridBirds.Rows[chosenRow].Cells[7].Value.ToString();
+            string birdID = dataGridBirds.Rows[chosenRow].Cells[0].Value.ToString();
+
+            // Create a new instance of the form that you want to send the data to.
+            Addchick form = new Addchick();
+
+            if (gender == "Male")
+            {
+                form.motherChickBox.Visible = true;
+                form.fatherChickBox.Visible = false;
+                form.motherIdLabel.Visible = true;
+                form.FatherIdLabel.Visible = false;
+
+            }
+            else
+            {
+                form.motherChickBox.Visible = false;
+                form.motherIdLabel.Visible = false;
+                form.FatherIdLabel.Visible = true; 
+                form.fatherChickBox.Visible = true;
+            }
+            // Set the data for the new form.
+            form.birdID = birdID;
+            form.species = species;
+            form.subSpecies = subSpecies;
+            form.cageID = cageID;
+            form.gender = gender;
+            // Show the new form.
+            form.Show();
+
+            /* this.Hide();
+             using (Addchick addchick = new Addchick())
+                 addchick.ShowDialog();
+             if (!IsDisposed) Show();*/
         }
     }
 }

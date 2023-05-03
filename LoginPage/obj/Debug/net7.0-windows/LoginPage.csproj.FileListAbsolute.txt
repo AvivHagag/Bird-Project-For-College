@@ -208,3 +208,4 @@ C:\Users\Tomer\Source\Repos\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-
 C:\Users\Tomer\Source\Repos\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windows\LoginPage.pdb
 C:\Users\Tomer\Source\Repos\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windows\LoginPage.genruntimeconfig.cache
 C:\Users\Tomer\Source\Repos\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windows\ref\LoginPage.dll
+C:\Users\Tomer\source\repos\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windows\LoginPage.Addchick.resources

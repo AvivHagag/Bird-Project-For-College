@@ -21,7 +21,7 @@ namespace LoginPage
 {
     public partial class Addbird : Form
     {
-       
+
 
         public Addbird()
         {
@@ -162,7 +162,7 @@ namespace LoginPage
             }
             else
                 MessageBox.Show("Bird was added successfully");
-        
+
         }
         private Boolean CageExist(String cage)
         {
@@ -192,7 +192,7 @@ namespace LoginPage
                     cageExist = true;
                     break;
                 }
-               
+
             }
 
             return cageExist;
@@ -218,6 +218,11 @@ namespace LoginPage
         private void birdExitBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
 
         }
     }

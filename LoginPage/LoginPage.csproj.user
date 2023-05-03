@@ -7,6 +7,9 @@
     <Compile Update="Addcage.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Addchick.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
