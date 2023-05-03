@@ -113,6 +113,8 @@ namespace LoginPage
 
                 if (birdSearchBox.Text == "Bird ID")
                 {
+                    try
+                    {
                     if (birdIDCell.Value == int.Parse(idTextBox.Text))
                     {
                         rowIndex = dataGridBirds.Rows.Add();
@@ -126,6 +128,12 @@ namespace LoginPage
                         dataGridBirds.Rows[rowIndex].Cells[7].Value = cageIDCell.Value;
                         dataGridBirds.Rows[rowIndex].Cells[8].Value = userIDCell.Value;
 
+                    }
+
+                    } catch
+                    {
+                        MessageBox.Show("Invalid input to the id, please try again");
+                        break;
                     }
 
                 }
@@ -269,7 +277,7 @@ namespace LoginPage
             {
                 form.motherChickBox.Visible = false;
                 form.motherIdLabel.Visible = false;
-                form.FatherIdLabel.Visible = true; 
+                form.FatherIdLabel.Visible = true;
                 form.fatherChickBox.Visible = true;
             }
             // Set the data for the new form.

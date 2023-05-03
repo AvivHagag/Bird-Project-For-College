@@ -35,14 +35,13 @@
             heightColumn = new DataGridViewTextBoxColumn();
             materialColumn = new DataGridViewTextBoxColumn();
             searchGroup = new GroupBox();
+            searchLabel = new Label();
             cageSearchExitBtn = new Button();
             cageSearchMenuBtn = new Button();
             idTextBox = new TextBox();
             materialListBox = new ComboBox();
             searchBtn = new Button();
             cageSearchBox = new ComboBox();
-            searchLabel = new Label();
-            addChickLabels = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridCages).BeginInit();
             searchGroup.SuspendLayout();
             SuspendLayout();
@@ -86,7 +85,6 @@
             // 
             // searchGroup
             // 
-            searchGroup.Controls.Add(addChickLabels);
             searchGroup.Controls.Add(searchLabel);
             searchGroup.Controls.Add(cageSearchExitBtn);
             searchGroup.Controls.Add(cageSearchMenuBtn);
@@ -101,6 +99,15 @@
             searchGroup.TabIndex = 2;
             searchGroup.TabStop = false;
             searchGroup.Text = "Search Cage";
+            // 
+            // searchLabel
+            // 
+            searchLabel.AutoSize = true;
+            searchLabel.Location = new Point(45, 77);
+            searchLabel.Name = "searchLabel";
+            searchLabel.Size = new Size(91, 15);
+            searchLabel.TabIndex = 3;
+            searchLabel.Text = "Choose to filter:";
             // 
             // cageSearchExitBtn
             // 
@@ -160,25 +167,6 @@
             cageSearchBox.TabIndex = 0;
             cageSearchBox.SelectedIndexChanged += cageSearchBox_SelectedIndexChanged;
             // 
-            // searchLabel
-            // 
-            searchLabel.AutoSize = true;
-            searchLabel.Location = new Point(45, 77);
-            searchLabel.Name = "searchLabel";
-            searchLabel.Size = new Size(91, 15);
-            searchLabel.TabIndex = 3;
-            searchLabel.Text = "Choose to filter:";
-            // 
-            // addChickLabels
-            // 
-            addChickLabels.AutoSize = true;
-            addChickLabels.ForeColor = SystemColors.Highlight;
-            addChickLabels.Location = new Point(382, 8);
-            addChickLabels.Name = "addChickLabels";
-            addChickLabels.Size = new Size(201, 15);
-            addChickLabels.TabIndex = 7;
-            addChickLabels.Text = "Double click to add chick to the bird.";
-            // 
             // SearchCage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -208,7 +196,6 @@
         private ComboBox cageSearchBox;
         private Button cageSearchMenuBtn;
         private Button cageSearchExitBtn;
-        private Label addChickLabels;
         private Label searchLabel;
     }
 }

@@ -47,12 +47,16 @@
             dateColumn = new DataGridViewTextBoxColumn();
             cageColumn = new DataGridViewTextBoxColumn();
             userColumn = new DataGridViewTextBoxColumn();
+            addChickLabels = new Label();
+            searchLabel = new Label();
             searchGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridBirds).BeginInit();
             SuspendLayout();
             // 
             // searchGroup
             // 
+            searchGroup.Controls.Add(searchLabel);
+            searchGroup.Controls.Add(addChickLabels);
             searchGroup.Controls.Add(exitBtn);
             searchGroup.Controls.Add(birdMainMenuBtn);
             searchGroup.Controls.Add(idTextBox);
@@ -63,7 +67,7 @@
             searchGroup.Controls.Add(dataGridBirds);
             searchGroup.Location = new Point(12, 12);
             searchGroup.Name = "searchGroup";
-            searchGroup.Size = new Size(1156, 388);
+            searchGroup.Size = new Size(1183, 425);
             searchGroup.TabIndex = 1;
             searchGroup.TabStop = false;
             searchGroup.Text = "Search bird";
@@ -143,7 +147,7 @@
             dataGridBirds.AllowUserToResizeColumns = false;
             dataGridBirds.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridBirds.Columns.AddRange(new DataGridViewColumn[] { birdIDColumn, birdSpeciceColumn, subSpecieColumn, genderColumn, motherColumn, fatherColumn, dateColumn, cageColumn, userColumn });
-            dataGridBirds.Location = new Point(214, 4);
+            dataGridBirds.Location = new Point(230, 32);
             dataGridBirds.Name = "dataGridBirds";
             dataGridBirds.RowTemplate.Height = 25;
             dataGridBirds.Size = new Size(944, 384);
@@ -196,11 +200,30 @@
             userColumn.HeaderText = "User ID";
             userColumn.Name = "userColumn";
             // 
+            // addChickLabels
+            // 
+            addChickLabels.AutoSize = true;
+            addChickLabels.ForeColor = SystemColors.Highlight;
+            addChickLabels.Location = new Point(630, 14);
+            addChickLabels.Name = "addChickLabels";
+            addChickLabels.Size = new Size(201, 15);
+            addChickLabels.TabIndex = 8;
+            addChickLabels.Text = "Double click to add chick to the bird.";
+            // 
+            // searchLabel
+            // 
+            searchLabel.AutoSize = true;
+            searchLabel.Location = new Point(45, 77);
+            searchLabel.Name = "searchLabel";
+            searchLabel.Size = new Size(91, 15);
+            searchLabel.TabIndex = 9;
+            searchLabel.Text = "Choose to filter:";
+            // 
             // Searchbird
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1168, 426);
+            ClientSize = new Size(1198, 440);
             Controls.Add(searchGroup);
             Name = "Searchbird";
             Text = "Searchbird";
@@ -231,5 +254,7 @@
         private DataGridViewTextBoxColumn userColumn;
         private Button birdMainMenuBtn;
         private Button exitBtn;
+        private Label addChickLabels;
+        private Label searchLabel;
     }
 }
