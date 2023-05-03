@@ -187,12 +187,12 @@ namespace LoginPage
         private void BackBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            RegNameVal.Text = null;
+            /*RegNameVal.Text = null;
             RegPassVal.Text = null;
-            RegIdVal.Text = null;
-            using (LoginForm FormLog = new LoginForm())
-                FormLog.ShowDialog();
-            Show();
+            RegIdVal.Text = null;*/
+            LoginForm FormLog = new LoginForm();
+            FormLog.Show();
+           
         }
 
         private void regExitBtn_Click(object sender, EventArgs e)

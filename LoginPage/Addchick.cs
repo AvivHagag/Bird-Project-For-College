@@ -56,7 +56,7 @@ namespace LoginPage
 
         private void exitChickBtn_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Hide();
 
         }
 

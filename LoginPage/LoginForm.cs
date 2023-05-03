@@ -141,9 +141,8 @@ namespace WinFormsApp1
         private void regPage_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using (RegForm formReg = new RegForm())
-                formReg.ShowDialog();
-            if (!IsDisposed) Show();
+            RegForm formReg = new RegForm();
+            formReg.Show();
         }
 
         private void usernameBox_TextChanged_1(object sender, EventArgs e)
