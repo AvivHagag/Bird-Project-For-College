@@ -106,7 +106,8 @@ namespace LoginPage
 
 
 
-                }
+/*                    new LoginForm().Show();
+*/                }
                 else
                 {
                     MessageBox.Show("User already exists");

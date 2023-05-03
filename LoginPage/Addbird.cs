@@ -21,6 +21,7 @@ namespace LoginPage
 {
     public partial class Addbird : Form
     {
+       
 
         public Addbird()
         {
@@ -101,7 +102,7 @@ namespace LoginPage
                         }
                     }
                 }
-                if (selectedDate != null && cagenumber.Text != null)
+                if (selectedDate != null && cagenumber.Text != null && CageExist(cagenumber.Text))
                 {
 
                     int newRow = lastRow + 1;
@@ -151,13 +152,51 @@ namespace LoginPage
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
 
                 }
+                else if (!(CageExist(cagenumber.Text)))
+                {
+                    MessageBox.Show("Cage number is not exist, try again.");
+
+                }
                 else
                     MessageBox.Show("Bird was added successfully");
             }
             else
                 MessageBox.Show("Bird was added successfully");
+        
         }
+        private Boolean CageExist(String cage)
+        {
+            string fileName = "birds.xlsx";
+            string projectDirectory = System.IO.Path.GetDirectoryName(Application.StartupPath);
+            string dataFolder = Path.Combine(projectDirectory, "Data");
+            string filePath = System.IO.Path.Combine(dataFolder, fileName);
+            bool fileExists = File.Exists(filePath);
 
+            Excel.Application application = new Excel.Application();
+            Excel.Workbook workbook;
+            Excel.Worksheet worksheet;
+            application.DisplayAlerts = false;
+            workbook = application.Workbooks.Open(filePath);
+            worksheet = workbook.Sheets[3]; // Get the third worksheet in the workbook
+
+            // Get the last row number
+            int lastRow = worksheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell).Row;
+
+            bool cageExist = false;
+            for (int i = 2; i <= lastRow; i++)
+            {
+                // Start from 2 to skip the header row
+                Excel.Range cageCell = worksheet.Cells[i, 1];
+                if (cageCell.Value != null && cageCell.Value.ToString() == cage)
+                {
+                    cageExist = true;
+                    break;
+                }
+               
+            }
+
+            return cageExist;
+        }
         private void BackBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
