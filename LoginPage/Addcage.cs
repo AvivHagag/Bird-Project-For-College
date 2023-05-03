@@ -42,17 +42,17 @@ namespace LoginPage
             worksheet = workbook.Sheets[3]; // Get the cages worksheet in the workbook
 
             // Get the last row number
-            int lastRow = worksheet.UsedRange.Rows.Count+1;
+            int lastRow = worksheet.UsedRange.Rows.Count + 1;
             int check = 0;
             if (int.TryParse(lengthBox.Text, out n) && int.TryParse(widthBox.Text, out n) && int.TryParse(heightBox.Text, out n))
             {
-            worksheet.Cells[lastRow, 1] = "a"+lastRow;
+                worksheet.Cells[lastRow, 1] = "a" + lastRow;
                 worksheet.Cells[lastRow, 2] = lengthBox.Text;
                 worksheet.Cells[lastRow, 3] = widthBox.Text;
                 worksheet.Cells[lastRow, 4] = heightBox.Text;
                 worksheet.Cells[lastRow, 5] = materialBox.Text;
 
-            workbook.Save();
+                workbook.Save();
             }
 
 
@@ -86,6 +86,20 @@ namespace LoginPage
 
         private void material_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void cageMainMenuBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (MainPage FormMain = new MainPage())
+                FormMain.ShowDialog();
+            Show();
+        }
+
+        private void exitCageBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
 
         }
     }

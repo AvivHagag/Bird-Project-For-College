@@ -104,8 +104,8 @@ namespace WinFormsApp1
             workbook = null;
             application = null;
         }
-         // get user name amd password,id from the  login form 
-        public String getusername() 
+        // get user name amd password,id from the  login form 
+        public String getusername()
         {
             return userName;
         }
@@ -138,16 +138,22 @@ namespace WinFormsApp1
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void regPage_Click(object sender, EventArgs e)
         {
             this.Hide();
             using (RegForm formReg = new RegForm())
                 formReg.ShowDialog();
-            Show();
+            if(!IsDisposed) Show();
         }
 
         private void usernameBox_TextChanged_1(object sender, EventArgs e)
         {
+
+        }
+
+        private void loginExitBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
 
         }
     }

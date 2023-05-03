@@ -23,17 +23,18 @@ namespace LoginPage
 
         private void Searchbird_Load(object sender, EventArgs e)
         {
-            
+
 
         }
 
         private void searchBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(birdSearchBox.Text == "Specie") {
+            if (birdSearchBox.Text == "Specie")
+            {
                 datePicker.Visible = false;
                 idTextBox.Visible = false;
 
-                SpecieBox.Visible= true;
+                SpecieBox.Visible = true;
                 SpecieBox.Items.Clear();
                 SpecieBox.Text = null;
 
@@ -78,7 +79,7 @@ namespace LoginPage
 
         private void searchBtn_Click(object sender, EventArgs e)
         {
-            
+
             string fileName = "birds.xlsx";
             string projectDirectory = System.IO.Path.GetDirectoryName(Application.StartupPath);
             string dataFolder = Path.Combine(projectDirectory, "Data");
@@ -109,9 +110,9 @@ namespace LoginPage
                 Excel.Range cageIDCell = worksheet.Cells[i, 8];
                 Excel.Range userIDCell = worksheet.Cells[i, 9];
 
-                if(birdSearchBox.Text == "Bird ID")
+                if (birdSearchBox.Text == "Bird ID")
                 {
-                    if ( birdIDCell.Value == int.Parse(idTextBox.Text))
+                    if (birdIDCell.Value == int.Parse(idTextBox.Text))
                     {
                         rowIndex = dataGridBirds.Rows.Add();
                         dataGridBirds.Rows[rowIndex].Cells[0].Value = birdIDCell.Value;
@@ -123,25 +124,25 @@ namespace LoginPage
                         dataGridBirds.Rows[rowIndex].Cells[6].Value = dateCell.Value;
                         dataGridBirds.Rows[rowIndex].Cells[7].Value = cageIDCell.Value;
                         dataGridBirds.Rows[rowIndex].Cells[8].Value = userIDCell.Value;
-                    
+
                     }
 
                 }
                 else if (birdSearchBox.Text == "Specie")
                 {
-                    if(speciesCell.Value == SpecieBox.Text)
+                    if (speciesCell.Value == SpecieBox.Text)
                     {
 
-                    rowIndex = dataGridBirds.Rows.Add();
-                    dataGridBirds.Rows[rowIndex].Cells[0].Value = birdIDCell.Value;
-                    dataGridBirds.Rows[rowIndex].Cells[1].Value = speciesCell.Value;
-                    dataGridBirds.Rows[rowIndex].Cells[2].Value = subSpeciesCell.Value;
-                    dataGridBirds.Rows[rowIndex].Cells[3].Value = genderCell.Value;
-                    dataGridBirds.Rows[rowIndex].Cells[4].Value = motherCell.Value;
-                    dataGridBirds.Rows[rowIndex].Cells[5].Value = fatherCell.Value;
-                    dataGridBirds.Rows[rowIndex].Cells[6].Value = dateCell.Value;
-                    dataGridBirds.Rows[rowIndex].Cells[7].Value = cageIDCell.Value;
-                    dataGridBirds.Rows[rowIndex].Cells[8].Value = userIDCell.Value;
+                        rowIndex = dataGridBirds.Rows.Add();
+                        dataGridBirds.Rows[rowIndex].Cells[0].Value = birdIDCell.Value;
+                        dataGridBirds.Rows[rowIndex].Cells[1].Value = speciesCell.Value;
+                        dataGridBirds.Rows[rowIndex].Cells[2].Value = subSpeciesCell.Value;
+                        dataGridBirds.Rows[rowIndex].Cells[3].Value = genderCell.Value;
+                        dataGridBirds.Rows[rowIndex].Cells[4].Value = motherCell.Value;
+                        dataGridBirds.Rows[rowIndex].Cells[5].Value = fatherCell.Value;
+                        dataGridBirds.Rows[rowIndex].Cells[6].Value = dateCell.Value;
+                        dataGridBirds.Rows[rowIndex].Cells[7].Value = cageIDCell.Value;
+                        dataGridBirds.Rows[rowIndex].Cells[8].Value = userIDCell.Value;
 
                     }
                 }
@@ -221,6 +222,20 @@ namespace LoginPage
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void birdMainMenuBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (MainPage FormMain = new MainPage())
+                FormMain.ShowDialog();
+            Show();
+        }
+
+        private void exitBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
 
         }
     }

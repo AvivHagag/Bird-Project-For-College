@@ -38,10 +38,10 @@ namespace LoginPage
             string dataFolder = Path.Combine(projectDirectory, "Data");
             string filePath = System.IO.Path.Combine(dataFolder, fileName);
             bool fileExists = File.Exists(filePath);
-                Excel.Application application = new Excel.Application();
-                Excel.Workbook workbook;
-                Excel.Worksheet worksheet;
-                application.DisplayAlerts = false;
+            Excel.Application application = new Excel.Application();
+            Excel.Workbook workbook;
+            Excel.Worksheet worksheet;
+            application.DisplayAlerts = false;
             if (CheckReg(userName, Password))
             {
 
@@ -78,7 +78,7 @@ namespace LoginPage
                     worksheet.Cells[newRow, 2] = Password;
                     worksheet.Cells[newRow, 3] = Id;
                     workbook.Save();
-                    
+
                     MessageBox.Show("The user has successfully registered");
                     this.Hide();
                     RegNameVal.Text = null;
@@ -106,7 +106,6 @@ namespace LoginPage
 
 
 
-                    new LoginForm().Show();
                 }
                 else
                 {
@@ -192,6 +191,12 @@ namespace LoginPage
             using (LoginForm FormLog = new LoginForm())
                 FormLog.ShowDialog();
             Show();
+        }
+
+        private void regExitBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+
         }
     }
 }

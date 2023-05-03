@@ -28,142 +28,162 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Addcagegroubbox = new System.Windows.Forms.GroupBox();
-            this.CageAddBtn = new System.Windows.Forms.Button();
-            this.heightBox = new System.Windows.Forms.TextBox();
-            this.widthBox = new System.Windows.Forms.TextBox();
-            this.lengthBox = new System.Windows.Forms.TextBox();
-            this.materialBox = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Addcagegroubbox.SuspendLayout();
-            this.SuspendLayout();
+            Addcagegroubbox = new GroupBox();
+            cageMainMenuBtn = new Button();
+            CageAddBtn = new Button();
+            heightBox = new TextBox();
+            widthBox = new TextBox();
+            lengthBox = new TextBox();
+            materialBox = new ComboBox();
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            exitCageBtn = new Button();
+            Addcagegroubbox.SuspendLayout();
+            SuspendLayout();
             // 
             // Addcagegroubbox
             // 
-            this.Addcagegroubbox.Controls.Add(this.CageAddBtn);
-            this.Addcagegroubbox.Controls.Add(this.heightBox);
-            this.Addcagegroubbox.Controls.Add(this.widthBox);
-            this.Addcagegroubbox.Controls.Add(this.lengthBox);
-            this.Addcagegroubbox.Controls.Add(this.materialBox);
-            this.Addcagegroubbox.Controls.Add(this.label4);
-            this.Addcagegroubbox.Controls.Add(this.label3);
-            this.Addcagegroubbox.Controls.Add(this.label2);
-            this.Addcagegroubbox.Controls.Add(this.label1);
-            this.Addcagegroubbox.Location = new System.Drawing.Point(8, 27);
-            this.Addcagegroubbox.Margin = new System.Windows.Forms.Padding(2);
-            this.Addcagegroubbox.Name = "Addcagegroubbox";
-            this.Addcagegroubbox.Padding = new System.Windows.Forms.Padding(2);
-            this.Addcagegroubbox.Size = new System.Drawing.Size(482, 200);
-            this.Addcagegroubbox.TabIndex = 0;
-            this.Addcagegroubbox.TabStop = false;
-            this.Addcagegroubbox.Text = "Add Cage";
-            this.Addcagegroubbox.UseCompatibleTextRendering = true;
+            Addcagegroubbox.Controls.Add(exitCageBtn);
+            Addcagegroubbox.Controls.Add(cageMainMenuBtn);
+            Addcagegroubbox.Controls.Add(CageAddBtn);
+            Addcagegroubbox.Controls.Add(heightBox);
+            Addcagegroubbox.Controls.Add(widthBox);
+            Addcagegroubbox.Controls.Add(lengthBox);
+            Addcagegroubbox.Controls.Add(materialBox);
+            Addcagegroubbox.Controls.Add(label4);
+            Addcagegroubbox.Controls.Add(label3);
+            Addcagegroubbox.Controls.Add(label2);
+            Addcagegroubbox.Controls.Add(label1);
+            Addcagegroubbox.Location = new Point(8, 27);
+            Addcagegroubbox.Margin = new Padding(2);
+            Addcagegroubbox.Name = "Addcagegroubbox";
+            Addcagegroubbox.Padding = new Padding(2);
+            Addcagegroubbox.Size = new Size(482, 200);
+            Addcagegroubbox.TabIndex = 0;
+            Addcagegroubbox.TabStop = false;
+            Addcagegroubbox.Text = "Add Cage";
+            Addcagegroubbox.UseCompatibleTextRendering = true;
+            // 
+            // cageMainMenuBtn
+            // 
+            cageMainMenuBtn.Location = new Point(282, 110);
+            cageMainMenuBtn.Name = "cageMainMenuBtn";
+            cageMainMenuBtn.Size = new Size(151, 28);
+            cageMainMenuBtn.TabIndex = 9;
+            cageMainMenuBtn.Text = "Main menu";
+            cageMainMenuBtn.UseVisualStyleBackColor = true;
+            cageMainMenuBtn.Click += cageMainMenuBtn_Click;
             // 
             // CageAddBtn
             // 
-            this.CageAddBtn.Location = new System.Drawing.Point(284, 131);
-            this.CageAddBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.CageAddBtn.Name = "CageAddBtn";
-            this.CageAddBtn.Size = new System.Drawing.Size(151, 35);
-            this.CageAddBtn.TabIndex = 8;
-            this.CageAddBtn.Text = "Add";
-            this.CageAddBtn.UseVisualStyleBackColor = true;
-            this.CageAddBtn.Click += new System.EventHandler(this.CageAddBtn_Click);
+            CageAddBtn.Location = new Point(282, 70);
+            CageAddBtn.Margin = new Padding(2);
+            CageAddBtn.Name = "CageAddBtn";
+            CageAddBtn.Size = new Size(151, 35);
+            CageAddBtn.TabIndex = 8;
+            CageAddBtn.Text = "Add";
+            CageAddBtn.UseVisualStyleBackColor = true;
+            CageAddBtn.Click += CageAddBtn_Click;
             // 
             // heightBox
             // 
-            this.heightBox.Location = new System.Drawing.Point(82, 139);
-            this.heightBox.Margin = new System.Windows.Forms.Padding(2);
-            this.heightBox.Name = "heightBox";
-            this.heightBox.Size = new System.Drawing.Size(92, 23);
-            this.heightBox.TabIndex = 7;
+            heightBox.Location = new Point(82, 139);
+            heightBox.Margin = new Padding(2);
+            heightBox.Name = "heightBox";
+            heightBox.Size = new Size(92, 23);
+            heightBox.TabIndex = 7;
             // 
             // widthBox
             // 
-            this.widthBox.Location = new System.Drawing.Point(82, 90);
-            this.widthBox.Margin = new System.Windows.Forms.Padding(2);
-            this.widthBox.Name = "widthBox";
-            this.widthBox.Size = new System.Drawing.Size(92, 23);
-            this.widthBox.TabIndex = 6;
+            widthBox.Location = new Point(82, 90);
+            widthBox.Margin = new Padding(2);
+            widthBox.Name = "widthBox";
+            widthBox.Size = new Size(92, 23);
+            widthBox.TabIndex = 6;
             // 
             // lengthBox
             // 
-            this.lengthBox.Location = new System.Drawing.Point(82, 39);
-            this.lengthBox.Margin = new System.Windows.Forms.Padding(2);
-            this.lengthBox.Name = "lengthBox";
-            this.lengthBox.Size = new System.Drawing.Size(92, 23);
-            this.lengthBox.TabIndex = 5;
+            lengthBox.Location = new Point(82, 39);
+            lengthBox.Margin = new Padding(2);
+            lengthBox.Name = "lengthBox";
+            lengthBox.Size = new Size(92, 23);
+            lengthBox.TabIndex = 5;
             // 
             // materialBox
             // 
-            this.materialBox.FormattingEnabled = true;
-            this.materialBox.Items.AddRange(new object[] {
-            "wood",
-            "plastic",
-            "iron"});
-            this.materialBox.Location = new System.Drawing.Point(293, 35);
-            this.materialBox.Margin = new System.Windows.Forms.Padding(2);
-            this.materialBox.Name = "materialBox";
-            this.materialBox.Size = new System.Drawing.Size(117, 23);
-            this.materialBox.TabIndex = 4;
-            this.materialBox.SelectedIndexChanged += new System.EventHandler(this.material_SelectedIndexChanged);
+            materialBox.FormattingEnabled = true;
+            materialBox.Items.AddRange(new object[] { "wood", "plastic", "iron" });
+            materialBox.Location = new Point(293, 35);
+            materialBox.Margin = new Padding(2);
+            materialBox.Name = "materialBox";
+            materialBox.Size = new Size(117, 23);
+            materialBox.TabIndex = 4;
+            materialBox.SelectedIndexChanged += material_SelectedIndexChanged;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(230, 37);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 15);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Material";
+            label4.AutoSize = true;
+            label4.Location = new Point(230, 37);
+            label4.Margin = new Padding(2, 0, 2, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(50, 15);
+            label4.TabIndex = 3;
+            label4.Text = "Material";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 142);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Height";
+            label3.AutoSize = true;
+            label3.Location = new Point(15, 142);
+            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(43, 15);
+            label3.TabIndex = 2;
+            label3.Text = "Height";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 90);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(39, 15);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Width";
+            label2.AutoSize = true;
+            label2.Location = new Point(15, 90);
+            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(39, 15);
+            label2.TabIndex = 1;
+            label2.Text = "Width";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 39);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Length:";
+            label1.AutoSize = true;
+            label1.Location = new Point(15, 39);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(47, 15);
+            label1.TabIndex = 0;
+            label1.Text = "Length:";
+            // 
+            // exitCageBtn
+            // 
+            exitCageBtn.Location = new Point(282, 144);
+            exitCageBtn.Name = "exitCageBtn";
+            exitCageBtn.Size = new Size(151, 23);
+            exitCageBtn.TabIndex = 10;
+            exitCageBtn.Text = "Exit";
+            exitCageBtn.UseVisualStyleBackColor = true;
+            exitCageBtn.Click += exitCageBtn_Click;
             // 
             // Addcage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(560, 270);
-            this.Controls.Add(this.Addcagegroubbox);
-            this.Margin = new System.Windows.Forms.Padding(2);
-            this.Name = "Addcage";
-            this.Text = "Addcage";
-            this.Addcagegroubbox.ResumeLayout(false);
-            this.Addcagegroubbox.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(560, 270);
+            Controls.Add(Addcagegroubbox);
+            Margin = new Padding(2);
+            Name = "Addcage";
+            Text = "Addcage";
+            Addcagegroubbox.ResumeLayout(false);
+            Addcagegroubbox.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -178,5 +198,7 @@
         private Label label2;
         private Label label1;
         private Button CageAddBtn;
+        private Button cageMainMenuBtn;
+        private Button exitCageBtn;
     }
 }

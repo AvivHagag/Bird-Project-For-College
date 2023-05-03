@@ -39,6 +39,7 @@
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             BackBtn = new Button();
+            regExitBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -147,12 +148,23 @@
             BackBtn.UseVisualStyleBackColor = true;
             BackBtn.Click += BackBtn_Click;
             // 
+            // regExitBtn
+            // 
+            regExitBtn.Location = new Point(165, 389);
+            regExitBtn.Name = "regExitBtn";
+            regExitBtn.Size = new Size(75, 23);
+            regExitBtn.TabIndex = 11;
+            regExitBtn.Text = "Exit";
+            regExitBtn.UseVisualStyleBackColor = true;
+            regExitBtn.Click += regExitBtn_Click;
+            // 
             // RegForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(402, 450);
+            Controls.Add(regExitBtn);
             Controls.Add(BackBtn);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
@@ -184,5 +196,6 @@
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
         private Button BackBtn;
+        private Button regExitBtn;
     }
 }

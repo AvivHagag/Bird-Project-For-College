@@ -36,6 +36,7 @@
             invalidAuth = new Label();
             pictureBox1 = new PictureBox();
             regBtn = new Button();
+            loginExitBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -130,7 +131,17 @@
             regBtn.TabIndex = 7;
             regBtn.Text = "Register";
             regBtn.UseVisualStyleBackColor = false;
-            regBtn.Click += button1_Click;
+            regBtn.Click += regPage_Click;
+            // 
+            // loginExitBtn
+            // 
+            loginExitBtn.Location = new Point(181, 287);
+            loginExitBtn.Name = "loginExitBtn";
+            loginExitBtn.Size = new Size(90, 23);
+            loginExitBtn.TabIndex = 8;
+            loginExitBtn.Text = "Exit";
+            loginExitBtn.UseVisualStyleBackColor = true;
+            loginExitBtn.Click += loginExitBtn_Click;
             // 
             // LoginForm
             // 
@@ -138,6 +149,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(455, 334);
+            Controls.Add(loginExitBtn);
             Controls.Add(regBtn);
             Controls.Add(pictureBox1);
             Controls.Add(invalidAuth);
@@ -165,5 +177,6 @@
         private Label invalidAuth;
         private PictureBox pictureBox1;
         private Button regBtn;
+        private Button loginExitBtn;
     }
 }

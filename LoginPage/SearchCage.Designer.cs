@@ -28,133 +28,146 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridCages = new System.Windows.Forms.DataGridView();
-            this.cageIDColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lengthColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.widthColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.heightColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.materialColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.searchGroup = new System.Windows.Forms.GroupBox();
-            this.idTextBox = new System.Windows.Forms.TextBox();
-            this.materialListBox = new System.Windows.Forms.ComboBox();
-            this.searchBtn = new System.Windows.Forms.Button();
-            this.cageSearchBox = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridCages)).BeginInit();
-            this.searchGroup.SuspendLayout();
-            this.SuspendLayout();
+            dataGridCages = new DataGridView();
+            cageIDColumn = new DataGridViewTextBoxColumn();
+            lengthColumn = new DataGridViewTextBoxColumn();
+            widthColumn = new DataGridViewTextBoxColumn();
+            heightColumn = new DataGridViewTextBoxColumn();
+            materialColumn = new DataGridViewTextBoxColumn();
+            searchGroup = new GroupBox();
+            cageSearchMenuBtn = new Button();
+            idTextBox = new TextBox();
+            materialListBox = new ComboBox();
+            searchBtn = new Button();
+            cageSearchBox = new ComboBox();
+            cageSearchExitBtn = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridCages).BeginInit();
+            searchGroup.SuspendLayout();
+            SuspendLayout();
             // 
             // dataGridCages
             // 
-            this.dataGridCages.AllowUserToAddRows = false;
-            this.dataGridCages.AllowUserToResizeColumns = false;
-            this.dataGridCages.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridCages.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cageIDColumn,
-            this.lengthColumn,
-            this.widthColumn,
-            this.heightColumn,
-            this.materialColumn});
-            this.dataGridCages.Location = new System.Drawing.Point(214, 4);
-            this.dataGridCages.Name = "dataGridCages";
-            this.dataGridCages.RowTemplate.Height = 25;
-            this.dataGridCages.Size = new System.Drawing.Size(543, 391);
-            this.dataGridCages.TabIndex = 5;
+            dataGridCages.AllowUserToAddRows = false;
+            dataGridCages.AllowUserToResizeColumns = false;
+            dataGridCages.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridCages.Columns.AddRange(new DataGridViewColumn[] { cageIDColumn, lengthColumn, widthColumn, heightColumn, materialColumn });
+            dataGridCages.Location = new Point(214, 4);
+            dataGridCages.Name = "dataGridCages";
+            dataGridCages.RowTemplate.Height = 25;
+            dataGridCages.Size = new Size(543, 391);
+            dataGridCages.TabIndex = 5;
             // 
             // cageIDColumn
             // 
-            this.cageIDColumn.HeaderText = "Cage ID";
-            this.cageIDColumn.Name = "cageIDColumn";
+            cageIDColumn.HeaderText = "Cage ID";
+            cageIDColumn.Name = "cageIDColumn";
             // 
             // lengthColumn
             // 
-            this.lengthColumn.HeaderText = "Length";
-            this.lengthColumn.Name = "lengthColumn";
+            lengthColumn.HeaderText = "Length";
+            lengthColumn.Name = "lengthColumn";
             // 
             // widthColumn
             // 
-            this.widthColumn.HeaderText = "Width";
-            this.widthColumn.Name = "widthColumn";
+            widthColumn.HeaderText = "Width";
+            widthColumn.Name = "widthColumn";
             // 
             // heightColumn
             // 
-            this.heightColumn.HeaderText = "Height";
-            this.heightColumn.Name = "heightColumn";
+            heightColumn.HeaderText = "Height";
+            heightColumn.Name = "heightColumn";
             // 
             // materialColumn
             // 
-            this.materialColumn.HeaderText = "Material";
-            this.materialColumn.Name = "materialColumn";
+            materialColumn.HeaderText = "Material";
+            materialColumn.Name = "materialColumn";
             // 
             // searchGroup
             // 
-            this.searchGroup.Controls.Add(this.idTextBox);
-            this.searchGroup.Controls.Add(this.materialListBox);
-            this.searchGroup.Controls.Add(this.searchBtn);
-            this.searchGroup.Controls.Add(this.cageSearchBox);
-            this.searchGroup.Controls.Add(this.dataGridCages);
-            this.searchGroup.Location = new System.Drawing.Point(12, 18);
-            this.searchGroup.Name = "searchGroup";
-            this.searchGroup.Size = new System.Drawing.Size(754, 388);
-            this.searchGroup.TabIndex = 2;
-            this.searchGroup.TabStop = false;
-            this.searchGroup.Text = "Search Cage";
+            searchGroup.Controls.Add(cageSearchExitBtn);
+            searchGroup.Controls.Add(cageSearchMenuBtn);
+            searchGroup.Controls.Add(idTextBox);
+            searchGroup.Controls.Add(materialListBox);
+            searchGroup.Controls.Add(searchBtn);
+            searchGroup.Controls.Add(cageSearchBox);
+            searchGroup.Controls.Add(dataGridCages);
+            searchGroup.Location = new Point(12, 18);
+            searchGroup.Name = "searchGroup";
+            searchGroup.Size = new Size(754, 388);
+            searchGroup.TabIndex = 2;
+            searchGroup.TabStop = false;
+            searchGroup.Text = "Search Cage";
+            // 
+            // cageSearchMenuBtn
+            // 
+            cageSearchMenuBtn.Location = new Point(56, 221);
+            cageSearchMenuBtn.Name = "cageSearchMenuBtn";
+            cageSearchMenuBtn.Size = new Size(95, 23);
+            cageSearchMenuBtn.TabIndex = 3;
+            cageSearchMenuBtn.Text = "Main menu";
+            cageSearchMenuBtn.UseVisualStyleBackColor = true;
+            cageSearchMenuBtn.Click += cageSearchMenuBtn_Click;
             // 
             // idTextBox
             // 
-            this.idTextBox.Location = new System.Drawing.Point(56, 124);
-            this.idTextBox.Name = "idTextBox";
-            this.idTextBox.Size = new System.Drawing.Size(100, 23);
-            this.idTextBox.TabIndex = 4;
-            this.idTextBox.Visible = false;
+            idTextBox.Location = new Point(56, 124);
+            idTextBox.Name = "idTextBox";
+            idTextBox.Size = new Size(100, 23);
+            idTextBox.TabIndex = 4;
+            idTextBox.Visible = false;
             // 
             // materialListBox
             // 
-            this.materialListBox.FormattingEnabled = true;
-            this.materialListBox.Items.AddRange(new object[] {
-            "wood",
-            "plastic",
-            "iron"});
-            this.materialListBox.Location = new System.Drawing.Point(45, 124);
-            this.materialListBox.Name = "materialListBox";
-            this.materialListBox.Size = new System.Drawing.Size(121, 23);
-            this.materialListBox.TabIndex = 2;
-            this.materialListBox.Visible = false;
+            materialListBox.FormattingEnabled = true;
+            materialListBox.Items.AddRange(new object[] { "wood", "plastic", "iron" });
+            materialListBox.Location = new Point(45, 124);
+            materialListBox.Name = "materialListBox";
+            materialListBox.Size = new Size(121, 23);
+            materialListBox.TabIndex = 2;
+            materialListBox.Visible = false;
             // 
             // searchBtn
             // 
-            this.searchBtn.Location = new System.Drawing.Point(71, 192);
-            this.searchBtn.Name = "searchBtn";
-            this.searchBtn.Size = new System.Drawing.Size(75, 23);
-            this.searchBtn.TabIndex = 1;
-            this.searchBtn.Text = "Search";
-            this.searchBtn.UseVisualStyleBackColor = true;
-            this.searchBtn.Click += new System.EventHandler(this.searchBtn_Click);
+            searchBtn.Location = new Point(56, 192);
+            searchBtn.Name = "searchBtn";
+            searchBtn.Size = new Size(95, 23);
+            searchBtn.TabIndex = 1;
+            searchBtn.Text = "Search";
+            searchBtn.UseVisualStyleBackColor = true;
+            searchBtn.Click += searchBtn_Click;
             // 
             // cageSearchBox
             // 
-            this.cageSearchBox.FormattingEnabled = true;
-            this.cageSearchBox.Items.AddRange(new object[] {
-            "Cage ID",
-            "Material"});
-            this.cageSearchBox.Location = new System.Drawing.Point(45, 95);
-            this.cageSearchBox.Name = "cageSearchBox";
-            this.cageSearchBox.Size = new System.Drawing.Size(121, 23);
-            this.cageSearchBox.TabIndex = 0;
-            this.cageSearchBox.SelectedIndexChanged += new System.EventHandler(this.cageSearchBox_SelectedIndexChanged);
+            cageSearchBox.FormattingEnabled = true;
+            cageSearchBox.Items.AddRange(new object[] { "Cage ID", "Material" });
+            cageSearchBox.Location = new Point(45, 95);
+            cageSearchBox.Name = "cageSearchBox";
+            cageSearchBox.Size = new Size(121, 23);
+            cageSearchBox.TabIndex = 0;
+            cageSearchBox.SelectedIndexChanged += cageSearchBox_SelectedIndexChanged;
+            // 
+            // cageSearchExitBtn
+            // 
+            cageSearchExitBtn.Location = new Point(67, 250);
+            cageSearchExitBtn.Name = "cageSearchExitBtn";
+            cageSearchExitBtn.Size = new Size(75, 23);
+            cageSearchExitBtn.TabIndex = 6;
+            cageSearchExitBtn.Text = "Exit";
+            cageSearchExitBtn.UseVisualStyleBackColor = true;
+            cageSearchExitBtn.Click += cageSearchExitBtn_Click;
             // 
             // SearchCage
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(768, 425);
-            this.Controls.Add(this.searchGroup);
-            this.Name = "SearchCage";
-            this.Text = "SearchCage";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridCages)).EndInit();
-            this.searchGroup.ResumeLayout(false);
-            this.searchGroup.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(768, 425);
+            Controls.Add(searchGroup);
+            Name = "SearchCage";
+            Text = "SearchCage";
+            ((System.ComponentModel.ISupportInitialize)dataGridCages).EndInit();
+            searchGroup.ResumeLayout(false);
+            searchGroup.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -170,5 +183,7 @@
         private ComboBox materialListBox;
         private Button searchBtn;
         private ComboBox cageSearchBox;
+        private Button cageSearchMenuBtn;
+        private Button cageSearchExitBtn;
     }
 }

@@ -59,5 +59,11 @@ namespace LoginPage
         {
 
         }
+
+        private void mainExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+
+        }
     }
 }

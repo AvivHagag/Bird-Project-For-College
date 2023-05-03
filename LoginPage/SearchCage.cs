@@ -25,10 +25,10 @@ namespace LoginPage
             {
                 idTextBox.Visible = true;
                 materialListBox.Visible = false;
-            /*    materialListBox.Items.Clear();
-                materialListBox.Text = null;*/
+                /*    materialListBox.Items.Clear();
+                    materialListBox.Text = null;*/
 
-               
+
             }
             else if (cageSearchBox.Text == "Material")
             {
@@ -42,7 +42,7 @@ namespace LoginPage
                 materialListBox.Items.Add("iron");
 
             }
-       
+
         }
 
         private void searchBtn_Click(object sender, EventArgs e)
@@ -85,7 +85,7 @@ namespace LoginPage
                         dataGridCages.Rows[rowIndex].Cells[2].Value = widthCell.Value;
                         dataGridCages.Rows[rowIndex].Cells[3].Value = heightCell.Value;
                         dataGridCages.Rows[rowIndex].Cells[4].Value = materialCell.Value;
-       
+
 
                     }
 
@@ -104,8 +104,8 @@ namespace LoginPage
 
                     }
                 }
-   
-        
+
+
 
 
             }
@@ -125,6 +125,20 @@ namespace LoginPage
 
 
 
+
+        }
+
+        private void cageSearchMenuBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (MainPage FormMain = new MainPage())
+                FormMain.ShowDialog();
+            Show();
+        }
+
+        private void cageSearchExitBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
 
         }
     }
