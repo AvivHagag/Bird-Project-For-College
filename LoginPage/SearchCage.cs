@@ -77,7 +77,7 @@ namespace LoginPage
 
                 if (cageSearchBox.Text == "Cage ID")
                 {
-                    if (cageIDCell.Value == int.Parse(idTextBox.Text))
+                    if (cageIDCell.Value == idTextBox.Text)
                     {
                         rowIndex = dataGridCages.Rows.Add();
                         dataGridCages.Rows[rowIndex].Cells[0].Value = cageIDCell.Value;
