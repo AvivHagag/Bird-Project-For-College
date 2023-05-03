@@ -102,7 +102,8 @@ namespace LoginPage
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
-
+                    LoginForm FormLog = new LoginForm();
+                    FormLog.Show();
 
 
 
@@ -130,7 +131,8 @@ namespace LoginPage
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
 
-
+                    LoginForm FormLog = new LoginForm();
+                    FormLog.Show();
                 }
             }
 
