@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             Addcagegroubbox = new GroupBox();
+            exitCageBtn = new Button();
             cageMainMenuBtn = new Button();
             CageAddBtn = new Button();
             heightBox = new TextBox();
@@ -39,7 +40,6 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            exitCageBtn = new Button();
             Addcagegroubbox.SuspendLayout();
             SuspendLayout();
             // 
@@ -56,6 +56,8 @@
             Addcagegroubbox.Controls.Add(label3);
             Addcagegroubbox.Controls.Add(label2);
             Addcagegroubbox.Controls.Add(label1);
+            Addcagegroubbox.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            Addcagegroubbox.ForeColor = Color.FromArgb(44, 62, 80);
             Addcagegroubbox.Location = new Point(8, 27);
             Addcagegroubbox.Margin = new Padding(2);
             Addcagegroubbox.Name = "Addcagegroubbox";
@@ -66,25 +68,50 @@
             Addcagegroubbox.Text = "Add Cage";
             Addcagegroubbox.UseCompatibleTextRendering = true;
             // 
+            // exitCageBtn
+            // 
+            exitCageBtn.BackColor = Color.FromArgb(192, 57, 43);
+            exitCageBtn.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            exitCageBtn.ForeColor = Color.White;
+            exitCageBtn.Location = new Point(293, 144);
+            exitCageBtn.Name = "exitCageBtn";
+            exitCageBtn.Size = new Size(117, 35);
+            exitCageBtn.TabIndex = 10;
+            exitCageBtn.Text = "Exit";
+            exitCageBtn.UseVisualStyleBackColor = false;
+            exitCageBtn.Click += exitCageBtn_Click;
+            // 
             // cageMainMenuBtn
             // 
-            cageMainMenuBtn.Location = new Point(282, 110);
+            cageMainMenuBtn.BackColor = Color.FromArgb(44, 62, 80);
+            cageMainMenuBtn.Cursor = Cursors.Hand;
+            cageMainMenuBtn.FlatAppearance.BorderSize = 0;
+            cageMainMenuBtn.FlatStyle = FlatStyle.Flat;
+            cageMainMenuBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            cageMainMenuBtn.ForeColor = Color.White;
+            cageMainMenuBtn.Location = new Point(293, 110);
             cageMainMenuBtn.Name = "cageMainMenuBtn";
-            cageMainMenuBtn.Size = new Size(151, 28);
+            cageMainMenuBtn.Size = new Size(117, 28);
             cageMainMenuBtn.TabIndex = 9;
             cageMainMenuBtn.Text = "Main menu";
-            cageMainMenuBtn.UseVisualStyleBackColor = true;
+            cageMainMenuBtn.UseVisualStyleBackColor = false;
             cageMainMenuBtn.Click += cageMainMenuBtn_Click;
             // 
             // CageAddBtn
             // 
-            CageAddBtn.Location = new Point(282, 70);
+            CageAddBtn.BackColor = Color.FromArgb(44, 62, 80);
+            CageAddBtn.Cursor = Cursors.Hand;
+            CageAddBtn.FlatAppearance.BorderSize = 0;
+            CageAddBtn.FlatStyle = FlatStyle.Flat;
+            CageAddBtn.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            CageAddBtn.ForeColor = Color.White;
+            CageAddBtn.Location = new Point(293, 70);
             CageAddBtn.Margin = new Padding(2);
             CageAddBtn.Name = "CageAddBtn";
-            CageAddBtn.Size = new Size(151, 35);
+            CageAddBtn.Size = new Size(117, 25);
             CageAddBtn.TabIndex = 8;
             CageAddBtn.Text = "Add";
-            CageAddBtn.UseVisualStyleBackColor = true;
+            CageAddBtn.UseVisualStyleBackColor = false;
             CageAddBtn.Click += CageAddBtn_Click;
             // 
             // heightBox
@@ -92,7 +119,7 @@
             heightBox.Location = new Point(82, 139);
             heightBox.Margin = new Padding(2);
             heightBox.Name = "heightBox";
-            heightBox.Size = new Size(92, 23);
+            heightBox.Size = new Size(92, 25);
             heightBox.TabIndex = 7;
             // 
             // widthBox
@@ -100,7 +127,7 @@
             widthBox.Location = new Point(82, 90);
             widthBox.Margin = new Padding(2);
             widthBox.Name = "widthBox";
-            widthBox.Size = new Size(92, 23);
+            widthBox.Size = new Size(92, 25);
             widthBox.TabIndex = 6;
             // 
             // lengthBox
@@ -108,7 +135,7 @@
             lengthBox.Location = new Point(82, 39);
             lengthBox.Margin = new Padding(2);
             lengthBox.Name = "lengthBox";
-            lengthBox.Size = new Size(92, 23);
+            lengthBox.Size = new Size(92, 25);
             lengthBox.TabIndex = 5;
             // 
             // materialBox
@@ -118,17 +145,17 @@
             materialBox.Location = new Point(293, 35);
             materialBox.Margin = new Padding(2);
             materialBox.Name = "materialBox";
-            materialBox.Size = new Size(117, 23);
+            materialBox.Size = new Size(117, 25);
             materialBox.TabIndex = 4;
             materialBox.SelectedIndexChanged += material_SelectedIndexChanged;
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(230, 37);
+            label4.Location = new Point(215, 38);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(50, 15);
+            label4.Size = new Size(65, 19);
             label4.TabIndex = 3;
             label4.Text = "Material";
             // 
@@ -138,7 +165,7 @@
             label3.Location = new Point(15, 142);
             label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(43, 15);
+            label3.Size = new Size(54, 19);
             label3.TabIndex = 2;
             label3.Text = "Height";
             // 
@@ -148,7 +175,7 @@
             label2.Location = new Point(15, 90);
             label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(39, 15);
+            label2.Size = new Size(49, 19);
             label2.TabIndex = 1;
             label2.Text = "Width";
             // 
@@ -158,19 +185,9 @@
             label1.Location = new Point(15, 39);
             label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(47, 15);
+            label1.Size = new Size(58, 19);
             label1.TabIndex = 0;
             label1.Text = "Length:";
-            // 
-            // exitCageBtn
-            // 
-            exitCageBtn.Location = new Point(282, 144);
-            exitCageBtn.Name = "exitCageBtn";
-            exitCageBtn.Size = new Size(151, 23);
-            exitCageBtn.TabIndex = 10;
-            exitCageBtn.Text = "Exit";
-            exitCageBtn.UseVisualStyleBackColor = true;
-            exitCageBtn.Click += exitCageBtn_Click;
             // 
             // Addcage
             // 

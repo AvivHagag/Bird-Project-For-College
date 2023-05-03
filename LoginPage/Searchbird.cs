@@ -115,22 +115,23 @@ namespace LoginPage
                 {
                     try
                     {
-                    if (birdIDCell.Value == int.Parse(idTextBox.Text))
-                    {
-                        rowIndex = dataGridBirds.Rows.Add();
-                        dataGridBirds.Rows[rowIndex].Cells[0].Value = birdIDCell.Value;
-                        dataGridBirds.Rows[rowIndex].Cells[1].Value = speciesCell.Value;
-                        dataGridBirds.Rows[rowIndex].Cells[2].Value = subSpeciesCell.Value;
-                        dataGridBirds.Rows[rowIndex].Cells[3].Value = genderCell.Value;
-                        dataGridBirds.Rows[rowIndex].Cells[4].Value = motherCell.Value;
-                        dataGridBirds.Rows[rowIndex].Cells[5].Value = fatherCell.Value;
-                        dataGridBirds.Rows[rowIndex].Cells[6].Value = dateCell.Value;
-                        dataGridBirds.Rows[rowIndex].Cells[7].Value = cageIDCell.Value;
-                        dataGridBirds.Rows[rowIndex].Cells[8].Value = userIDCell.Value;
+                        if (birdIDCell.Value == int.Parse(idTextBox.Text))
+                        {
+                            rowIndex = dataGridBirds.Rows.Add();
+                            dataGridBirds.Rows[rowIndex].Cells[0].Value = birdIDCell.Value;
+                            dataGridBirds.Rows[rowIndex].Cells[1].Value = speciesCell.Value;
+                            dataGridBirds.Rows[rowIndex].Cells[2].Value = subSpeciesCell.Value;
+                            dataGridBirds.Rows[rowIndex].Cells[3].Value = genderCell.Value;
+                            dataGridBirds.Rows[rowIndex].Cells[4].Value = motherCell.Value;
+                            dataGridBirds.Rows[rowIndex].Cells[5].Value = fatherCell.Value;
+                            dataGridBirds.Rows[rowIndex].Cells[6].Value = dateCell.Value;
+                            dataGridBirds.Rows[rowIndex].Cells[7].Value = cageIDCell.Value;
+                            dataGridBirds.Rows[rowIndex].Cells[8].Value = userIDCell.Value;
+
+                        }
 
                     }
-
-                    } catch
+                    catch
                     {
                         MessageBox.Show("Invalid input to the id, please try again");
                         break;

@@ -51,6 +51,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.BackColor = Color.FromArgb(236, 240, 241);
             groupBox1.Controls.Add(birdExitBtn);
             groupBox1.Controls.Add(BackBtn);
             groupBox1.Controls.Add(FinalAddbtn);
@@ -68,10 +69,12 @@
             groupBox1.Controls.Add(label3);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(label1);
+            groupBox1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox1.ForeColor = Color.FromArgb(44, 62, 80);
             groupBox1.Location = new Point(8, 16);
             groupBox1.Margin = new Padding(2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(2);
+            groupBox1.Padding = new Padding(10);
             groupBox1.Size = new Size(519, 239);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
@@ -80,67 +83,84 @@
             // 
             // birdExitBtn
             // 
-            birdExitBtn.Location = new Point(334, 192);
+            birdExitBtn.BackColor = Color.FromArgb(192, 57, 43);
+            birdExitBtn.FlatAppearance.BorderSize = 0;
+            birdExitBtn.FlatStyle = FlatStyle.Flat;
+            birdExitBtn.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            birdExitBtn.ForeColor = Color.White;
+            birdExitBtn.Location = new Point(356, 192);
             birdExitBtn.Name = "birdExitBtn";
-            birdExitBtn.Size = new Size(138, 23);
+            birdExitBtn.Size = new Size(138, 25);
             birdExitBtn.TabIndex = 16;
             birdExitBtn.Text = "Exit";
-            birdExitBtn.UseVisualStyleBackColor = true;
+            birdExitBtn.UseVisualStyleBackColor = false;
             birdExitBtn.Click += birdExitBtn_Click;
             // 
             // BackBtn
             // 
-            BackBtn.ForeColor = Color.Black;
-            BackBtn.Location = new Point(334, 160);
+            BackBtn.BackColor = Color.FromArgb(44, 62, 80);
+            BackBtn.Cursor = Cursors.Hand;
+            BackBtn.FlatAppearance.BorderSize = 0;
+            BackBtn.FlatStyle = FlatStyle.Flat;
+            BackBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            BackBtn.ForeColor = Color.White;
+            BackBtn.Location = new Point(356, 160);
             BackBtn.Name = "BackBtn";
-            BackBtn.Size = new Size(138, 23);
+            BackBtn.Size = new Size(138, 25);
             BackBtn.TabIndex = 15;
             BackBtn.Text = "Main menu";
-            BackBtn.UseVisualStyleBackColor = true;
+            BackBtn.UseVisualStyleBackColor = false;
             BackBtn.Click += BackBtn_Click;
             // 
             // FinalAddbtn
             // 
-            FinalAddbtn.Location = new Point(334, 109);
+            FinalAddbtn.BackColor = Color.FromArgb(44, 62, 80);
+            FinalAddbtn.Cursor = Cursors.Hand;
+            FinalAddbtn.FlatAppearance.BorderSize = 0;
+            FinalAddbtn.FlatStyle = FlatStyle.Flat;
+            FinalAddbtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            FinalAddbtn.ForeColor = Color.White;
+            FinalAddbtn.Location = new Point(356, 128);
             FinalAddbtn.Margin = new Padding(2);
             FinalAddbtn.Name = "FinalAddbtn";
-            FinalAddbtn.Size = new Size(138, 46);
+            FinalAddbtn.Size = new Size(138, 27);
             FinalAddbtn.TabIndex = 14;
             FinalAddbtn.Text = "Add";
-            FinalAddbtn.UseVisualStyleBackColor = true;
+            FinalAddbtn.UseVisualStyleBackColor = false;
             FinalAddbtn.Click += FinalAddbtn_Click;
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(334, 31);
+            dateTimePicker1.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
+            dateTimePicker1.Location = new Point(356, 31);
             dateTimePicker1.Margin = new Padding(2);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(181, 23);
+            dateTimePicker1.Size = new Size(159, 22);
             dateTimePicker1.TabIndex = 13;
             dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
             // 
             // cagenumber
             // 
-            cagenumber.Location = new Point(334, 69);
+            cagenumber.Location = new Point(356, 69);
             cagenumber.Margin = new Padding(2);
             cagenumber.Name = "cagenumber";
-            cagenumber.Size = new Size(91, 23);
+            cagenumber.Size = new Size(91, 25);
             cagenumber.TabIndex = 12;
             // 
             // fatherserialnumber
             // 
-            fatherserialnumber.Location = new Point(155, 184);
+            fatherserialnumber.Location = new Point(172, 189);
             fatherserialnumber.Margin = new Padding(2);
             fatherserialnumber.Name = "fatherserialnumber";
-            fatherserialnumber.Size = new Size(88, 23);
+            fatherserialnumber.Size = new Size(88, 25);
             fatherserialnumber.TabIndex = 11;
             // 
             // motherserialnumber
             // 
-            motherserialnumber.Location = new Point(155, 148);
+            motherserialnumber.Location = new Point(172, 153);
             motherserialnumber.Margin = new Padding(2);
             motherserialnumber.Name = "motherserialnumber";
-            motherserialnumber.Size = new Size(88, 23);
+            motherserialnumber.Size = new Size(88, 25);
             motherserialnumber.TabIndex = 10;
             // 
             // GendercomboBox
@@ -150,7 +170,7 @@
             GendercomboBox.Location = new Point(100, 109);
             GendercomboBox.Margin = new Padding(2);
             GendercomboBox.Name = "GendercomboBox";
-            GendercomboBox.Size = new Size(129, 23);
+            GendercomboBox.Size = new Size(129, 25);
             GendercomboBox.TabIndex = 9;
             // 
             // SubspeciescomboBox
@@ -159,7 +179,7 @@
             SubspeciescomboBox.Location = new Point(100, 69);
             SubspeciescomboBox.Margin = new Padding(2);
             SubspeciescomboBox.Name = "SubspeciescomboBox";
-            SubspeciescomboBox.Size = new Size(129, 23);
+            SubspeciescomboBox.Size = new Size(129, 25);
             SubspeciescomboBox.TabIndex = 8;
             SubspeciescomboBox.SelectedIndexChanged += SubspeciescomboBox_SelectedIndexChanged;
             // 
@@ -170,45 +190,45 @@
             SpeciescomboBox.Location = new Point(100, 31);
             SpeciescomboBox.Margin = new Padding(2);
             SpeciescomboBox.Name = "SpeciescomboBox";
-            SpeciescomboBox.Size = new Size(129, 23);
+            SpeciescomboBox.Size = new Size(129, 25);
             SpeciescomboBox.TabIndex = 7;
             SpeciescomboBox.SelectedIndexChanged += SpeciescomboBox_SelectedIndex;
             // 
             // label7
             // 
-            label7.Location = new Point(246, 31);
+            label7.Location = new Point(245, 31);
             label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(84, 15);
+            label7.Size = new Size(99, 29);
             label7.TabIndex = 6;
-            label7.Text = "hatch date:";
+            label7.Text = "Hatch date:";
             // 
             // label6
             // 
-            label6.Location = new Point(246, 69);
+            label6.Location = new Point(245, 69);
             label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(84, 15);
+            label6.Size = new Size(107, 25);
             label6.TabIndex = 5;
-            label6.Text = "cage number ";
+            label6.Text = "Cage number :";
             // 
             // label5
             // 
-            label5.Location = new Point(4, 192);
+            label5.Location = new Point(7, 192);
             label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(126, 15);
+            label5.Size = new Size(164, 37);
             label5.TabIndex = 4;
-            label5.Text = "father serial number:";
+            label5.Text = "Father serial number:";
             // 
             // label4
             // 
-            label4.Location = new Point(4, 156);
+            label4.Location = new Point(7, 156);
             label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(134, 15);
+            label4.Size = new Size(161, 29);
             label4.TabIndex = 3;
-            label4.Text = "mother serial number:";
+            label4.Text = "Mother serial number:";
             // 
             // label3
             // 
@@ -226,7 +246,7 @@
             label2.Name = "label2";
             label2.Size = new Size(77, 23);
             label2.TabIndex = 1;
-            label2.Text = "subspecies:";
+            label2.Text = "Subspecies:";
             // 
             // label1
             // 
@@ -235,7 +255,7 @@
             label1.Name = "label1";
             label1.Size = new Size(62, 23);
             label1.TabIndex = 0;
-            label1.Text = "species:";
+            label1.Text = "Species:";
             // 
             // Addbird
             // 
