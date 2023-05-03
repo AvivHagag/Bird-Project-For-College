@@ -143,7 +143,7 @@ namespace WinFormsApp1
             this.Hide();
             using (RegForm formReg = new RegForm())
                 formReg.ShowDialog();
-            if(!IsDisposed) Show();
+            if (!IsDisposed) Show();
         }
 
         private void usernameBox_TextChanged_1(object sender, EventArgs e)

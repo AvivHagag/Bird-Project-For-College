@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             usernameBox = new TextBox();
             userNameLable = new Label();
             passwordLable = new Label();
@@ -42,42 +43,42 @@
             // 
             // usernameBox
             // 
-            usernameBox.Location = new Point(203, 129);
+            usernameBox.Location = new Point(232, 169);
             usernameBox.Margin = new Padding(2);
             usernameBox.Name = "usernameBox";
-            usernameBox.Size = new Size(140, 23);
+            usernameBox.Size = new Size(159, 25);
             usernameBox.TabIndex = 0;
             usernameBox.TextChanged += usernameBox_TextChanged_1;
             // 
             // userNameLable
             // 
             userNameLable.AutoSize = true;
-            userNameLable.Location = new Point(132, 137);
+            userNameLable.Location = new Point(150, 172);
             userNameLable.Margin = new Padding(2, 0, 2, 0);
             userNameLable.Name = "userNameLable";
-            userNameLable.Size = new Size(60, 15);
+            userNameLable.Size = new Size(76, 19);
             userNameLable.TabIndex = 1;
             userNameLable.Text = "Username";
             // 
             // passwordLable
             // 
             passwordLable.AutoSize = true;
-            passwordLable.Location = new Point(132, 164);
+            passwordLable.Location = new Point(150, 199);
             passwordLable.Margin = new Padding(2, 0, 2, 0);
             passwordLable.Name = "passwordLable";
-            passwordLable.Size = new Size(57, 15);
+            passwordLable.Size = new Size(73, 19);
             passwordLable.TabIndex = 2;
             passwordLable.Text = "Password";
             passwordLable.Click += Password_Click;
             // 
             // passwordBox
             // 
-            passwordBox.Location = new Point(203, 156);
+            passwordBox.Location = new Point(232, 199);
             passwordBox.Margin = new Padding(2);
             passwordBox.MaxLength = 14;
             passwordBox.Name = "passwordBox";
             passwordBox.PasswordChar = '*';
-            passwordBox.Size = new Size(140, 23);
+            passwordBox.Size = new Size(159, 25);
             passwordBox.TabIndex = 3;
             passwordBox.TextChanged += passwordBox_TextChanged;
             // 
@@ -86,10 +87,10 @@
             loginBtn.BackColor = Color.Teal;
             loginBtn.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             loginBtn.ForeColor = Color.White;
-            loginBtn.Location = new Point(181, 200);
+            loginBtn.Location = new Point(217, 249);
             loginBtn.Margin = new Padding(2);
             loginBtn.Name = "loginBtn";
-            loginBtn.Size = new Size(90, 39);
+            loginBtn.Size = new Size(103, 44);
             loginBtn.TabIndex = 4;
             loginBtn.Text = "Login";
             loginBtn.UseVisualStyleBackColor = false;
@@ -99,10 +100,10 @@
             // 
             invalidAuth.AutoSize = true;
             invalidAuth.ForeColor = Color.Red;
-            invalidAuth.Location = new Point(104, 183);
+            invalidAuth.Location = new Point(108, 228);
             invalidAuth.Margin = new Padding(2, 0, 2, 0);
             invalidAuth.Name = "invalidAuth";
-            invalidAuth.Size = new Size(255, 15);
+            invalidAuth.Size = new Size(330, 19);
             invalidAuth.TabIndex = 5;
             invalidAuth.Text = "Invalid username or password. Please try again.";
             invalidAuth.Visible = false;
@@ -110,12 +111,12 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = LoginPage.Properties.Resources.LoginLogo1;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.ImageLocation = "";
-            pictureBox1.Location = new Point(-2, -2);
+            pictureBox1.Location = new Point(-26, -117);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(459, 126);
-            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.Size = new Size(578, 408);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 6;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
@@ -124,10 +125,10 @@
             // 
             regBtn.BackColor = Color.MidnightBlue;
             regBtn.ForeColor = Color.White;
-            regBtn.Location = new Point(181, 243);
+            regBtn.Location = new Point(217, 299);
             regBtn.Margin = new Padding(2);
             regBtn.Name = "regBtn";
-            regBtn.Size = new Size(90, 39);
+            regBtn.Size = new Size(103, 44);
             regBtn.TabIndex = 7;
             regBtn.Text = "Register";
             regBtn.UseVisualStyleBackColor = false;
@@ -135,9 +136,9 @@
             // 
             // loginExitBtn
             // 
-            loginExitBtn.Location = new Point(181, 287);
+            loginExitBtn.Location = new Point(217, 348);
             loginExitBtn.Name = "loginExitBtn";
-            loginExitBtn.Size = new Size(90, 23);
+            loginExitBtn.Size = new Size(103, 26);
             loginExitBtn.TabIndex = 8;
             loginExitBtn.Text = "Exit";
             loginExitBtn.UseVisualStyleBackColor = true;
@@ -145,19 +146,20 @@
             // 
             // LoginForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(455, 334);
+            ClientSize = new Size(520, 379);
             Controls.Add(loginExitBtn);
             Controls.Add(regBtn);
-            Controls.Add(pictureBox1);
             Controls.Add(invalidAuth);
             Controls.Add(loginBtn);
             Controls.Add(passwordBox);
             Controls.Add(passwordLable);
             Controls.Add(userNameLable);
             Controls.Add(usernameBox);
+            Controls.Add(pictureBox1);
+            Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             Margin = new Padding(2);
             Name = "LoginForm";
             Text = "Form1";
