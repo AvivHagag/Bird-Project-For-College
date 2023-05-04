@@ -202,5 +202,20 @@ namespace LoginPage
             Application.Exit();
 
         }
+
+        private void RegPassVal_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void alert2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void regIdLabel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

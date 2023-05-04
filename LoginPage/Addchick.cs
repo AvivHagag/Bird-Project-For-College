@@ -28,6 +28,8 @@ namespace LoginPage
         public string subSpecies;
         public string cageID;
         public string gender;
+        public Boolean reciveFromMothrer;
+        public Boolean reciveFromFather;
 
         public Addchick()
         {
@@ -81,7 +83,7 @@ namespace LoginPage
 
             // Get the last row number
             int lastRow = worksheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell).Row;
-            if (gender == "Male")
+            if (reciveFromFather)
             {
                 for (int i = 2; i <= lastRow; i++)
                 {
@@ -117,7 +119,7 @@ namespace LoginPage
 
             }
 
-            if (selectedDate != null)
+            if (selectedDate != null && chickGenderCombo.Text!="" && ((reciveFromFather && motherSerial) || (reciveFromMothrer && fatherSerial)))
             {
 
                 int newRow = lastRow + 1;
@@ -125,30 +127,18 @@ namespace LoginPage
                 worksheet.Cells[newRow, 2] = species;
                 worksheet.Cells[newRow, 3] = subSpecies;
                 worksheet.Cells[newRow, 4] = chickGenderCombo.Text;
-                if (motherSerial == true && gender == "Male")
+                if (reciveFromFather && motherSerial)
                 {
                     worksheet.Cells[newRow, 5] = motherChickBox.Text;
                     worksheet.Cells[newRow, 6] = birdID;
 
                 }
 
-                else if (motherSerial == false && gender == "Male")
+                else if (reciveFromFather && fatherSerial)
                 {
-                    worksheet.Cells[newRow, 5] = null;
-                    worksheet.Cells[newRow, 6] = birdID;
-
-
-                }
-                if (fatherSerial == true && gender == "Female")
-                {
+                    worksheet.Cells[newRow, 5] = birdID;
                     worksheet.Cells[newRow, 6] = fatherChickBox.Text;
-                    worksheet.Cells[newRow, 5] = birdID;
 
-                }
-                else if (fatherSerial == false && gender == "Female")
-                {
-                    worksheet.Cells[newRow, 5] = null;
-                    worksheet.Cells[newRow, 5] = birdID;
 
                 }
                 worksheet.Cells[newRow, 7] = selectedDate;
@@ -157,6 +147,13 @@ namespace LoginPage
                 workbook.Save();
                 MessageBox.Show("Bird was added successfully");
                 this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Invaild input! Aviv homo gadol noder");
+                this.Hide();
+
+            }
 
                 chickGenderCombo.Text = null;
                 motherChickBox.Text = null;
@@ -185,4 +182,4 @@ namespace LoginPage
 
         }
     }
-}
+

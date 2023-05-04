@@ -268,6 +268,8 @@ namespace LoginPage
 
             if (gender == "Male")
             {
+                form.reciveFromFather = true;
+                form.reciveFromMothrer = false;
                 form.motherChickBox.Visible = true;
                 form.fatherChickBox.Visible = false;
                 form.motherIdLabel.Visible = true;
@@ -276,6 +278,8 @@ namespace LoginPage
             }
             else
             {
+                form.reciveFromFather = false;
+                form.reciveFromMothrer = true;
                 form.motherChickBox.Visible = false;
                 form.motherIdLabel.Visible = false;
                 form.FatherIdLabel.Visible = true;

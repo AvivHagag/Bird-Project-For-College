@@ -47,29 +47,30 @@
             // 
             // RegNameVal
             // 
-            RegNameVal.Location = new Point(238, 169);
+            RegNameVal.Location = new Point(359, 169);
             RegNameVal.Name = "RegNameVal";
-            RegNameVal.Size = new Size(114, 25);
+            RegNameVal.Size = new Size(114, 34);
             RegNameVal.TabIndex = 1;
             RegNameVal.TextChanged += RegNameVal_TextChanged;
             // 
             // RegPassVal
             // 
-            RegPassVal.Location = new Point(238, 207);
+            RegPassVal.Location = new Point(359, 218);
             RegPassVal.Name = "RegPassVal";
-            RegPassVal.Size = new Size(114, 25);
+            RegPassVal.Size = new Size(114, 34);
             RegPassVal.TabIndex = 2;
+            RegPassVal.TextChanged += RegPassVal_TextChanged;
             // 
             // RegIdVal
             // 
-            RegIdVal.Location = new Point(238, 249);
+            RegIdVal.Location = new Point(359, 268);
             RegIdVal.Name = "RegIdVal";
-            RegIdVal.Size = new Size(114, 25);
+            RegIdVal.Size = new Size(114, 34);
             RegIdVal.TabIndex = 3;
             // 
             // regNameLabel
             // 
-            regNameLabel.Location = new Point(117, 169);
+            regNameLabel.Location = new Point(177, 169);
             regNameLabel.Name = "regNameLabel";
             regNameLabel.Size = new Size(114, 26);
             regNameLabel.TabIndex = 4;
@@ -78,7 +79,7 @@
             // 
             // regPassLabel
             // 
-            regPassLabel.Location = new Point(117, 207);
+            regPassLabel.Location = new Point(177, 222);
             regPassLabel.Name = "regPassLabel";
             regPassLabel.Size = new Size(114, 26);
             regPassLabel.TabIndex = 4;
@@ -87,20 +88,21 @@
             // 
             // regIdLabel
             // 
-            regIdLabel.Location = new Point(117, 248);
+            regIdLabel.Location = new Point(177, 272);
             regIdLabel.Name = "regIdLabel";
             regIdLabel.Size = new Size(114, 26);
             regIdLabel.TabIndex = 4;
             regIdLabel.Text = "User ID:";
             regIdLabel.TextAlign = ContentAlignment.MiddleLeft;
+            regIdLabel.Click += regIdLabel_Click;
             // 
             // alert1
             // 
             alert1.AutoSize = true;
             alert1.ForeColor = Color.Red;
-            alert1.Location = new Point(29, 279);
+            alert1.Location = new Point(65, 314);
             alert1.Name = "alert1";
-            alert1.Size = new Size(418, 19);
+            alert1.Size = new Size(596, 28);
             alert1.TabIndex = 6;
             alert1.Text = "User name need to be between 6-8 chars and at most 2 digits";
             alert1.Visible = false;
@@ -109,17 +111,18 @@
             // alert2
             // 
             alert2.ForeColor = Color.Red;
-            alert2.Location = new Point(47, 279);
+            alert2.Location = new Point(65, 342);
             alert2.Name = "alert2";
             alert2.Size = new Size(378, 36);
             alert2.TabIndex = 7;
             alert2.Text = "The password should contain 8-10 characters and at least one number, letter and special character";
             alert2.Visible = false;
+            alert2.Click += alert2_Click;
             // 
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.signup31;
-            pictureBox2.Location = new Point(117, 331);
+            pictureBox2.Location = new Point(457, 364);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(235, 70);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -132,7 +135,7 @@
             BackBtn.BackColor = Color.FromArgb(44, 62, 80);
             BackBtn.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
             BackBtn.ForeColor = Color.White;
-            BackBtn.Location = new Point(175, 408);
+            BackBtn.Location = new Point(65, 399);
             BackBtn.Name = "BackBtn";
             BackBtn.Size = new Size(117, 35);
             BackBtn.TabIndex = 10;
@@ -145,7 +148,7 @@
             regExitBtn.BackColor = Color.FromArgb(192, 57, 43);
             regExitBtn.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
             regExitBtn.ForeColor = Color.White;
-            regExitBtn.Location = new Point(175, 449);
+            regExitBtn.Location = new Point(65, 448);
             regExitBtn.Name = "regExitBtn";
             regExitBtn.Size = new Size(117, 35);
             regExitBtn.TabIndex = 11;
@@ -156,9 +159,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(12, -87);
+            pictureBox1.Location = new Point(30, -131);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(446, 363);
+            pictureBox1.Size = new Size(747, 413);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 8;
             pictureBox1.TabStop = false;
@@ -166,10 +169,10 @@
             // 
             // RegForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 17F);
+            AutoScaleDimensions = new SizeF(12F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(459, 510);
+            ClientSize = new Size(730, 510);
             Controls.Add(regExitBtn);
             Controls.Add(BackBtn);
             Controls.Add(pictureBox2);
