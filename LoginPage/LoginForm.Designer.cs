@@ -43,7 +43,7 @@
             // 
             // usernameBox
             // 
-            usernameBox.Location = new Point(232, 169);
+            usernameBox.Location = new Point(217, 169);
             usernameBox.Margin = new Padding(2);
             usernameBox.Name = "usernameBox";
             usernameBox.Size = new Size(159, 25);
@@ -53,7 +53,7 @@
             // userNameLable
             // 
             userNameLable.AutoSize = true;
-            userNameLable.Location = new Point(150, 172);
+            userNameLable.Location = new Point(135, 172);
             userNameLable.Margin = new Padding(2, 0, 2, 0);
             userNameLable.Name = "userNameLable";
             userNameLable.Size = new Size(76, 19);
@@ -63,7 +63,7 @@
             // passwordLable
             // 
             passwordLable.AutoSize = true;
-            passwordLable.Location = new Point(150, 199);
+            passwordLable.Location = new Point(135, 199);
             passwordLable.Margin = new Padding(2, 0, 2, 0);
             passwordLable.Name = "passwordLable";
             passwordLable.Size = new Size(73, 19);
@@ -73,7 +73,7 @@
             // 
             // passwordBox
             // 
-            passwordBox.Location = new Point(232, 199);
+            passwordBox.Location = new Point(217, 199);
             passwordBox.Margin = new Padding(2);
             passwordBox.MaxLength = 14;
             passwordBox.Name = "passwordBox";
@@ -84,13 +84,13 @@
             // 
             // loginBtn
             // 
-            loginBtn.BackColor = Color.Teal;
-            loginBtn.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            loginBtn.BackColor = Color.FromArgb(44, 62, 80);
+            loginBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             loginBtn.ForeColor = Color.White;
-            loginBtn.Location = new Point(217, 249);
+            loginBtn.Location = new Point(217, 252);
             loginBtn.Margin = new Padding(2);
             loginBtn.Name = "loginBtn";
-            loginBtn.Size = new Size(103, 44);
+            loginBtn.Size = new Size(103, 41);
             loginBtn.TabIndex = 4;
             loginBtn.Text = "Login";
             loginBtn.UseVisualStyleBackColor = false;
@@ -100,7 +100,7 @@
             // 
             invalidAuth.AutoSize = true;
             invalidAuth.ForeColor = Color.Red;
-            invalidAuth.Location = new Point(108, 228);
+            invalidAuth.Location = new Point(93, 228);
             invalidAuth.Margin = new Padding(2, 0, 2, 0);
             invalidAuth.Name = "invalidAuth";
             invalidAuth.Size = new Size(330, 19);
@@ -123,12 +123,12 @@
             // 
             // regBtn
             // 
-            regBtn.BackColor = Color.MidnightBlue;
+            regBtn.BackColor = Color.FromArgb(44, 62, 80);
             regBtn.ForeColor = Color.White;
-            regBtn.Location = new Point(217, 299);
+            regBtn.Location = new Point(217, 294);
             regBtn.Margin = new Padding(2);
             regBtn.Name = "regBtn";
-            regBtn.Size = new Size(103, 44);
+            regBtn.Size = new Size(103, 41);
             regBtn.TabIndex = 7;
             regBtn.Text = "Register";
             regBtn.UseVisualStyleBackColor = false;
@@ -136,12 +136,15 @@
             // 
             // loginExitBtn
             // 
-            loginExitBtn.Location = new Point(217, 348);
+            loginExitBtn.BackColor = Color.FromArgb(192, 57, 43);
+            loginExitBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            loginExitBtn.ForeColor = Color.White;
+            loginExitBtn.Location = new Point(217, 335);
             loginExitBtn.Name = "loginExitBtn";
-            loginExitBtn.Size = new Size(103, 26);
+            loginExitBtn.Size = new Size(103, 41);
             loginExitBtn.TabIndex = 8;
             loginExitBtn.Text = "Exit";
-            loginExitBtn.UseVisualStyleBackColor = true;
+            loginExitBtn.UseVisualStyleBackColor = false;
             loginExitBtn.Click += loginExitBtn_Click;
             // 
             // LoginForm

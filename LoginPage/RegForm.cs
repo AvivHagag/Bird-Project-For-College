@@ -194,7 +194,7 @@ namespace LoginPage
             RegIdVal.Text = null;*/
             LoginForm FormLog = new LoginForm();
             FormLog.Show();
-           
+
         }
 
         private void regExitBtn_Click(object sender, EventArgs e)

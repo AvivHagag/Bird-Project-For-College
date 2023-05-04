@@ -129,23 +129,28 @@
             // 
             // BackBtn
             // 
-            BackBtn.ForeColor = Color.Black;
+            BackBtn.BackColor = Color.FromArgb(44, 62, 80);
+            BackBtn.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            BackBtn.ForeColor = Color.White;
             BackBtn.Location = new Point(175, 408);
             BackBtn.Name = "BackBtn";
-            BackBtn.Size = new Size(117, 26);
+            BackBtn.Size = new Size(117, 35);
             BackBtn.TabIndex = 10;
             BackBtn.Text = "Back to Login";
-            BackBtn.UseVisualStyleBackColor = true;
+            BackBtn.UseVisualStyleBackColor = false;
             BackBtn.Click += BackBtn_Click;
             // 
             // regExitBtn
             // 
-            regExitBtn.Location = new Point(189, 441);
+            regExitBtn.BackColor = Color.FromArgb(192, 57, 43);
+            regExitBtn.Font = new Font("Arial", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            regExitBtn.ForeColor = Color.White;
+            regExitBtn.Location = new Point(175, 449);
             regExitBtn.Name = "regExitBtn";
-            regExitBtn.Size = new Size(86, 26);
+            regExitBtn.Size = new Size(117, 35);
             regExitBtn.TabIndex = 11;
             regExitBtn.Text = "Exit";
-            regExitBtn.UseVisualStyleBackColor = true;
+            regExitBtn.UseVisualStyleBackColor = false;
             regExitBtn.Click += regExitBtn_Click;
             // 
             // pictureBox1

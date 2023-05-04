@@ -31,7 +31,6 @@
             chickGroup = new GroupBox();
             chickGenderCombo = new ComboBox();
             dateChickBox = new DateTimePicker();
-            chickMenuBtn = new Button();
             exitChickBtn = new Button();
             addChickBtn = new Button();
             motherChickBox = new TextBox();
@@ -48,7 +47,6 @@
             chickGroup.BackColor = Color.FromArgb(236, 240, 241);
             chickGroup.Controls.Add(chickGenderCombo);
             chickGroup.Controls.Add(dateChickBox);
-            chickGroup.Controls.Add(chickMenuBtn);
             chickGroup.Controls.Add(exitChickBtn);
             chickGroup.Controls.Add(addChickBtn);
             chickGroup.Controls.Add(motherChickBox);
@@ -85,21 +83,6 @@
             dateChickBox.Size = new Size(200, 29);
             dateChickBox.TabIndex = 10;
             // 
-            // chickMenuBtn
-            // 
-            chickMenuBtn.BackColor = Color.FromArgb(44, 62, 80);
-            chickMenuBtn.FlatAppearance.BorderSize = 0;
-            chickMenuBtn.FlatStyle = FlatStyle.Flat;
-            chickMenuBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            chickMenuBtn.ForeColor = Color.White;
-            chickMenuBtn.Location = new Point(325, 290);
-            chickMenuBtn.Name = "chickMenuBtn";
-            chickMenuBtn.Size = new Size(103, 23);
-            chickMenuBtn.TabIndex = 9;
-            chickMenuBtn.Text = "Main menu";
-            chickMenuBtn.UseVisualStyleBackColor = true;
-            chickMenuBtn.Click += chickMenuBtn_Click;
-            // 
             // exitChickBtn
             // 
             exitChickBtn.AutoEllipsis = true;
@@ -125,7 +108,7 @@
             addChickBtn.FlatStyle = FlatStyle.Flat;
             addChickBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             addChickBtn.ForeColor = Color.White;
-            addChickBtn.Location = new Point(325, 261);
+            addChickBtn.Location = new Point(325, 290);
             addChickBtn.Name = "addChickBtn";
             addChickBtn.Size = new Size(103, 23);
             addChickBtn.TabIndex = 1;
@@ -205,7 +188,6 @@
         private GroupBox chickGroup;
         private Label chickGenderLabel;
         private Label dateChickLabel;
-        private Button chickMenuBtn;
         private Button exitChickBtn;
         private Button addChickBtn;
         private DateTimePicker dateChickBox;
