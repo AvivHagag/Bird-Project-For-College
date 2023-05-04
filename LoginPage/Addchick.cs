@@ -150,7 +150,7 @@ namespace LoginPage
             }
             else
             {
-                MessageBox.Show("Invaild input! Aviv homo gadol noder");
+                MessageBox.Show("Invaild input, Bird was not added");
                 this.Hide();
 
             }

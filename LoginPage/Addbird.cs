@@ -225,5 +225,30 @@ namespace LoginPage
         {
 
         }
+
+        private void GendercomboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(GendercomboBox.Text=="Female")
+            {
+                BodyColorcmb.Items.Clear();
+                BodyColorcmb.Items.Add("Green");
+                BodyColorcmb.Items.Add("Yellow");
+                BodyColorcmb.Items.Add("Blue");
+                BodyColorcmb.Items.Add("Silver");
+            }
+            else
+            {
+                BodyColorcmb.Items.Clear();
+                BodyColorcmb.Items.Add("Green");
+                BodyColorcmb.Items.Add("Yellow");
+                BodyColorcmb.Items.Add("Blue");
+                BodyColorcmb.Items.Add("Silver");
+                BodyColorcmb.Items.Add("Patel");
+                BodyColorcmb.Items.Add("Diluted");
+
+
+
+            }
+        }
     }
 }
