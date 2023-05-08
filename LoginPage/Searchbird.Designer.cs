@@ -70,11 +70,9 @@
             searchGroup.Controls.Add(dataGridBirds);
             searchGroup.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             searchGroup.ForeColor = Color.FromArgb(44, 62, 80);
-            searchGroup.Location = new Point(17, 20);
-            searchGroup.Margin = new Padding(4, 5, 4, 5);
+            searchGroup.Location = new Point(12, 12);
             searchGroup.Name = "searchGroup";
-            searchGroup.Padding = new Padding(4, 5, 4, 5);
-            searchGroup.Size = new Size(1846, 727);
+            searchGroup.Size = new Size(1251, 436);
             searchGroup.TabIndex = 1;
             searchGroup.TabStop = false;
             searchGroup.Text = "Search bird";
@@ -83,10 +81,9 @@
             // searchLabel
             // 
             searchLabel.AutoSize = true;
-            searchLabel.Location = new Point(64, 122);
-            searchLabel.Margin = new Padding(4, 0, 4, 0);
+            searchLabel.Location = new Point(45, 73);
             searchLabel.Name = "searchLabel";
-            searchLabel.Size = new Size(165, 28);
+            searchLabel.Size = new Size(117, 19);
             searchLabel.TabIndex = 9;
             searchLabel.Text = "Choose to filter:";
             // 
@@ -94,10 +91,9 @@
             // 
             addChickLabels.AutoSize = true;
             addChickLabels.ForeColor = SystemColors.Highlight;
-            addChickLabels.Location = new Point(900, 35);
-            addChickLabels.Margin = new Padding(4, 0, 4, 0);
+            addChickLabels.Location = new Point(630, 21);
             addChickLabels.Name = "addChickLabels";
-            addChickLabels.Size = new Size(363, 28);
+            addChickLabels.Size = new Size(256, 19);
             addChickLabels.TabIndex = 8;
             addChickLabels.Text = "Double click to add chick to the bird.";
             // 
@@ -109,10 +105,9 @@
             exitBtn.FlatStyle = FlatStyle.Flat;
             exitBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             exitBtn.ForeColor = Color.White;
-            exitBtn.Location = new Point(86, 443);
-            exitBtn.Margin = new Padding(4, 5, 4, 5);
+            exitBtn.Location = new Point(60, 266);
             exitBtn.Name = "exitBtn";
-            exitBtn.Size = new Size(136, 42);
+            exitBtn.Size = new Size(95, 25);
             exitBtn.TabIndex = 6;
             exitBtn.Text = "Exit";
             exitBtn.UseVisualStyleBackColor = false;
@@ -126,10 +121,9 @@
             birdMainMenuBtn.FlatStyle = FlatStyle.Flat;
             birdMainMenuBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             birdMainMenuBtn.ForeColor = Color.White;
-            birdMainMenuBtn.Location = new Point(86, 368);
-            birdMainMenuBtn.Margin = new Padding(4, 5, 4, 5);
+            birdMainMenuBtn.Location = new Point(60, 221);
             birdMainMenuBtn.Name = "birdMainMenuBtn";
-            birdMainMenuBtn.Size = new Size(136, 42);
+            birdMainMenuBtn.Size = new Size(95, 25);
             birdMainMenuBtn.TabIndex = 2;
             birdMainMenuBtn.Text = "Main menu";
             birdMainMenuBtn.UseVisualStyleBackColor = false;
@@ -137,10 +131,9 @@
             // 
             // idTextBox
             // 
-            idTextBox.Location = new Point(79, 207);
-            idTextBox.Margin = new Padding(4, 5, 4, 5);
+            idTextBox.Location = new Point(55, 124);
             idTextBox.Name = "idTextBox";
-            idTextBox.Size = new Size(141, 34);
+            idTextBox.Size = new Size(100, 25);
             idTextBox.TabIndex = 4;
             idTextBox.Visible = false;
             idTextBox.TextChanged += idTextBox_TextChanged;
@@ -149,10 +142,9 @@
             // 
             datePicker.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             datePicker.Format = DateTimePickerFormat.Short;
-            datePicker.Location = new Point(9, 207);
-            datePicker.Margin = new Padding(4, 5, 4, 5);
+            datePicker.Location = new Point(6, 124);
             datePicker.Name = "datePicker";
-            datePicker.Size = new Size(284, 29);
+            datePicker.Size = new Size(200, 22);
             datePicker.TabIndex = 3;
             datePicker.Visible = false;
             datePicker.ValueChanged += dateTimePicker1_ValueChanged;
@@ -160,10 +152,9 @@
             // SpecieBox
             // 
             SpecieBox.FormattingEnabled = true;
-            SpecieBox.Location = new Point(64, 207);
-            SpecieBox.Margin = new Padding(4, 5, 4, 5);
+            SpecieBox.Location = new Point(45, 124);
             SpecieBox.Name = "SpecieBox";
-            SpecieBox.Size = new Size(171, 36);
+            SpecieBox.Size = new Size(121, 25);
             SpecieBox.TabIndex = 2;
             SpecieBox.Visible = false;
             // 
@@ -175,10 +166,9 @@
             searchBtn.FlatStyle = FlatStyle.Flat;
             searchBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             searchBtn.ForeColor = Color.White;
-            searchBtn.Location = new Point(86, 320);
-            searchBtn.Margin = new Padding(4, 5, 4, 5);
+            searchBtn.Location = new Point(60, 192);
             searchBtn.Name = "searchBtn";
-            searchBtn.Size = new Size(136, 42);
+            searchBtn.Size = new Size(95, 25);
             searchBtn.TabIndex = 1;
             searchBtn.Text = "Search";
             searchBtn.UseVisualStyleBackColor = false;
@@ -188,10 +178,9 @@
             // 
             birdSearchBox.FormattingEnabled = true;
             birdSearchBox.Items.AddRange(new object[] { "Bird ID", "Specie", "Hatch date", "Gender" });
-            birdSearchBox.Location = new Point(64, 158);
-            birdSearchBox.Margin = new Padding(4, 5, 4, 5);
+            birdSearchBox.Location = new Point(45, 95);
             birdSearchBox.Name = "birdSearchBox";
-            birdSearchBox.Size = new Size(171, 36);
+            birdSearchBox.Size = new Size(121, 25);
             birdSearchBox.TabIndex = 0;
             birdSearchBox.SelectedIndexChanged += searchBox_SelectedIndexChanged;
             // 
@@ -208,9 +197,8 @@
             dataGridBirds.ColumnHeadersHeight = 42;
             dataGridBirds.Columns.AddRange(new DataGridViewColumn[] { birdIDColumn, birdSpeciceColumn, subSpecieColumn, genderColumn, motherColumn, fatherColumn, dateColumn, cageColumn, userColumn, HeadColor, ChestColor, BodyColor });
             dataGridBirds.EnableHeadersVisualStyles = false;
-            dataGridBirds.GridColor = SystemColors.ActiveCaptionText;
-            dataGridBirds.Location = new Point(301, 77);
-            dataGridBirds.Margin = new Padding(4, 5, 4, 5);
+            dataGridBirds.GridColor = SystemColors.ScrollBar;
+            dataGridBirds.Location = new Point(211, 46);
             dataGridBirds.MultiSelect = false;
             dataGridBirds.Name = "dataGridBirds";
             dataGridBirds.ReadOnly = true;
@@ -219,9 +207,10 @@
             dataGridBirds.RowHeadersWidth = 62;
             dataGridBirds.RowTemplate.Height = 25;
             dataGridBirds.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridBirds.Size = new Size(1545, 640);
+            dataGridBirds.Size = new Size(1040, 384);
             dataGridBirds.TabIndex = 5;
             dataGridBirds.TabStop = false;
+            dataGridBirds.CellContentClick += dataGridBirds_CellContentClick;
             dataGridBirds.CellDoubleClick += dataGridBirds_CellDoubleClick;
             // 
             // birdIDColumn
@@ -311,11 +300,10 @@
             // 
             // Searchbird
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1865, 750);
+            ClientSize = new Size(1269, 450);
             Controls.Add(searchGroup);
-            Margin = new Padding(4, 5, 4, 5);
             Name = "Searchbird";
             Text = "Searchbird";
             Load += Searchbird_Load;

@@ -38,8 +38,8 @@ namespace LoginPage
 
         public Addchick()
         {
-            InitializeComponent();
 
+            InitializeComponent();
 
         }
 
@@ -85,7 +85,7 @@ namespace LoginPage
             application.DisplayAlerts = false;
             workbook = application.Workbooks.Open(filePath);
             worksheet = workbook.Sheets[2]; // Get the second worksheet in the workbook
-            string sheadcolor; 
+            string sheadcolor;
             string schestcolor;
             string sbodycolor;
 
@@ -103,9 +103,9 @@ namespace LoginPage
                         if (GenderCell.Value.ToString() == "Female")
                         {
 
-                            sheadcolor = worksheet.Cells[i,9].Value.ToString();
-                            schestcolor = worksheet.Cells[i,10].Value.ToString();
-                            sbodycolor = worksheet.Cells[i,11]. Value.ToString();
+                            sheadcolor = worksheet.Cells[i, 9].Value.ToString();
+                            schestcolor = worksheet.Cells[i, 10].Value.ToString();
+                            sbodycolor = worksheet.Cells[i, 11].Value.ToString();
                             motherSerial = true;
                             break;
                         }
@@ -134,7 +134,7 @@ namespace LoginPage
 
             }
 
-            if (selectedDate != null && chickGenderCombo.Text!="" && ((reciveFromFather && motherSerial) || (reciveFromMothrer && fatherSerial)))
+            if (selectedDate != null && chickGenderCombo.Text != "" && ((reciveFromFather && motherSerial) || (reciveFromMothrer && fatherSerial)))
             {
 
                 int newRow = lastRow + 1;
@@ -170,31 +170,55 @@ namespace LoginPage
 
             }
 
-                chickGenderCombo.Text = null;
-                motherChickBox.Text = null;
-                fatherChickBox.Text = null;
-                selectedDate = DateTime.Today;
+            chickGenderCombo.Text = null;
+            motherChickBox.Text = null;
+            fatherChickBox.Text = null;
+            selectedDate = DateTime.Today;
 
-                // Close the workbook and release the objects
-                workbook.Close();
-                Marshal.ReleaseComObject(workbook);
+            // Close the workbook and release the objects
+            workbook.Close();
+            Marshal.ReleaseComObject(workbook);
 
-                application.Quit();
-                Marshal.ReleaseComObject(application);
-                Process[] pro = Process.GetProcessesByName("excel");
+            application.Quit();
+            Marshal.ReleaseComObject(application);
+            Process[] pro = Process.GetProcessesByName("excel");
 
-                pro[0].Kill();
-                pro[0].WaitForExit();
-                GC.Collect();
-                GC.WaitForPendingFinalizers();
+            pro[0].Kill();
+            pro[0].WaitForExit();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
 
-                // Release COM objects
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
+            // Release COM objects
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
 
-            }
+        }
+
+
+        private void SpacieLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Addchick_Load(object sender, EventArgs e)
+        {
+            IdLabel.Text = birdID;
+            SpacieLabel.Text = species;
+            subLabel.Text = subSpecies;
+            genderLabel.Text = gender;
+            cageidLabel.Text = cageID;
+        }
+
+        private void subLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateChickLabel_Click(object sender, EventArgs e)
+        {
 
         }
     }
+}
 

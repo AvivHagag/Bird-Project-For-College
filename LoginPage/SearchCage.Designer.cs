@@ -45,25 +45,21 @@
             ((System.ComponentModel.ISupportInitialize)dataGridCages).BeginInit();
             searchGroup.SuspendLayout();
             SuspendLayout();
-            //
+            // 
             // dataGridCages
             // 
             dataGridCages.AllowUserToAddRows = false;
             dataGridCages.AllowUserToDeleteRows = false;
             dataGridCages.AllowUserToResizeRows = false;
             dataGridCages.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridCages.BackgroundColor = Color.White;
             dataGridCages.BorderStyle = BorderStyle.None;
-            dataGridCages.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridCages.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridCages.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridCages.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridCages.Columns.AddRange(new DataGridViewColumn[] {
-                cageIDColumn,
-                lengthColumn,
-                widthColumn,
-                heightColumn,
-                materialColumn
-            });
+            dataGridCages.Columns.AddRange(new DataGridViewColumn[] { cageIDColumn, lengthColumn, widthColumn, heightColumn, materialColumn });
             dataGridCages.EnableHeadersVisualStyles = false;
+            dataGridCages.GridColor = Color.FromArgb(200, 200, 200);
             dataGridCages.Location = new Point(224, 26);
             dataGridCages.MultiSelect = false;
             dataGridCages.Name = "dataGridCages";
@@ -75,35 +71,36 @@
             dataGridCages.Size = new Size(543, 391);
             dataGridCages.TabIndex = 5;
             dataGridCages.TabStop = false;
-            dataGridCages.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridCages.GridColor = Color.FromArgb(200, 200, 200);
-            dataGridCages.BackgroundColor = Color.White;
-
             // 
             // cageIDColumn
             // 
             cageIDColumn.HeaderText = "Cage ID";
             cageIDColumn.Name = "cageIDColumn";
+            cageIDColumn.ReadOnly = true;
             // 
             // lengthColumn
             // 
             lengthColumn.HeaderText = "Length";
             lengthColumn.Name = "lengthColumn";
+            lengthColumn.ReadOnly = true;
             // 
             // widthColumn
             // 
             widthColumn.HeaderText = "Width";
             widthColumn.Name = "widthColumn";
+            widthColumn.ReadOnly = true;
             // 
             // heightColumn
             // 
             heightColumn.HeaderText = "Height";
             heightColumn.Name = "heightColumn";
+            heightColumn.ReadOnly = true;
             // 
             // materialColumn
             // 
             materialColumn.HeaderText = "Material";
             materialColumn.Name = "materialColumn";
+            materialColumn.ReadOnly = true;
             // 
             // searchGroup
             // 
@@ -165,9 +162,9 @@
             // 
             // idTextBox
             // 
-            idTextBox.Location = new Point(56, 124);
+            idTextBox.Location = new Point(45, 124);
             idTextBox.Name = "idTextBox";
-            idTextBox.Size = new Size(100, 25);
+            idTextBox.Size = new Size(121, 25);
             idTextBox.TabIndex = 4;
             idTextBox.Visible = false;
             // 

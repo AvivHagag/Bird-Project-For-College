@@ -327,5 +327,10 @@ namespace LoginPage
                  addchick.ShowDialog();
              if (!IsDisposed) Show();*/
         }
+
+        private void dataGridBirds_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

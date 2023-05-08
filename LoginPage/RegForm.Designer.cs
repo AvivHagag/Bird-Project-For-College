@@ -49,7 +49,7 @@
             // 
             RegNameVal.Location = new Point(359, 169);
             RegNameVal.Name = "RegNameVal";
-            RegNameVal.Size = new Size(114, 34);
+            RegNameVal.Size = new Size(114, 25);
             RegNameVal.TabIndex = 1;
             RegNameVal.TextChanged += RegNameVal_TextChanged;
             // 
@@ -57,7 +57,7 @@
             // 
             RegPassVal.Location = new Point(359, 218);
             RegPassVal.Name = "RegPassVal";
-            RegPassVal.Size = new Size(114, 34);
+            RegPassVal.Size = new Size(114, 25);
             RegPassVal.TabIndex = 2;
             RegPassVal.TextChanged += RegPassVal_TextChanged;
             // 
@@ -65,7 +65,7 @@
             // 
             RegIdVal.Location = new Point(359, 268);
             RegIdVal.Name = "RegIdVal";
-            RegIdVal.Size = new Size(114, 34);
+            RegIdVal.Size = new Size(114, 25);
             RegIdVal.TabIndex = 3;
             // 
             // regNameLabel
@@ -102,7 +102,7 @@
             alert1.ForeColor = Color.Red;
             alert1.Location = new Point(65, 314);
             alert1.Name = "alert1";
-            alert1.Size = new Size(596, 28);
+            alert1.Size = new Size(418, 19);
             alert1.TabIndex = 6;
             alert1.Text = "User name need to be between 6-8 chars and at most 2 digits";
             alert1.Visible = false;
@@ -159,7 +159,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(30, -131);
+            pictureBox1.Location = new Point(-20, -120);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(747, 413);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -169,7 +169,7 @@
             // 
             // RegForm
             // 
-            AutoScaleDimensions = new SizeF(12F, 28F);
+            AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(730, 510);
