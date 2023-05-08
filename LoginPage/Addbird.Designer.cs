@@ -95,9 +95,9 @@
             // BodyColorcmb
             // 
             BodyColorcmb.FormattingEnabled = true;
-            BodyColorcmb.Location = new Point(505, 236);
+            BodyColorcmb.Location = new Point(509, 236);
             BodyColorcmb.Name = "BodyColorcmb";
-            BodyColorcmb.Size = new Size(115, 36);
+            BodyColorcmb.Size = new Size(122, 36);
             BodyColorcmb.TabIndex = 22;
             // 
             // ChestColorcmb
@@ -106,7 +106,7 @@
             ChestColorcmb.Items.AddRange(new object[] { "Purple", "Lilac", "White" });
             ChestColorcmb.Location = new Point(509, 184);
             ChestColorcmb.Name = "ChestColorcmb";
-            ChestColorcmb.Size = new Size(111, 36);
+            ChestColorcmb.Size = new Size(122, 36);
             ChestColorcmb.TabIndex = 21;
             // 
             // HeadColorcmb
@@ -130,7 +130,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(371, 187);
+            label9.Location = new Point(375, 185);
             label9.Name = "label9";
             label9.Size = new Size(120, 28);
             label9.TabIndex = 18;
@@ -139,7 +139,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(357, 134);
+            label8.Location = new Point(375, 134);
             label8.Name = "label8";
             label8.Size = new Size(117, 28);
             label8.TabIndex = 17;
@@ -297,7 +297,7 @@
             // 
             label2.Location = new Point(10, 115);
             label2.Name = "label2";
-            label2.Size = new Size(110, 38);
+            label2.Size = new Size(127, 38);
             label2.TabIndex = 1;
             label2.Text = "Subspecies:";
             // 

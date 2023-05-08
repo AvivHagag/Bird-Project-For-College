@@ -23,13 +23,18 @@ namespace LoginPage
 {
     public partial class Addchick : Form
     {
+        // all the data that come from the parent who choosen 
         public string birdID;
         public string species;
         public string subSpecies;
         public string cageID;
         public string gender;
+        public string headcolor;
+        public string chestcolor;
+        public string bodycolor;
         public Boolean reciveFromMothrer;
         public Boolean reciveFromFather;
+
 
         public Addchick()
         {
@@ -80,6 +85,9 @@ namespace LoginPage
             application.DisplayAlerts = false;
             workbook = application.Workbooks.Open(filePath);
             worksheet = workbook.Sheets[2]; // Get the second worksheet in the workbook
+            string sheadcolor; 
+            string schestcolor;
+            string sbodycolor;
 
             // Get the last row number
             int lastRow = worksheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell).Row;
@@ -94,6 +102,10 @@ namespace LoginPage
                         Excel.Range GenderCell = worksheet.Cells[i, 4];
                         if (GenderCell.Value.ToString() == "Female")
                         {
+
+                            sheadcolor = worksheet.Cells[i,9].Value.ToString();
+                            schestcolor = worksheet.Cells[i,10].Value.ToString();
+                            sbodycolor = worksheet.Cells[i,11]. Value.ToString();
                             motherSerial = true;
                             break;
                         }
@@ -111,6 +123,9 @@ namespace LoginPage
                         Excel.Range Gender2Cell = worksheet.Cells[i, 4];
                         if (Gender2Cell.Value.ToString() == "Male")
                         {
+                            sheadcolor = worksheet.Cells[i, 9].Value.ToString();
+                            schestcolor = worksheet.Cells[i, 10].Value.ToString();
+                            sbodycolor = worksheet.Cells[i, 11].Value.ToString();
                             fatherSerial = true;
                             break;
                         }

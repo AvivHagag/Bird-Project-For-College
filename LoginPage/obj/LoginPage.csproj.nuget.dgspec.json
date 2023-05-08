@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Hodaya Amiel\\Source\\Repos\\Bird-Project-For-College\\LoginPage\\LoginPage.csproj": {}
+    "C:\\Users\\Hodaya Amiel\\source\\repos\\Project 1\\LoginPage\\LoginPage.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Hodaya Amiel\\Source\\Repos\\Bird-Project-For-College\\LoginPage\\LoginPage.csproj": {
+    "C:\\Users\\Hodaya Amiel\\source\\repos\\Project 1\\LoginPage\\LoginPage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Hodaya Amiel\\Source\\Repos\\Bird-Project-For-College\\LoginPage\\LoginPage.csproj",
+        "projectUniqueName": "C:\\Users\\Hodaya Amiel\\source\\repos\\Project 1\\LoginPage\\LoginPage.csproj",
         "projectName": "LoginPage",
-        "projectPath": "C:\\Users\\Hodaya Amiel\\Source\\Repos\\Bird-Project-For-College\\LoginPage\\LoginPage.csproj",
+        "projectPath": "C:\\Users\\Hodaya Amiel\\source\\repos\\Project 1\\LoginPage\\LoginPage.csproj",
         "packagesPath": "C:\\Users\\Hodaya Amiel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Hodaya Amiel\\Source\\Repos\\Bird-Project-For-College\\LoginPage\\obj\\",
+        "outputPath": "C:\\Users\\Hodaya Amiel\\source\\repos\\Project 1\\LoginPage\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Hodaya Amiel\\AppData\\Roaming\\NuGet\\NuGet.Config",

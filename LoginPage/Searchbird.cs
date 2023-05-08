@@ -110,6 +110,10 @@ namespace LoginPage
                 Excel.Range dateCell = worksheet.Cells[i, 7];
                 Excel.Range cageIDCell = worksheet.Cells[i, 8];
                 Excel.Range userIDCell = worksheet.Cells[i, 9];
+                Excel.Range headcell = worksheet.Cells[i, 10];
+                Excel.Range chestcell = worksheet.Cells[i, 11];
+                Excel.Range bodycell = worksheet.Cells[i, 12];
+
 
                 if (birdSearchBox.Text == "Bird ID")
                 {
@@ -127,6 +131,11 @@ namespace LoginPage
                             dataGridBirds.Rows[rowIndex].Cells[6].Value = dateCell.Value;
                             dataGridBirds.Rows[rowIndex].Cells[7].Value = cageIDCell.Value;
                             dataGridBirds.Rows[rowIndex].Cells[8].Value = userIDCell.Value;
+                            dataGridBirds.Rows[rowIndex].Cells[9].Value = headcell.Value;
+                            dataGridBirds.Rows[rowIndex].Cells[10].Value = chestcell.Value;
+                            dataGridBirds.Rows[rowIndex].Cells[11].Value = bodycell.Value;
+
+
 
                         }
 
@@ -153,6 +162,10 @@ namespace LoginPage
                         dataGridBirds.Rows[rowIndex].Cells[6].Value = dateCell.Value;
                         dataGridBirds.Rows[rowIndex].Cells[7].Value = cageIDCell.Value;
                         dataGridBirds.Rows[rowIndex].Cells[8].Value = userIDCell.Value;
+                        dataGridBirds.Rows[rowIndex].Cells[9].Value = headcell.Value;
+                        dataGridBirds.Rows[rowIndex].Cells[10].Value = chestcell.Value;
+                        dataGridBirds.Rows[rowIndex].Cells[11].Value = bodycell.Value;
+
 
                     }
                 }
@@ -171,6 +184,9 @@ namespace LoginPage
                         dataGridBirds.Rows[rowIndex].Cells[6].Value = dateCell.Value;
                         dataGridBirds.Rows[rowIndex].Cells[7].Value = cageIDCell.Value;
                         dataGridBirds.Rows[rowIndex].Cells[8].Value = userIDCell.Value;
+                        dataGridBirds.Rows[rowIndex].Cells[9].Value = headcell.Value;
+                        dataGridBirds.Rows[rowIndex].Cells[10].Value = chestcell.Value;
+                        dataGridBirds.Rows[rowIndex].Cells[11].Value = bodycell.Value;
 
                     }
                 }
@@ -189,6 +205,9 @@ namespace LoginPage
                         dataGridBirds.Rows[rowIndex].Cells[6].Value = dateCell.Value;
                         dataGridBirds.Rows[rowIndex].Cells[7].Value = cageIDCell.Value;
                         dataGridBirds.Rows[rowIndex].Cells[8].Value = userIDCell.Value;
+                        dataGridBirds.Rows[rowIndex].Cells[9].Value = headcell.Value;
+                        dataGridBirds.Rows[rowIndex].Cells[10].Value = chestcell.Value;
+                        dataGridBirds.Rows[rowIndex].Cells[11].Value = bodycell.Value;
 
                     }
                 }
@@ -262,6 +281,11 @@ namespace LoginPage
             string subSpecies = dataGridBirds.Rows[chosenRow].Cells[2].Value.ToString();
             string cageID = dataGridBirds.Rows[chosenRow].Cells[7].Value.ToString();
             string birdID = dataGridBirds.Rows[chosenRow].Cells[0].Value.ToString();
+            string headcolor = dataGridBirds.Rows[chosenRow].Cells[9].Value.ToString();
+            string chestcolor = dataGridBirds.Rows[chosenRow].Cells[10].Value.ToString();
+            string bodycolor = dataGridBirds.Rows[chosenRow].Cells[11].Value.ToString();
+
+
 
             // Create a new instance of the form that you want to send the data to.
             Addchick form = new Addchick();
@@ -286,11 +310,15 @@ namespace LoginPage
                 form.fatherChickBox.Visible = true;
             }
             // Set the data for the new form.
+
             form.birdID = birdID;
             form.species = species;
             form.subSpecies = subSpecies;
             form.cageID = cageID;
             form.gender = gender;
+            form.headcolor = headcolor;
+            form.chestcolor = chestcolor;
+            form.bodycolor = bodycolor;
             // Show the new form.
             form.Show();
 

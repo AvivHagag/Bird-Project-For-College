@@ -55,7 +55,7 @@ namespace LoginPage
         {
             Boolean motherSerial = false;
             Boolean fatherSerial = false;
-            if (SpeciescomboBox.Text != "" && SubspeciescomboBox.Text != "" && GendercomboBox.Text != "")
+            if (SpeciescomboBox.Text != "" && SubspeciescomboBox.Text != "" && GendercomboBox.Text != "" && HeadColorcmb.Text != "" && ChestColorcmb.Text != "" && BodyColorcmb.Text != "")
             {
                 DateTime selectedDate = dateTimePicker1.Value.Date;
                 //open system runtime-app
@@ -121,6 +121,10 @@ namespace LoginPage
                     worksheet.Cells[newRow, 7] = selectedDate;
                     worksheet.Cells[newRow, 8] = cagenumber.Text;
                     worksheet.Cells[newRow, 9] = ((LoginForm)Application.OpenForms["LoginForm"]).getid();
+                    worksheet.Cells[newRow, 10] = HeadColorcmb.Text;
+                    worksheet.Cells[newRow, 11] = ChestColorcmb.Text;
+                    worksheet.Cells[newRow, 12] = BodyColorcmb.Text;
+
                     workbook.Save();
                     MessageBox.Show("Bird was added successfully");
                     this.Hide();
@@ -161,7 +165,7 @@ namespace LoginPage
                     MessageBox.Show("Bird was added successfully");
             }
             else
-                MessageBox.Show("Bird was added successfully");
+                MessageBox.Show("Bird was not added, Invalid input!");
 
         }
         private Boolean CageExist(String cage)
@@ -228,7 +232,7 @@ namespace LoginPage
 
         private void GendercomboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(GendercomboBox.Text=="Female")
+            if (GendercomboBox.Text == "Female")
             {
                 BodyColorcmb.Items.Clear();
                 BodyColorcmb.Items.Add("Green");
