@@ -96,6 +96,7 @@
             addChickLabels.Size = new Size(256, 19);
             addChickLabels.TabIndex = 8;
             addChickLabels.Text = "Double click to add chick to the bird.";
+            addChickLabels.Click += addChickLabels_Click;
             // 
             // exitBtn
             // 

@@ -34,8 +34,11 @@ namespace LoginPage
         public string bodycolor;
         public Boolean reciveFromMothrer;
         public Boolean reciveFromFather;
+        public string sheadcolor;
+        public string schestcolor;
+        public string sbodycolor;
 
-
+                            
         public Addchick()
         {
 
@@ -85,9 +88,9 @@ namespace LoginPage
             application.DisplayAlerts = false;
             workbook = application.Workbooks.Open(filePath);
             worksheet = workbook.Sheets[2]; // Get the second worksheet in the workbook
-            string sheadcolor;
-            string schestcolor;
-            string sbodycolor;
+            string sheadcolor = "";
+            string schestcolor = "";
+            string sbodycolor = "";
 
             // Get the last row number
             int lastRow = worksheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell).Row;
@@ -159,6 +162,73 @@ namespace LoginPage
                 worksheet.Cells[newRow, 7] = selectedDate;
                 worksheet.Cells[newRow, 8] = cageID.ToString();
                 worksheet.Cells[newRow, 9] = ((LoginForm)Application.OpenForms["LoginForm"]).getid();
+                if(headcolor==sheadcolor)
+                {
+                    worksheet.Cells[newRow, 10] = headcolor;
+                }
+                if(headcolor!=sheadcolor)
+                {
+                    if (chickGenderCombo.Text == "Male")
+                        worksheet.Cells[newRow, 10] = sheadcolor;
+                    else
+                        worksheet.Cells[newRow, 10] = headcolor;
+                }
+                if(chestcolor==schestcolor)
+                {
+                    worksheet.Cells[newRow, 11] = chestcolor;
+                }
+                if(chestcolor!=schestcolor)
+                {
+                    if(chestcolor == "Purple" || schestcolor== "Purple")
+                    {
+                        worksheet.Cells[newRow, 11] = "Purple";
+                    }
+                    else if(chestcolor == "Lilac" || schestcolor== "Lilac")
+                    {
+                        worksheet.Cells[newRow, 11] = "Lilac";
+                    }
+                    else
+                    {
+                        worksheet.Cells[newRow, 11] = "White";
+                    }
+                }
+                if(bodycolor==sbodycolor)
+                {
+                    worksheet.Cells[newRow, 12] = bodycolor;
+                }
+                if(bodycolor!=sbodycolor)
+                {
+                    if(bodycolor== "Green" && sbodycolor=="Yellow" || bodycolor== "Yellow" && sbodycolor== "Green")
+                    {
+                        if (chickGenderCombo.Text == "Male")
+                            worksheet.Cells[newRow, 12] = "Diluted";
+                        else
+                        {
+                            if (gender == "Male")
+                            {
+                                worksheet.Cells[newRow, 12] = bodycolor;
+                            }
+                            else
+                                worksheet.Cells[newRow, 12] = sbodycolor;
+                        }
+                    }
+                    if (bodycolor == "Blue" && sbodycolor == "Yellow" || bodycolor == "Yellow" && sbodycolor == "Blue")
+                    {
+                        if (chickGenderCombo.Text == "Male")
+                            worksheet.Cells[newRow, 12] = "Pastel";
+                        else
+                        {
+                            if (gender == "Male")
+                            {
+                                worksheet.Cells[newRow, 12] = bodycolor;
+                            }
+                            else
+                                worksheet.Cells[newRow, 12] = sbodycolor;
+                        }
+                    }
+                }
+
+
                 workbook.Save();
                 MessageBox.Show("Bird was added successfully");
                 this.Hide();
@@ -208,6 +278,9 @@ namespace LoginPage
             subLabel.Text = subSpecies;
             genderLabel.Text = gender;
             cageidLabel.Text = cageID;
+            HeadCLabel.Text = headcolor;
+            ChestCLabel.Text = chestcolor;
+            bodyCLabel.Text = bodycolor;
         }
 
         private void subLabel_Click(object sender, EventArgs e)
@@ -218,6 +291,19 @@ namespace LoginPage
         private void dateChickLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void IdLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cageMainMenuBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (MainPage FormMain = new MainPage())
+                FormMain.ShowDialog();
+            Show();
         }
     }
 }

@@ -84,9 +84,9 @@
             groupBox1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             groupBox1.ForeColor = Color.FromArgb(44, 62, 80);
             groupBox1.Location = new Point(8, 7);
-            groupBox1.Margin = new Padding(2, 2, 2, 2);
+            groupBox1.Margin = new Padding(2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(10, 10, 10, 10);
+            groupBox1.Padding = new Padding(10);
             groupBox1.Size = new Size(569, 281);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
@@ -97,27 +97,29 @@
             // 
             BodyColorcmb.FormattingEnabled = true;
             BodyColorcmb.Location = new Point(390, 139);
-            BodyColorcmb.Margin = new Padding(2, 2, 2, 2);
+            BodyColorcmb.Margin = new Padding(2);
             BodyColorcmb.Name = "BodyColorcmb";
             BodyColorcmb.Size = new Size(91, 25);
             BodyColorcmb.TabIndex = 22;
+            BodyColorcmb.SelectedIndexChanged += BodyColorcmb_SelectedIndexChanged;
             // 
             // ChestColorcmb
             // 
             ChestColorcmb.FormattingEnabled = true;
             ChestColorcmb.Items.AddRange(new object[] { "Purple", "Lilac", "White" });
             ChestColorcmb.Location = new Point(390, 102);
-            ChestColorcmb.Margin = new Padding(2, 2, 2, 2);
+            ChestColorcmb.Margin = new Padding(2);
             ChestColorcmb.Name = "ChestColorcmb";
             ChestColorcmb.Size = new Size(91, 25);
             ChestColorcmb.TabIndex = 21;
+            ChestColorcmb.SelectedIndexChanged += ChestColorcmb_SelectedIndexChanged;
             // 
             // HeadColorcmb
             // 
             HeadColorcmb.FormattingEnabled = true;
             HeadColorcmb.Items.AddRange(new object[] { "Red", "Black", "Yellow" });
             HeadColorcmb.Location = new Point(390, 63);
-            HeadColorcmb.Margin = new Padding(2, 2, 2, 2);
+            HeadColorcmb.Margin = new Padding(2);
             HeadColorcmb.Name = "HeadColorcmb";
             HeadColorcmb.Size = new Size(91, 25);
             HeadColorcmb.TabIndex = 20;
@@ -192,7 +194,7 @@
             FinalAddbtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             FinalAddbtn.ForeColor = Color.White;
             FinalAddbtn.Location = new Point(375, 173);
-            FinalAddbtn.Margin = new Padding(2, 2, 2, 2);
+            FinalAddbtn.Margin = new Padding(2);
             FinalAddbtn.Name = "FinalAddbtn";
             FinalAddbtn.Size = new Size(128, 29);
             FinalAddbtn.TabIndex = 14;
@@ -204,7 +206,7 @@
             // 
             dateTimePicker1.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             dateTimePicker1.Location = new Point(100, 225);
-            dateTimePicker1.Margin = new Padding(2, 2, 2, 2);
+            dateTimePicker1.Margin = new Padding(2);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(170, 22);
             dateTimePicker1.TabIndex = 13;
@@ -213,7 +215,7 @@
             // cagenumber
             // 
             cagenumber.Location = new Point(390, 23);
-            cagenumber.Margin = new Padding(2, 2, 2, 2);
+            cagenumber.Margin = new Padding(2);
             cagenumber.Name = "cagenumber";
             cagenumber.Size = new Size(91, 25);
             cagenumber.TabIndex = 12;
@@ -221,7 +223,7 @@
             // fatherserialnumber
             // 
             fatherserialnumber.Location = new Point(165, 183);
-            fatherserialnumber.Margin = new Padding(2, 2, 2, 2);
+            fatherserialnumber.Margin = new Padding(2);
             fatherserialnumber.Name = "fatherserialnumber";
             fatherserialnumber.Size = new Size(88, 25);
             fatherserialnumber.TabIndex = 11;
@@ -229,7 +231,7 @@
             // motherserialnumber
             // 
             motherserialnumber.Location = new Point(165, 142);
-            motherserialnumber.Margin = new Padding(2, 2, 2, 2);
+            motherserialnumber.Margin = new Padding(2);
             motherserialnumber.Name = "motherserialnumber";
             motherserialnumber.Size = new Size(88, 25);
             motherserialnumber.TabIndex = 10;
@@ -239,7 +241,7 @@
             GendercomboBox.FormattingEnabled = true;
             GendercomboBox.Items.AddRange(new object[] { "Male", "Female" });
             GendercomboBox.Location = new Point(100, 105);
-            GendercomboBox.Margin = new Padding(2, 2, 2, 2);
+            GendercomboBox.Margin = new Padding(2);
             GendercomboBox.Name = "GendercomboBox";
             GendercomboBox.Size = new Size(129, 25);
             GendercomboBox.TabIndex = 9;
@@ -249,7 +251,7 @@
             // 
             SubspeciescomboBox.FormattingEnabled = true;
             SubspeciescomboBox.Location = new Point(100, 66);
-            SubspeciescomboBox.Margin = new Padding(2, 2, 2, 2);
+            SubspeciescomboBox.Margin = new Padding(2);
             SubspeciescomboBox.Name = "SubspeciescomboBox";
             SubspeciescomboBox.Size = new Size(129, 25);
             SubspeciescomboBox.TabIndex = 8;
@@ -260,7 +262,7 @@
             SpeciescomboBox.FormattingEnabled = true;
             SpeciescomboBox.Items.AddRange(new object[] { "American Gouldian", "European Gouldian", "Australian Gouldian" });
             SpeciescomboBox.Location = new Point(100, 23);
-            SpeciescomboBox.Margin = new Padding(2, 2, 2, 2);
+            SpeciescomboBox.Margin = new Padding(2);
             SpeciescomboBox.Name = "SpeciescomboBox";
             SpeciescomboBox.Size = new Size(129, 25);
             SpeciescomboBox.TabIndex = 7;
@@ -337,7 +339,7 @@
             BackColor = Color.White;
             ClientSize = new Size(588, 299);
             Controls.Add(groupBox1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "Addbird";
             Text = "Addbird";
             groupBox1.ResumeLayout(false);

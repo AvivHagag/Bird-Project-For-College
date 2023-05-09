@@ -71,6 +71,7 @@
             dataGridCages.Size = new Size(543, 391);
             dataGridCages.TabIndex = 5;
             dataGridCages.TabStop = false;
+            dataGridCages.CellContentClick += dataGridCages_CellContentClick;
             // 
             // cageIDColumn
             // 

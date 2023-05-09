@@ -141,5 +141,10 @@ namespace LoginPage
             Application.Exit();
 
         }
+
+        private void dataGridCages_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

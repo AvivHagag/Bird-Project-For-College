@@ -247,7 +247,7 @@ namespace LoginPage
                 BodyColorcmb.Items.Add("Yellow");
                 BodyColorcmb.Items.Add("Blue");
                 BodyColorcmb.Items.Add("Silver");
-                BodyColorcmb.Items.Add("Patel");
+                BodyColorcmb.Items.Add("Pastel");
                 BodyColorcmb.Items.Add("Diluted");
 
 
@@ -256,6 +256,16 @@ namespace LoginPage
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ChestColorcmb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BodyColorcmb_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

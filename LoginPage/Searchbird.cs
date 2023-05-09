@@ -277,7 +277,6 @@ namespace LoginPage
 
             string species = dataGridBirds.Rows[chosenRow].Cells[1].Value.ToString();
             string gender = dataGridBirds.Rows[chosenRow].Cells[3].Value.ToString();
-
             string subSpecies = dataGridBirds.Rows[chosenRow].Cells[2].Value.ToString();
             string cageID = dataGridBirds.Rows[chosenRow].Cells[7].Value.ToString();
             string birdID = dataGridBirds.Rows[chosenRow].Cells[0].Value.ToString();
@@ -320,15 +319,21 @@ namespace LoginPage
             form.chestcolor = chestcolor;
             form.bodycolor = bodycolor;
             // Show the new form.
+
             form.Show();
 
-            /* this.Hide();
-             using (Addchick addchick = new Addchick())
-                 addchick.ShowDialog();
-             if (!IsDisposed) Show();*/
+            
+            //using (Addchick addchick = new Addchick())
+            //    addchick.ShowDialog();
+            //if (!IsDisposed) Show();
         }
 
         private void dataGridBirds_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void addChickLabels_Click(object sender, EventArgs e)
         {
 
         }

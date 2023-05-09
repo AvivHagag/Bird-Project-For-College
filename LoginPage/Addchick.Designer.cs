@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             chickGroup = new GroupBox();
+            bodyCLabel = new Label();
+            ChestCLabel = new Label();
+            HeadCLabel = new Label();
+            label8 = new Label();
+            label7 = new Label();
+            label6 = new Label();
             label5 = new Label();
             label4 = new Label();
             label3 = new Label();
@@ -49,12 +55,20 @@
             motherIdLabel = new Label();
             chickGenderLabel = new Label();
             dateChickLabel = new Label();
+            cageMainMenuBtn = new Button();
             chickGroup.SuspendLayout();
             SuspendLayout();
             // 
             // chickGroup
             // 
             chickGroup.BackColor = Color.FromArgb(236, 240, 241);
+            chickGroup.Controls.Add(cageMainMenuBtn);
+            chickGroup.Controls.Add(bodyCLabel);
+            chickGroup.Controls.Add(ChestCLabel);
+            chickGroup.Controls.Add(HeadCLabel);
+            chickGroup.Controls.Add(label8);
+            chickGroup.Controls.Add(label7);
+            chickGroup.Controls.Add(label6);
             chickGroup.Controls.Add(label5);
             chickGroup.Controls.Add(label4);
             chickGroup.Controls.Add(label3);
@@ -85,6 +99,54 @@
             chickGroup.TabStop = false;
             chickGroup.Text = "Add Chick";
             chickGroup.Enter += chickGroup_Enter;
+            // 
+            // bodyCLabel
+            // 
+            bodyCLabel.Location = new Point(125, 217);
+            bodyCLabel.Name = "bodyCLabel";
+            bodyCLabel.Size = new Size(157, 26);
+            bodyCLabel.TabIndex = 27;
+            bodyCLabel.Text = "label7";
+            // 
+            // ChestCLabel
+            // 
+            ChestCLabel.Location = new Point(125, 189);
+            ChestCLabel.Name = "ChestCLabel";
+            ChestCLabel.Size = new Size(157, 26);
+            ChestCLabel.TabIndex = 26;
+            ChestCLabel.Text = "label6";
+            // 
+            // HeadCLabel
+            // 
+            HeadCLabel.Location = new Point(125, 163);
+            HeadCLabel.Name = "HeadCLabel";
+            HeadCLabel.Size = new Size(157, 26);
+            HeadCLabel.TabIndex = 25;
+            HeadCLabel.Text = "label6";
+            // 
+            // label8
+            // 
+            label8.Location = new Point(13, 217);
+            label8.Name = "label8";
+            label8.Size = new Size(106, 26);
+            label8.TabIndex = 24;
+            label8.Text = "Body Color:";
+            // 
+            // label7
+            // 
+            label7.Location = new Point(13, 191);
+            label7.Name = "label7";
+            label7.Size = new Size(106, 26);
+            label7.TabIndex = 23;
+            label7.Text = "Chest Color:";
+            // 
+            // label6
+            // 
+            label6.Location = new Point(13, 165);
+            label6.Name = "label6";
+            label6.Size = new Size(106, 26);
+            label6.TabIndex = 22;
+            label6.Text = "Head Color:";
             // 
             // label5
             // 
@@ -167,6 +229,7 @@
             IdLabel.Size = new Size(157, 26);
             IdLabel.TabIndex = 12;
             IdLabel.Text = "label1";
+            IdLabel.Click += IdLabel_Click;
             // 
             // chickGenderCombo
             // 
@@ -194,7 +257,7 @@
             exitChickBtn.FlatStyle = FlatStyle.Flat;
             exitChickBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             exitChickBtn.ForeColor = Color.White;
-            exitChickBtn.Location = new Point(365, 204);
+            exitChickBtn.Location = new Point(508, 247);
             exitChickBtn.Name = "exitChickBtn";
             exitChickBtn.Size = new Size(103, 25);
             exitChickBtn.TabIndex = 8;
@@ -210,7 +273,7 @@
             addChickBtn.FlatStyle = FlatStyle.Flat;
             addChickBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             addChickBtn.ForeColor = Color.White;
-            addChickBtn.Location = new Point(365, 165);
+            addChickBtn.Location = new Point(302, 163);
             addChickBtn.Name = "addChickBtn";
             addChickBtn.Size = new Size(103, 33);
             addChickBtn.TabIndex = 1;
@@ -273,6 +336,22 @@
             dateChickLabel.Text = "Date of hatch:";
             dateChickLabel.Click += dateChickLabel_Click;
             // 
+            // cageMainMenuBtn
+            // 
+            cageMainMenuBtn.BackColor = Color.FromArgb(44, 62, 80);
+            cageMainMenuBtn.Cursor = Cursors.Hand;
+            cageMainMenuBtn.FlatAppearance.BorderSize = 0;
+            cageMainMenuBtn.FlatStyle = FlatStyle.Flat;
+            cageMainMenuBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            cageMainMenuBtn.ForeColor = Color.White;
+            cageMainMenuBtn.Location = new Point(411, 163);
+            cageMainMenuBtn.Name = "cageMainMenuBtn";
+            cageMainMenuBtn.Size = new Size(103, 33);
+            cageMainMenuBtn.TabIndex = 28;
+            cageMainMenuBtn.Text = "Main menu";
+            cageMainMenuBtn.UseVisualStyleBackColor = false;
+            cageMainMenuBtn.Click += cageMainMenuBtn_Click;
+            // 
             // Addchick
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -310,5 +389,12 @@
         private Label label3;
         private Label label2;
         private Label label1;
+        private Label bodyCLabel;
+        private Label ChestCLabel;
+        private Label HeadCLabel;
+        private Label label8;
+        private Label label7;
+        private Label label6;
+        private Button cageMainMenuBtn;
     }
 }
