@@ -106,9 +106,9 @@ namespace LoginPage
                         if (GenderCell.Value.ToString() == "Female")
                         {
 
-                            sheadcolor = worksheet.Cells[i, 9].Value.ToString();
-                            schestcolor = worksheet.Cells[i, 10].Value.ToString();
-                            sbodycolor = worksheet.Cells[i, 11].Value.ToString();
+                            sheadcolor = worksheet.Cells[i, 10].Value.ToString();
+                            schestcolor = worksheet.Cells[i, 11].Value.ToString();
+                            sbodycolor = worksheet.Cells[i, 12].Value.ToString();
                             motherSerial = true;
                             break;
                         }
@@ -126,9 +126,9 @@ namespace LoginPage
                         Excel.Range Gender2Cell = worksheet.Cells[i, 4];
                         if (Gender2Cell.Value.ToString() == "Male")
                         {
-                            sheadcolor = worksheet.Cells[i, 9].Value.ToString();
-                            schestcolor = worksheet.Cells[i, 10].Value.ToString();
-                            sbodycolor = worksheet.Cells[i, 11].Value.ToString();
+                            sheadcolor = worksheet.Cells[i, 10].Value.ToString();
+                            schestcolor = worksheet.Cells[i, 11].Value.ToString();
+                            sbodycolor = worksheet.Cells[i, 12].Value.ToString();
                             fatherSerial = true;
                             break;
                         }
@@ -162,7 +162,10 @@ namespace LoginPage
                 worksheet.Cells[newRow, 7] = selectedDate;
                 worksheet.Cells[newRow, 8] = cageID.ToString();
                 worksheet.Cells[newRow, 9] = ((LoginForm)Application.OpenForms["LoginForm"]).getid();
-                if(headcolor==sheadcolor)
+                MessageBox.Show(sheadcolor);
+                MessageBox.Show(schestcolor);
+                MessageBox.Show(sbodycolor);
+                if (headcolor==sheadcolor)
                 {
                     worksheet.Cells[newRow, 10] = headcolor;
                 }
@@ -214,22 +217,39 @@ namespace LoginPage
                     }
                     if (bodycolor == "Blue" && sbodycolor == "Yellow" || bodycolor == "Yellow" && sbodycolor == "Blue")
                     {
-                        if (chickGenderCombo.Text == "Male")
-                            worksheet.Cells[newRow, 12] = "Pastel";
+                        if (chestcolor == "Purple" || schestcolor == "Purple")
+                        {
+                            if (chickGenderCombo.Text == "Male")
+                                worksheet.Cells[newRow, 12] = "Pastel";
+                            else
+                            {
+                                if (gender == "Male")
+                                {
+                                    worksheet.Cells[newRow, 12] = bodycolor;
+                                }
+                                else
+                                    worksheet.Cells[newRow, 12] = sbodycolor;
+                            }
+                        }
                         else
                         {
-                            if (gender == "Male")
-                            {
-                                worksheet.Cells[newRow, 12] = bodycolor;
-                            }
+                            if (chickGenderCombo.Text == "Male")
+                                worksheet.Cells[newRow, 12] = "Silver";
                             else
-                                worksheet.Cells[newRow, 12] = sbodycolor;
+                            {
+                                if (gender == "Male")
+                                {
+                                    worksheet.Cells[newRow, 12] = bodycolor;
+                                }
+                                else
+                                    worksheet.Cells[newRow, 12] = sbodycolor;
+                            }
                         }
                     }
-                }
+                    }
 
 
-                workbook.Save();
+                    workbook.Save();
                 MessageBox.Show("Bird was added successfully");
                 this.Hide();
             }
@@ -237,7 +257,7 @@ namespace LoginPage
             {
                 MessageBox.Show("Invaild input, Bird was not added");
                 this.Hide();
-
+                
             }
 
             chickGenderCombo.Text = null;
