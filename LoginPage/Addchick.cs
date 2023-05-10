@@ -171,15 +171,28 @@ namespace LoginPage
                 }
                 if(headcolor!=sheadcolor)
                 {
-                    if (chickGenderCombo.Text == "Male")
+                    if (gender == "Male" && headcolor == "Black" && sheadcolor == "Red")
+                    {
+                        if (chickGenderCombo.Text == "Male")
+                            worksheet.Cells[newRow, 10] = sheadcolor;
+                        else
+                            worksheet.Cells[newRow, 10] = headcolor;
+                    }
+                    if(gender == "Female" && headcolor == "Black" && sheadcolor == "Red")
+                    {
                         worksheet.Cells[newRow, 10] = sheadcolor;
+                    }
                     else
-                        worksheet.Cells[newRow, 10] = headcolor;
+                        if(headcolor=="Black" || sheadcolor=="Black")
+                            worksheet.Cells[newRow, 10] = "Black";
+                        else
+                        worksheet.Cells[newRow, 10] = "Red";
                 }
                 if(chestcolor==schestcolor)
                 {
                     worksheet.Cells[newRow, 11] = chestcolor;
                 }
+
                 if(chestcolor!=schestcolor)
                 {
                     if(chestcolor == "Purple" || schestcolor== "Purple")
@@ -195,58 +208,49 @@ namespace LoginPage
                         worksheet.Cells[newRow, 11] = "White";
                     }
                 }
+
                 if(bodycolor==sbodycolor)
                 {
                     worksheet.Cells[newRow, 12] = bodycolor;
                 }
                 if(bodycolor!=sbodycolor)
                 {
-                    if(bodycolor== "Green" && sbodycolor=="Yellow" || bodycolor== "Yellow" && sbodycolor== "Green")
+                    if (gender == "Male")
                     {
-                        if (chickGenderCombo.Text == "Male")
-                            worksheet.Cells[newRow, 12] = "Diluted";
-                        else
+                        if (bodycolor == "Yellow" && sbodycolor == "Green")
                         {
-                            if (gender == "Male")
+                            if (chickGenderCombo.Text == "Male")
                             {
-                                worksheet.Cells[newRow, 12] = bodycolor;
+                                worksheet.Cells[newRow, 12] = "Diluted";
                             }
                             else
+                            {
+                                worksheet.Cells[newRow, 12] = "Yellow";
+                            }
+
+                        }
+                    }
+                    else
+                    {
+                        if (bodycolor == "Yellow" && sbodycolor == "Green")
+                        {
+                            if (chickGenderCombo.Text == "Male")
+                                worksheet.Cells[newRow, 12] = "Diluted";
+                            else
+                            {
                                 worksheet.Cells[newRow, 12] = sbodycolor;
+                            }
                         }
                     }
                     if (bodycolor == "Blue" && sbodycolor == "Yellow" || bodycolor == "Yellow" && sbodycolor == "Blue")
                     {
-                        if (chestcolor == "Purple" || schestcolor == "Purple")
-                        {
-                            if (chickGenderCombo.Text == "Male")
-                                worksheet.Cells[newRow, 12] = "Pastel";
-                            else
-                            {
-                                if (gender == "Male")
-                                {
-                                    worksheet.Cells[newRow, 12] = bodycolor;
-                                }
-                                else
-                                    worksheet.Cells[newRow, 12] = sbodycolor;
-                            }
-                        }
-                        else
-                        {
-                            if (chickGenderCombo.Text == "Male")
-                                worksheet.Cells[newRow, 12] = "Silver";
-                            else
-                            {
-                                if (gender == "Male")
-                                {
-                                    worksheet.Cells[newRow, 12] = bodycolor;
-                                }
-                                else
-                                    worksheet.Cells[newRow, 12] = sbodycolor;
-                            }
-                        }
+                        worksheet.Cells[newRow, 12] = "Silver";
                     }
+                    else
+                    {
+                        worksheet.Cells[newRow, 12] = bodycolor;
                     }
+                }
 
 
                     workbook.Save();
