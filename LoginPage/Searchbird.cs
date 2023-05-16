@@ -352,5 +352,10 @@ namespace LoginPage
         {
 
         }
+
+        private void SpecieBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -94,7 +94,7 @@
             // searchLabel
             // 
             searchLabel.AutoSize = true;
-            searchLabel.Location = new Point(54, 179);
+            searchLabel.Location = new Point(45, 185);
             searchLabel.Name = "searchLabel";
             searchLabel.Size = new Size(117, 19);
             searchLabel.TabIndex = 9;
@@ -119,7 +119,7 @@
             exitBtn.FlatStyle = FlatStyle.Flat;
             exitBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             exitBtn.ForeColor = Color.White;
-            exitBtn.Location = new Point(60, 316);
+            exitBtn.Location = new Point(60, 339);
             exitBtn.Name = "exitBtn";
             exitBtn.Size = new Size(95, 25);
             exitBtn.TabIndex = 6;
@@ -135,7 +135,7 @@
             birdMainMenuBtn.FlatStyle = FlatStyle.Flat;
             birdMainMenuBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             birdMainMenuBtn.ForeColor = Color.White;
-            birdMainMenuBtn.Location = new Point(60, 285);
+            birdMainMenuBtn.Location = new Point(60, 308);
             birdMainMenuBtn.Name = "birdMainMenuBtn";
             birdMainMenuBtn.Size = new Size(95, 25);
             birdMainMenuBtn.TabIndex = 2;
@@ -145,7 +145,7 @@
             // 
             // idTextBox
             // 
-            idTextBox.Location = new Point(45, 212);
+            idTextBox.Location = new Point(45, 240);
             idTextBox.Name = "idTextBox";
             idTextBox.Size = new Size(126, 25);
             idTextBox.TabIndex = 4;
@@ -156,7 +156,7 @@
             // 
             datePicker.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             datePicker.Format = DateTimePickerFormat.Short;
-            datePicker.Location = new Point(6, 211);
+            datePicker.Location = new Point(5, 243);
             datePicker.Name = "datePicker";
             datePicker.Size = new Size(200, 22);
             datePicker.TabIndex = 3;
@@ -166,11 +166,12 @@
             // SpecieBox
             // 
             SpecieBox.FormattingEnabled = true;
-            SpecieBox.Location = new Point(45, 212);
+            SpecieBox.Location = new Point(45, 240);
             SpecieBox.Name = "SpecieBox";
             SpecieBox.Size = new Size(126, 25);
             SpecieBox.TabIndex = 2;
             SpecieBox.Visible = false;
+            SpecieBox.SelectedIndexChanged += SpecieBox_SelectedIndexChanged;
             // 
             // searchBtn
             // 
@@ -180,7 +181,7 @@
             searchBtn.FlatStyle = FlatStyle.Flat;
             searchBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             searchBtn.ForeColor = Color.White;
-            searchBtn.Location = new Point(60, 254);
+            searchBtn.Location = new Point(60, 277);
             searchBtn.Name = "searchBtn";
             searchBtn.Size = new Size(95, 25);
             searchBtn.TabIndex = 1;
@@ -192,7 +193,7 @@
             // 
             birdSearchBox.FormattingEnabled = true;
             birdSearchBox.Items.AddRange(new object[] { "Bird ID", "Species", "Hatch date", "Gender" });
-            birdSearchBox.Location = new Point(45, 212);
+            birdSearchBox.Location = new Point(45, 207);
             birdSearchBox.Name = "birdSearchBox";
             birdSearchBox.Size = new Size(126, 25);
             birdSearchBox.TabIndex = 0;
