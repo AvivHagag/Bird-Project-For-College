@@ -52,12 +52,14 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
+            pictureBox1 = new PictureBox();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
             // 
-            groupBox1.BackColor = Color.FromArgb(236, 240, 241);
+            groupBox1.BackColor = Color.White;
             groupBox1.Controls.Add(BodyColorcmb);
             groupBox1.Controls.Add(ChestColorcmb);
             groupBox1.Controls.Add(HeadColorcmb);
@@ -87,7 +89,7 @@
             groupBox1.Margin = new Padding(2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(10);
-            groupBox1.Size = new Size(569, 281);
+            groupBox1.Size = new Size(512, 281);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Add Bird";
@@ -193,7 +195,7 @@
             FinalAddbtn.FlatStyle = FlatStyle.Flat;
             FinalAddbtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             FinalAddbtn.ForeColor = Color.White;
-            FinalAddbtn.Location = new Point(375, 173);
+            FinalAddbtn.Location = new Point(376, 176);
             FinalAddbtn.Margin = new Padding(2);
             FinalAddbtn.Name = "FinalAddbtn";
             FinalAddbtn.Size = new Size(128, 29);
@@ -332,18 +334,31 @@
             label1.TabIndex = 0;
             label1.Text = "Species:";
             // 
+            // pictureBox1
+            // 
+            pictureBox1.ErrorImage = Properties.Resources.chick;
+            pictureBox1.Image = Properties.Resources.chick;
+            pictureBox1.Location = new Point(525, -2);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(301, 298);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            // 
             // Addbird
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(588, 299);
+            ClientSize = new Size(826, 299);
+            Controls.Add(pictureBox1);
             Controls.Add(groupBox1);
             Margin = new Padding(2);
             Name = "Addbird";
             Text = "Addbird";
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -373,5 +388,6 @@
         private ComboBox BodyColorcmb;
         private ComboBox ChestColorcmb;
         private ComboBox HeadColorcmb;
+        private PictureBox pictureBox1;
     }
 }

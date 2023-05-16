@@ -38,7 +38,7 @@ namespace LoginPage
         public string schestcolor;
         public string sbodycolor;
 
-                            
+
         public Addchick()
         {
 
@@ -165,11 +165,11 @@ namespace LoginPage
                 MessageBox.Show(sheadcolor);
                 MessageBox.Show(schestcolor);
                 MessageBox.Show(sbodycolor);
-                if (headcolor==sheadcolor)
+                if (headcolor == sheadcolor)
                 {
                     worksheet.Cells[newRow, 10] = headcolor;
                 }
-                if(headcolor!=sheadcolor)
+                if (headcolor != sheadcolor)
                 {
                     if (gender == "Male" && headcolor == "Black" && sheadcolor == "Red")
                     {
@@ -178,34 +178,34 @@ namespace LoginPage
                         else
                             worksheet.Cells[newRow, 10] = headcolor;
                     }
-                    if(gender == "Female" && headcolor == "Black" && sheadcolor == "Red")
+                    if (gender == "Female" && headcolor == "Black" && sheadcolor == "Red")
                     {
                         worksheet.Cells[newRow, 10] = sheadcolor;
                     }
                     else
-                        if(headcolor=="Black" || sheadcolor=="Black")
-                            worksheet.Cells[newRow, 10] = "Black";
-                        else
+                        if (headcolor == "Black" || sheadcolor == "Black")
+                        worksheet.Cells[newRow, 10] = "Black";
+                    else
                         worksheet.Cells[newRow, 10] = "Red";
                 }
-                
-                if(chestcolor == "Purple" || schestcolor== "Purple")
+
+                if (chestcolor == "Purple" || schestcolor == "Purple")
                 {
-                        worksheet.Cells[newRow, 11] = "Purple";
+                    worksheet.Cells[newRow, 11] = "Purple";
                 }
-                else if(chestcolor == "Lilac" || schestcolor== "Lilac")
+                else if (chestcolor == "Lilac" || schestcolor == "Lilac")
                 {
-                        worksheet.Cells[newRow, 11] = "Lilac";
+                    worksheet.Cells[newRow, 11] = "Lilac";
                 }
                 else
                 {
-                        worksheet.Cells[newRow, 11] = "White";
+                    worksheet.Cells[newRow, 11] = "White";
                 }
-                if(bodycolor==sbodycolor)
+                if (bodycolor == sbodycolor)
                 {
                     worksheet.Cells[newRow, 12] = bodycolor;
                 }
-                if(bodycolor!=sbodycolor)
+                if (bodycolor != sbodycolor)
                 {
                     if (gender == "Male")
                     {
@@ -245,7 +245,7 @@ namespace LoginPage
                 }
 
 
-                    workbook.Save();
+                workbook.Save();
                 MessageBox.Show("Bird was added successfully");
                 this.Hide();
             }
@@ -253,7 +253,7 @@ namespace LoginPage
             {
                 MessageBox.Show("Invaild input, Bird was not added");
                 this.Hide();
-                
+
             }
 
             chickGenderCombo.Text = null;
@@ -320,6 +320,11 @@ namespace LoginPage
             using (MainPage FormMain = new MainPage())
                 FormMain.ShowDialog();
             Show();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

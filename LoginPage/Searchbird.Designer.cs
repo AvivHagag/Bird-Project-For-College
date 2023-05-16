@@ -30,6 +30,7 @@
         {
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             searchGroup = new GroupBox();
+            pictureBox1 = new PictureBox();
             searchLabel = new Label();
             addChickLabels = new Label();
             exitBtn = new Button();
@@ -53,11 +54,13 @@
             ChestColor = new DataGridViewTextBoxColumn();
             BodyColor = new DataGridViewTextBoxColumn();
             searchGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridBirds).BeginInit();
             SuspendLayout();
             // 
             // searchGroup
             // 
+            searchGroup.Controls.Add(pictureBox1);
             searchGroup.Controls.Add(searchLabel);
             searchGroup.Controls.Add(addChickLabels);
             searchGroup.Controls.Add(exitBtn);
@@ -78,10 +81,20 @@
             searchGroup.Text = "Search bird";
             searchGroup.Enter += searchGroup_Enter;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.search;
+            pictureBox1.Location = new Point(32, 46);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(149, 130);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 10;
+            pictureBox1.TabStop = false;
+            // 
             // searchLabel
             // 
             searchLabel.AutoSize = true;
-            searchLabel.Location = new Point(45, 73);
+            searchLabel.Location = new Point(54, 179);
             searchLabel.Name = "searchLabel";
             searchLabel.Size = new Size(117, 19);
             searchLabel.TabIndex = 9;
@@ -106,7 +119,7 @@
             exitBtn.FlatStyle = FlatStyle.Flat;
             exitBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             exitBtn.ForeColor = Color.White;
-            exitBtn.Location = new Point(60, 266);
+            exitBtn.Location = new Point(60, 316);
             exitBtn.Name = "exitBtn";
             exitBtn.Size = new Size(95, 25);
             exitBtn.TabIndex = 6;
@@ -122,7 +135,7 @@
             birdMainMenuBtn.FlatStyle = FlatStyle.Flat;
             birdMainMenuBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             birdMainMenuBtn.ForeColor = Color.White;
-            birdMainMenuBtn.Location = new Point(60, 221);
+            birdMainMenuBtn.Location = new Point(60, 285);
             birdMainMenuBtn.Name = "birdMainMenuBtn";
             birdMainMenuBtn.Size = new Size(95, 25);
             birdMainMenuBtn.TabIndex = 2;
@@ -132,9 +145,9 @@
             // 
             // idTextBox
             // 
-            idTextBox.Location = new Point(55, 124);
+            idTextBox.Location = new Point(45, 212);
             idTextBox.Name = "idTextBox";
-            idTextBox.Size = new Size(100, 25);
+            idTextBox.Size = new Size(126, 25);
             idTextBox.TabIndex = 4;
             idTextBox.Visible = false;
             idTextBox.TextChanged += idTextBox_TextChanged;
@@ -143,7 +156,7 @@
             // 
             datePicker.Font = new Font("Segoe UI", 8F, FontStyle.Bold, GraphicsUnit.Point);
             datePicker.Format = DateTimePickerFormat.Short;
-            datePicker.Location = new Point(6, 124);
+            datePicker.Location = new Point(6, 211);
             datePicker.Name = "datePicker";
             datePicker.Size = new Size(200, 22);
             datePicker.TabIndex = 3;
@@ -153,9 +166,9 @@
             // SpecieBox
             // 
             SpecieBox.FormattingEnabled = true;
-            SpecieBox.Location = new Point(45, 124);
+            SpecieBox.Location = new Point(45, 212);
             SpecieBox.Name = "SpecieBox";
-            SpecieBox.Size = new Size(121, 25);
+            SpecieBox.Size = new Size(126, 25);
             SpecieBox.TabIndex = 2;
             SpecieBox.Visible = false;
             // 
@@ -167,7 +180,7 @@
             searchBtn.FlatStyle = FlatStyle.Flat;
             searchBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             searchBtn.ForeColor = Color.White;
-            searchBtn.Location = new Point(60, 192);
+            searchBtn.Location = new Point(60, 254);
             searchBtn.Name = "searchBtn";
             searchBtn.Size = new Size(95, 25);
             searchBtn.TabIndex = 1;
@@ -179,9 +192,9 @@
             // 
             birdSearchBox.FormattingEnabled = true;
             birdSearchBox.Items.AddRange(new object[] { "Bird ID", "Species", "Hatch date", "Gender" });
-            birdSearchBox.Location = new Point(45, 95);
+            birdSearchBox.Location = new Point(45, 212);
             birdSearchBox.Name = "birdSearchBox";
-            birdSearchBox.Size = new Size(121, 25);
+            birdSearchBox.Size = new Size(126, 25);
             birdSearchBox.TabIndex = 0;
             birdSearchBox.SelectedIndexChanged += searchBox_SelectedIndexChanged;
             // 
@@ -192,7 +205,7 @@
             dataGridBirds.AllowUserToResizeRows = false;
             dataGridBirds.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridBirds.BackgroundColor = SystemColors.ControlLightLight;
-            dataGridBirds.BorderStyle = BorderStyle.None;
+            dataGridBirds.BorderStyle = BorderStyle.Fixed3D;
             dataGridBirds.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridBirds.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dataGridBirds.ColumnHeadersHeight = 42;
@@ -303,6 +316,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(1269, 450);
             Controls.Add(searchGroup);
             Name = "Searchbird";
@@ -310,6 +324,7 @@
             Load += Searchbird_Load;
             searchGroup.ResumeLayout(false);
             searchGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridBirds).EndInit();
             ResumeLayout(false);
         }
@@ -339,5 +354,6 @@
         private DataGridViewTextBoxColumn HeadColor;
         private DataGridViewTextBoxColumn ChestColor;
         private DataGridViewTextBoxColumn BodyColor;
+        private PictureBox pictureBox1;
     }
 }

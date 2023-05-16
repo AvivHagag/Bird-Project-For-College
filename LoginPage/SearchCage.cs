@@ -78,7 +78,7 @@ namespace LoginPage
 
                 if (cageSearchBox.Text == "Cage ID" && userIDCell.Value.ToString() == currentId)
                 {
-                    if(idTextBox.Text=="")
+                    if (idTextBox.Text == "")
                     {
                         MessageBox.Show("Please enter cage id");
                         break;
@@ -116,7 +116,7 @@ namespace LoginPage
                     }
                 }
 
-                else 
+                else
                 {
 
                 }
@@ -181,6 +181,9 @@ namespace LoginPage
 
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

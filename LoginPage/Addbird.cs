@@ -192,7 +192,7 @@ namespace LoginPage
                 // Start from 2 to skip the header row
                 Excel.Range cageCell = worksheet.Cells[i, 1];
                 Excel.Range userID = worksheet.Cells[i, 6];
-                if (cageCell.Value != null && cageCell.Value.ToString() == cage && userID.Value.ToString()== ((LoginForm)Application.OpenForms["LoginForm"]).getid())
+                if (cageCell.Value != null && cageCell.Value.ToString() == cage && userID.Value.ToString() == ((LoginForm)Application.OpenForms["LoginForm"]).getid())
                 {
                     cageExist = true;
                     break;

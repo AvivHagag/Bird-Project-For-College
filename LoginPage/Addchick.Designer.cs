@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Addchick));
             chickGroup = new GroupBox();
+            cageMainMenuBtn = new Button();
             bodyCLabel = new Label();
             ChestCLabel = new Label();
             HeadCLabel = new Label();
@@ -55,13 +57,14 @@
             motherIdLabel = new Label();
             chickGenderLabel = new Label();
             dateChickLabel = new Label();
-            cageMainMenuBtn = new Button();
+            pictureBox1 = new PictureBox();
             chickGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // chickGroup
             // 
-            chickGroup.BackColor = Color.FromArgb(236, 240, 241);
+            chickGroup.BackColor = Color.White;
             chickGroup.Controls.Add(cageMainMenuBtn);
             chickGroup.Controls.Add(bodyCLabel);
             chickGroup.Controls.Add(ChestCLabel);
@@ -99,6 +102,22 @@
             chickGroup.TabStop = false;
             chickGroup.Text = "Add Chick";
             chickGroup.Enter += chickGroup_Enter;
+            // 
+            // cageMainMenuBtn
+            // 
+            cageMainMenuBtn.BackColor = Color.FromArgb(44, 62, 80);
+            cageMainMenuBtn.Cursor = Cursors.Hand;
+            cageMainMenuBtn.FlatAppearance.BorderSize = 0;
+            cageMainMenuBtn.FlatStyle = FlatStyle.Flat;
+            cageMainMenuBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            cageMainMenuBtn.ForeColor = Color.White;
+            cageMainMenuBtn.Location = new Point(411, 163);
+            cageMainMenuBtn.Name = "cageMainMenuBtn";
+            cageMainMenuBtn.Size = new Size(103, 33);
+            cageMainMenuBtn.TabIndex = 28;
+            cageMainMenuBtn.Text = "Main menu";
+            cageMainMenuBtn.UseVisualStyleBackColor = false;
+            cageMainMenuBtn.Click += cageMainMenuBtn_Click;
             // 
             // bodyCLabel
             // 
@@ -336,33 +355,33 @@
             dateChickLabel.Text = "Date of hatch:";
             dateChickLabel.Click += dateChickLabel_Click;
             // 
-            // cageMainMenuBtn
+            // pictureBox1
             // 
-            cageMainMenuBtn.BackColor = Color.FromArgb(44, 62, 80);
-            cageMainMenuBtn.Cursor = Cursors.Hand;
-            cageMainMenuBtn.FlatAppearance.BorderSize = 0;
-            cageMainMenuBtn.FlatStyle = FlatStyle.Flat;
-            cageMainMenuBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            cageMainMenuBtn.ForeColor = Color.White;
-            cageMainMenuBtn.Location = new Point(411, 163);
-            cageMainMenuBtn.Name = "cageMainMenuBtn";
-            cageMainMenuBtn.Size = new Size(103, 33);
-            cageMainMenuBtn.TabIndex = 28;
-            cageMainMenuBtn.Text = "Main menu";
-            cageMainMenuBtn.UseVisualStyleBackColor = false;
-            cageMainMenuBtn.Click += cageMainMenuBtn_Click;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox1.ErrorImage = (Image)resources.GetObject("pictureBox1.ErrorImage");
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(629, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(328, 306);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // Addchick
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(641, 307);
+            BackColor = Color.White;
+            ClientSize = new Size(943, 297);
+            Controls.Add(pictureBox1);
             Controls.Add(chickGroup);
             Name = "Addchick";
             Text = "Addchick";
             Load += Addchick_Load;
             chickGroup.ResumeLayout(false);
             chickGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
@@ -396,5 +415,6 @@
         private Label label7;
         private Label label6;
         private Button cageMainMenuBtn;
+        private PictureBox pictureBox1;
     }
 }

@@ -19,14 +19,14 @@ namespace LoginPage
 {
     public partial class BirdsCage : Form
     {
-            public string cageID;
+        public string cageID;
         public BirdsCage()
         {
             InitializeComponent();
-            
+
 
         }
-        
+
 
         private void dataGridBirds_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -35,7 +35,7 @@ namespace LoginPage
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
 
         }
 

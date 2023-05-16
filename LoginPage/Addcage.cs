@@ -45,7 +45,7 @@ namespace LoginPage
             // Get the last row number
             int lastRow = worksheet.UsedRange.Rows.Count + 1;
             int check = 0;
-            
+
             if (int.TryParse(lengthBox.Text, out n) && int.TryParse(widthBox.Text, out n) && int.TryParse(heightBox.Text, out n) && lengthBox.Text != "" && widthBox.Text != "" && heightBox.Text != "" && materialBox.Text != "" && int.Parse(lengthBox.Text) > 0 && int.Parse(widthBox.Text) > 0 && int.Parse(heightBox.Text) > 0)
             {
                 worksheet.Cells[lastRow, 1] = "a" + lastRow;
@@ -57,7 +57,7 @@ namespace LoginPage
                 worksheet.Cells[lastRow, 6] = ((LoginForm)Application.OpenForms["LoginForm"]).getid();
 
                 workbook.Save();
-            MessageBox.Show("Cage was added successfully, the id of the cage is: "+ nameCage);
+                MessageBox.Show("Cage was added successfully, the id of the cage is: " + nameCage);
             }
             else
             {
@@ -113,6 +113,14 @@ namespace LoginPage
         private void CageAddBtn_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void cageMainMenuBtn_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (MainPage FormMain = new MainPage())
+                FormMain.ShowDialog();
+            Show();
         }
     }
 }
