@@ -29,128 +29,127 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainPage));
-            AddBbtn = new Button();
-            Addcbtn = new Button();
-            SearchBbtn = new Button();
-            SearchCbtn = new Button();
-            mainExit = new Button();
-            pictureBox1 = new PictureBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            SuspendLayout();
+            this.AddBbtn = new System.Windows.Forms.Button();
+            this.Addcbtn = new System.Windows.Forms.Button();
+            this.SearchBbtn = new System.Windows.Forms.Button();
+            this.SearchCbtn = new System.Windows.Forms.Button();
+            this.mainExit = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.SuspendLayout();
             // 
             // AddBbtn
             // 
-            AddBbtn.BackColor = Color.FromArgb(44, 62, 80);
-            AddBbtn.Cursor = Cursors.Hand;
-            AddBbtn.FlatAppearance.BorderSize = 0;
-            AddBbtn.FlatStyle = FlatStyle.Flat;
-            AddBbtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            AddBbtn.ForeColor = Color.White;
-            AddBbtn.Location = new Point(9, 312);
-            AddBbtn.Margin = new Padding(2);
-            AddBbtn.Name = "AddBbtn";
-            AddBbtn.Size = new Size(107, 25);
-            AddBbtn.TabIndex = 1;
-            AddBbtn.Text = "Add Bird";
-            AddBbtn.UseVisualStyleBackColor = false;
-            AddBbtn.Click += AddBbtn_Click;
+            this.AddBbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.AddBbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AddBbtn.FlatAppearance.BorderSize = 0;
+            this.AddBbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AddBbtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.AddBbtn.ForeColor = System.Drawing.Color.White;
+            this.AddBbtn.Location = new System.Drawing.Point(9, 312);
+            this.AddBbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.AddBbtn.Name = "AddBbtn";
+            this.AddBbtn.Size = new System.Drawing.Size(107, 25);
+            this.AddBbtn.TabIndex = 1;
+            this.AddBbtn.Text = "Add Bird";
+            this.AddBbtn.UseVisualStyleBackColor = false;
+            this.AddBbtn.Click += new System.EventHandler(this.AddBbtn_Click);
             // 
             // Addcbtn
             // 
-            Addcbtn.BackColor = Color.FromArgb(44, 62, 80);
-            Addcbtn.Cursor = Cursors.Hand;
-            Addcbtn.FlatAppearance.BorderSize = 0;
-            Addcbtn.FlatStyle = FlatStyle.Flat;
-            Addcbtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            Addcbtn.ForeColor = Color.White;
-            Addcbtn.Location = new Point(138, 312);
-            Addcbtn.Margin = new Padding(2);
-            Addcbtn.Name = "Addcbtn";
-            Addcbtn.Size = new Size(107, 25);
-            Addcbtn.TabIndex = 2;
-            Addcbtn.Text = "Add Cage";
-            Addcbtn.UseVisualStyleBackColor = false;
-            Addcbtn.Click += Addcbtn_Click;
+            this.Addcbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.Addcbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Addcbtn.FlatAppearance.BorderSize = 0;
+            this.Addcbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Addcbtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Addcbtn.ForeColor = System.Drawing.Color.White;
+            this.Addcbtn.Location = new System.Drawing.Point(138, 312);
+            this.Addcbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.Addcbtn.Name = "Addcbtn";
+            this.Addcbtn.Size = new System.Drawing.Size(107, 25);
+            this.Addcbtn.TabIndex = 2;
+            this.Addcbtn.Text = "Add Cage";
+            this.Addcbtn.UseVisualStyleBackColor = false;
+            this.Addcbtn.Click += new System.EventHandler(this.Addcbtn_Click);
             // 
             // SearchBbtn
             // 
-            SearchBbtn.BackColor = Color.FromArgb(44, 62, 80);
-            SearchBbtn.Cursor = Cursors.Hand;
-            SearchBbtn.FlatAppearance.BorderSize = 0;
-            SearchBbtn.FlatStyle = FlatStyle.Flat;
-            SearchBbtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            SearchBbtn.ForeColor = Color.White;
-            SearchBbtn.Location = new Point(267, 312);
-            SearchBbtn.Margin = new Padding(2);
-            SearchBbtn.Name = "SearchBbtn";
-            SearchBbtn.Size = new Size(107, 25);
-            SearchBbtn.TabIndex = 3;
-            SearchBbtn.Text = "Search Bird";
-            SearchBbtn.UseVisualStyleBackColor = false;
-            SearchBbtn.Click += SearchBbtn_Click;
+            this.SearchBbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.SearchBbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchBbtn.FlatAppearance.BorderSize = 0;
+            this.SearchBbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchBbtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SearchBbtn.ForeColor = System.Drawing.Color.White;
+            this.SearchBbtn.Location = new System.Drawing.Point(267, 312);
+            this.SearchBbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.SearchBbtn.Name = "SearchBbtn";
+            this.SearchBbtn.Size = new System.Drawing.Size(107, 25);
+            this.SearchBbtn.TabIndex = 3;
+            this.SearchBbtn.Text = "Search Bird";
+            this.SearchBbtn.UseVisualStyleBackColor = false;
+            this.SearchBbtn.Click += new System.EventHandler(this.SearchBbtn_Click);
             // 
             // SearchCbtn
             // 
-            SearchCbtn.BackColor = Color.FromArgb(44, 62, 80);
-            SearchCbtn.Cursor = Cursors.Hand;
-            SearchCbtn.FlatAppearance.BorderSize = 0;
-            SearchCbtn.FlatStyle = FlatStyle.Flat;
-            SearchCbtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            SearchCbtn.ForeColor = Color.White;
-            SearchCbtn.Location = new Point(397, 312);
-            SearchCbtn.Margin = new Padding(2);
-            SearchCbtn.Name = "SearchCbtn";
-            SearchCbtn.Size = new Size(107, 25);
-            SearchCbtn.TabIndex = 4;
-            SearchCbtn.Text = "Search Cage";
-            SearchCbtn.UseVisualStyleBackColor = false;
-            SearchCbtn.Click += SearchCbtn_Click;
+            this.SearchCbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(62)))), ((int)(((byte)(80)))));
+            this.SearchCbtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SearchCbtn.FlatAppearance.BorderSize = 0;
+            this.SearchCbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SearchCbtn.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SearchCbtn.ForeColor = System.Drawing.Color.White;
+            this.SearchCbtn.Location = new System.Drawing.Point(397, 312);
+            this.SearchCbtn.Margin = new System.Windows.Forms.Padding(2);
+            this.SearchCbtn.Name = "SearchCbtn";
+            this.SearchCbtn.Size = new System.Drawing.Size(107, 25);
+            this.SearchCbtn.TabIndex = 4;
+            this.SearchCbtn.Text = "Search Cage";
+            this.SearchCbtn.UseVisualStyleBackColor = false;
+            this.SearchCbtn.Click += new System.EventHandler(this.SearchCbtn_Click);
             // 
             // mainExit
             // 
-            mainExit.BackColor = Color.FromArgb(192, 57, 43);
-            mainExit.Cursor = Cursors.Hand;
-            mainExit.FlatAppearance.BorderSize = 0;
-            mainExit.FlatStyle = FlatStyle.Flat;
-            mainExit.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            mainExit.ForeColor = Color.White;
-            mainExit.Location = new Point(9, 398);
-            mainExit.Name = "mainExit";
-            mainExit.Size = new Size(107, 25);
-            mainExit.TabIndex = 5;
-            mainExit.Text = "Exit";
-            mainExit.UseVisualStyleBackColor = false;
-            mainExit.Click += mainExit_Click;
+            this.mainExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(57)))), ((int)(((byte)(43)))));
+            this.mainExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.mainExit.FlatAppearance.BorderSize = 0;
+            this.mainExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mainExit.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.mainExit.ForeColor = System.Drawing.Color.White;
+            this.mainExit.Location = new System.Drawing.Point(201, 369);
+            this.mainExit.Name = "mainExit";
+            this.mainExit.Size = new System.Drawing.Size(107, 25);
+            this.mainExit.TabIndex = 5;
+            this.mainExit.Text = "Exit";
+            this.mainExit.UseVisualStyleBackColor = false;
+            this.mainExit.Click += new System.EventHandler(this.mainExit_Click);
             // 
             // pictureBox1
             // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(-25, -23);
-            pictureBox1.Margin = new Padding(0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(560, 432);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 6;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click_1;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(-25, -23);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(560, 432);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
             // 
             // MainPage
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(512, 450);
-            Controls.Add(mainExit);
-            Controls.Add(SearchCbtn);
-            Controls.Add(SearchBbtn);
-            Controls.Add(Addcbtn);
-            Controls.Add(AddBbtn);
-            Controls.Add(pictureBox1);
-            Name = "MainPage";
-            Text = "Main Page";
-            Load += MainPage_Load_1;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ResumeLayout(false);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(512, 450);
+            this.Controls.Add(this.mainExit);
+            this.Controls.Add(this.SearchCbtn);
+            this.Controls.Add(this.SearchBbtn);
+            this.Controls.Add(this.Addcbtn);
+            this.Controls.Add(this.AddBbtn);
+            this.Controls.Add(this.pictureBox1);
+            this.Name = "MainPage";
+            this.Text = "Main Page";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.ResumeLayout(false);
+
         }
 
         #endregion

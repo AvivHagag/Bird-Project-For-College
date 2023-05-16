@@ -146,5 +146,27 @@ namespace LoginPage
         {
 
         }
+
+        private void dataGridCages_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridCages_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            // Get the row that was double-clicked.
+            int chosenRow = e.RowIndex;
+            string cageID = dataGridCages.Rows[chosenRow].Cells[0].Value.ToString();
+
+            BirdsCage form= new BirdsCage();
+
+            form.cageID = cageID;
+            form.Show();
+
+
+
+        }
+
+
     }
 }

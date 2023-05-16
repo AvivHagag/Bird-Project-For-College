@@ -55,25 +55,13 @@ namespace LoginPage
         }
 
 
-        private void MainPage_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void mainExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aviv1\\Documents\\Bird-Project-For-College\\LoginPage\\LoginPage.csproj": {}
+    "C:\\Users\\ffgtf\\Source\\Repos\\Bird-Project-For-College1\\LoginPage\\LoginPage.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aviv1\\Documents\\Bird-Project-For-College\\LoginPage\\LoginPage.csproj": {
+    "C:\\Users\\ffgtf\\Source\\Repos\\Bird-Project-For-College1\\LoginPage\\LoginPage.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aviv1\\Documents\\Bird-Project-For-College\\LoginPage\\LoginPage.csproj",
+        "projectUniqueName": "C:\\Users\\ffgtf\\Source\\Repos\\Bird-Project-For-College1\\LoginPage\\LoginPage.csproj",
         "projectName": "LoginPage",
-        "projectPath": "C:\\Users\\aviv1\\Documents\\Bird-Project-For-College\\LoginPage\\LoginPage.csproj",
-        "packagesPath": "C:\\Users\\aviv1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aviv1\\Documents\\Bird-Project-For-College\\LoginPage\\obj\\",
+        "projectPath": "C:\\Users\\ffgtf\\Source\\Repos\\Bird-Project-For-College1\\LoginPage\\LoginPage.csproj",
+        "packagesPath": "C:\\Users\\ffgtf\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ffgtf\\Source\\Repos\\Bird-Project-For-College1\\LoginPage\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\aviv1\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ffgtf\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
