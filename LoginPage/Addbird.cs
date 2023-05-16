@@ -191,14 +191,20 @@ namespace LoginPage
             {
                 // Start from 2 to skip the header row
                 Excel.Range cageCell = worksheet.Cells[i, 1];
-                if (cageCell.Value != null && cageCell.Value.ToString() == cage)
+                Excel.Range userID = worksheet.Cells[i, 6];
+                if (cageCell.Value != null && cageCell.Value.ToString() == cage && userID.Value.ToString()== ((LoginForm)Application.OpenForms["LoginForm"]).getid())
                 {
                     cageExist = true;
                     break;
                 }
 
             }
+            // Close the workbook and release the objects
+            workbook.Close();
+            Marshal.ReleaseComObject(workbook);
 
+            application.Quit();
+            Marshal.ReleaseComObject(application);
             return cageExist;
         }
         private void BackBtn_Click(object sender, EventArgs e)

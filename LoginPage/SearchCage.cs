@@ -9,6 +9,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace LoginPage
@@ -53,7 +54,7 @@ namespace LoginPage
             string dataFolder = Path.Combine(projectDirectory, "Data");
             string filePath = System.IO.Path.Combine(dataFolder, fileName);
             bool fileExists = File.Exists(filePath);
-
+            string currentId = ((LoginForm)Application.OpenForms["LoginForm"]).getid();
             Excel.Application application = new Excel.Application();
             Excel.Workbook workbook;
             Excel.Worksheet worksheet;
@@ -61,7 +62,7 @@ namespace LoginPage
             workbook = application.Workbooks.Open(filePath);
             worksheet = workbook.Sheets[3];
 
-            int lastRow = worksheet.UsedRange.Rows.Count + 1;
+            int lastRow = worksheet.UsedRange.Rows.Count;
             int rowIndex = 0;
             int n = 0;
             dataGridCages.Rows.Clear();
@@ -73,11 +74,16 @@ namespace LoginPage
                 Excel.Range widthCell = worksheet.Cells[i, 3];
                 Excel.Range heightCell = worksheet.Cells[i, 4];
                 Excel.Range materialCell = worksheet.Cells[i, 5];
+                Excel.Range userIDCell = worksheet.Cells[i, 6];
 
-
-                if (cageSearchBox.Text == "Cage ID")
+                if (cageSearchBox.Text == "Cage ID" && userIDCell.Value.ToString() == currentId)
                 {
-                    if (cageIDCell.Value == idTextBox.Text)
+                    if(idTextBox.Text=="")
+                    {
+                        MessageBox.Show("Please enter cage id");
+                        break;
+                    }
+                    else if (cageIDCell.Value == idTextBox.Text)
                     {
                         rowIndex = dataGridCages.Rows.Add();
                         dataGridCages.Rows[rowIndex].Cells[0].Value = cageIDCell.Value;
@@ -85,14 +91,19 @@ namespace LoginPage
                         dataGridCages.Rows[rowIndex].Cells[2].Value = widthCell.Value;
                         dataGridCages.Rows[rowIndex].Cells[3].Value = heightCell.Value;
                         dataGridCages.Rows[rowIndex].Cells[4].Value = materialCell.Value;
-
+                        dataGridCages.Rows[rowIndex].Cells[5].Value = userIDCell.Value;
 
                     }
 
                 }
-                else if (cageSearchBox.Text == "Material")
+                else if (cageSearchBox.Text == "Material" && userIDCell.Value.ToString() == currentId)
                 {
-                    if (materialCell.Value == materialListBox.Text)
+                    if (materialListBox.Text == "")
+                    {
+                        MessageBox.Show("Please select material");
+                        break;
+                    }
+                    else if (materialCell.Value == materialListBox.Text)
                     {
 
                         rowIndex = dataGridCages.Rows.Add();
@@ -101,11 +112,14 @@ namespace LoginPage
                         dataGridCages.Rows[rowIndex].Cells[2].Value = widthCell.Value;
                         dataGridCages.Rows[rowIndex].Cells[3].Value = heightCell.Value;
                         dataGridCages.Rows[rowIndex].Cells[4].Value = materialCell.Value;
-
+                        dataGridCages.Rows[rowIndex].Cells[5].Value = userIDCell.Value;
                     }
                 }
 
+                else 
+                {
 
+                }
 
 
             }
@@ -158,7 +172,7 @@ namespace LoginPage
             int chosenRow = e.RowIndex;
             string cageID = dataGridCages.Rows[chosenRow].Cells[0].Value.ToString();
 
-            BirdsCage form= new BirdsCage();
+            BirdsCage form = new BirdsCage();
 
             form.cageID = cageID;
             form.Show();

@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 using Excel = Microsoft.Office.Interop.Excel;
 
@@ -30,7 +31,7 @@ namespace LoginPage
 
         private void searchBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (birdSearchBox.Text == "Specie")
+            if (birdSearchBox.Text == "Species")
             {
                 datePicker.Visible = false;
                 idTextBox.Visible = false;
@@ -86,7 +87,7 @@ namespace LoginPage
             string dataFolder = Path.Combine(projectDirectory, "Data");
             string filePath = System.IO.Path.Combine(dataFolder, fileName);
             bool fileExists = File.Exists(filePath);
-
+            String currentId = ((LoginForm)Application.OpenForms["LoginForm"]).getid();
             Excel.Application application = new Excel.Application();
             Excel.Workbook workbook;
             Excel.Worksheet worksheet;
@@ -94,7 +95,7 @@ namespace LoginPage
             workbook = application.Workbooks.Open(filePath);
             worksheet = workbook.Sheets[2];
 
-            int lastRow = worksheet.UsedRange.Rows.Count + 1;
+            int lastRow = worksheet.UsedRange.Rows.Count;
             int rowIndex = 0;
             int n = 0;
             dataGridBirds.Rows.Clear();
@@ -115,7 +116,7 @@ namespace LoginPage
                 Excel.Range bodycell = worksheet.Cells[i, 12];
 
 
-                if (birdSearchBox.Text == "Bird ID")
+                if (birdSearchBox.Text == "Bird ID" && userIDCell.Value.ToString() == currentId)
                 {
                     try
                     {
@@ -147,9 +148,14 @@ namespace LoginPage
                     }
 
                 }
-                else if (birdSearchBox.Text == "Specie")
+                else if (birdSearchBox.Text == "Species" && userIDCell.Value.ToString() == currentId)
                 {
-                    if (speciesCell.Value == SpecieBox.Text)
+                    if (SpecieBox.Text == "")
+                    {
+                        MessageBox.Show("Invalid input of the species, please try again");
+                        break;
+                    }
+                    else if (speciesCell.Value == SpecieBox.Text)
                     {
 
                         rowIndex = dataGridBirds.Rows.Add();
@@ -169,7 +175,7 @@ namespace LoginPage
 
                     }
                 }
-                else if (birdSearchBox.Text == "Hatch date")
+                else if (birdSearchBox.Text == "Hatch date" && userIDCell.Value.ToString() == currentId)
                 {
                     if (dateCell.Value == datePicker.Value.Date)
                     {
@@ -190,9 +196,14 @@ namespace LoginPage
 
                     }
                 }
-                else if (birdSearchBox.Text == "Gender")
+                else if (birdSearchBox.Text == "Gender" && userIDCell.Value.ToString() == currentId)
                 {
-                    if (genderCell.Value == SpecieBox.Text)
+                    if (SpecieBox.Text == "")
+                    {
+                        MessageBox.Show("Invalid input of the gender, please try again");
+                        break;
+                    }
+                    else if (genderCell.Value == SpecieBox.Text)
                     {
 
                         rowIndex = dataGridBirds.Rows.Add();
@@ -210,8 +221,12 @@ namespace LoginPage
                         dataGridBirds.Rows[rowIndex].Cells[11].Value = bodycell.Value;
 
                     }
-                }
 
+                }
+                else
+                {
+
+                }
 
 
             }
@@ -322,7 +337,7 @@ namespace LoginPage
 
             form.Show();
 
-            
+
             //using (Addchick addchick = new Addchick())
             //    addchick.ShowDialog();
             //if (!IsDisposed) Show();

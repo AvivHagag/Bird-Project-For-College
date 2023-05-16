@@ -178,7 +178,7 @@
             // birdSearchBox
             // 
             birdSearchBox.FormattingEnabled = true;
-            birdSearchBox.Items.AddRange(new object[] { "Bird ID", "Specie", "Hatch date", "Gender" });
+            birdSearchBox.Items.AddRange(new object[] { "Bird ID", "Species", "Hatch date", "Gender" });
             birdSearchBox.Location = new Point(45, 95);
             birdSearchBox.Name = "birdSearchBox";
             birdSearchBox.Size = new Size(121, 25);
@@ -224,14 +224,14 @@
             // 
             // birdSpeciceColumn
             // 
-            birdSpeciceColumn.HeaderText = "Specie";
+            birdSpeciceColumn.HeaderText = "Species";
             birdSpeciceColumn.MinimumWidth = 8;
             birdSpeciceColumn.Name = "birdSpeciceColumn";
             birdSpeciceColumn.ReadOnly = true;
             // 
             // subSpecieColumn
             // 
-            subSpecieColumn.HeaderText = "Sub Specie";
+            subSpecieColumn.HeaderText = "Sub Species";
             subSpecieColumn.MinimumWidth = 8;
             subSpecieColumn.Name = "subSpecieColumn";
             subSpecieColumn.ReadOnly = true;

@@ -188,27 +188,19 @@ namespace LoginPage
                         else
                         worksheet.Cells[newRow, 10] = "Red";
                 }
-                if(chestcolor==schestcolor)
+                
+                if(chestcolor == "Purple" || schestcolor== "Purple")
                 {
-                    worksheet.Cells[newRow, 11] = chestcolor;
-                }
-
-                if(chestcolor!=schestcolor)
-                {
-                    if(chestcolor == "Purple" || schestcolor== "Purple")
-                    {
                         worksheet.Cells[newRow, 11] = "Purple";
-                    }
-                    else if(chestcolor == "Lilac" || schestcolor== "Lilac")
-                    {
-                        worksheet.Cells[newRow, 11] = "Lilac";
-                    }
-                    else
-                    {
-                        worksheet.Cells[newRow, 11] = "White";
-                    }
                 }
-
+                else if(chestcolor == "Lilac" || schestcolor== "Lilac")
+                {
+                        worksheet.Cells[newRow, 11] = "Lilac";
+                }
+                else
+                {
+                        worksheet.Cells[newRow, 11] = "White";
+                }
                 if(bodycolor==sbodycolor)
                 {
                     worksheet.Cells[newRow, 12] = bodycolor;

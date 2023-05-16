@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp1;
 using Excel = Microsoft.Office.Interop.Excel;
 
 namespace LoginPage
@@ -48,13 +49,15 @@ namespace LoginPage
             if (int.TryParse(lengthBox.Text, out n) && int.TryParse(widthBox.Text, out n) && int.TryParse(heightBox.Text, out n) && lengthBox.Text != "" && widthBox.Text != "" && heightBox.Text != "" && materialBox.Text != "" && int.Parse(lengthBox.Text) > 0 && int.Parse(widthBox.Text) > 0 && int.Parse(heightBox.Text) > 0)
             {
                 worksheet.Cells[lastRow, 1] = "a" + lastRow;
+                string nameCage = "a" + lastRow;
                 worksheet.Cells[lastRow, 2] = lengthBox.Text;
                 worksheet.Cells[lastRow, 3] = widthBox.Text;
                 worksheet.Cells[lastRow, 4] = heightBox.Text;
                 worksheet.Cells[lastRow, 5] = materialBox.Text;
+                worksheet.Cells[lastRow, 6] = ((LoginForm)Application.OpenForms["LoginForm"]).getid();
 
                 workbook.Save();
-            MessageBox.Show("Cage was added successfully");
+            MessageBox.Show("Cage was added successfully, the id of the cage is: "+ nameCage);
             }
             else
             {
