@@ -247,12 +247,10 @@ namespace LoginPage
 
                 workbook.Save();
                 MessageBox.Show("Bird was added successfully");
-                this.Hide();
             }
             else
             {
                 MessageBox.Show("Invaild input, Bird was not added");
-                this.Hide();
 
             }
 
@@ -273,7 +271,8 @@ namespace LoginPage
             pro[0].WaitForExit();
             GC.Collect();
             GC.WaitForPendingFinalizers();
-
+            new MainPage().Show();
+            this.Close();
             // Release COM objects
             System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
             System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
@@ -316,10 +315,9 @@ namespace LoginPage
 
         private void cageMainMenuBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            using (MainPage FormMain = new MainPage())
-                FormMain.ShowDialog();
-            Show();
+            new MainPage().Show();
+                        this.Close();
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

@@ -24,38 +24,40 @@ namespace LoginPage
 
         private void AddBbtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            using (Addbird addbird = new Addbird())
-                addbird.ShowDialog();
-            Show();
+            
+            new Addbird().Show();
+            this.Close();
         }
 
         private void Addcbtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            using (Addcage addcage = new Addcage())
-                addcage.ShowDialog();
-            Show();
+            
+            new Addcage().Show();
+            this.Close();
+
+
         }
 
 
         private void SearchBbtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            using (Searchbird searchbird = new Searchbird())
-                searchbird.ShowDialog();
-            Show();
+            
+            new Searchbird().Show();
+            this.Close();
+
+
         }
         private void SearchCbtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            using (SearchCage searchcage = new SearchCage())
-                searchcage.ShowDialog();
-            Show();
+            
+            new SearchCage().Show();
+            this.Close();
+
+
         }
 
 
-       
+
         private void mainExit_Click(object sender, EventArgs e)
         {
             Application.Exit();

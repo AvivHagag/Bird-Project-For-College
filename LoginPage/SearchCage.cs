@@ -144,10 +144,8 @@ namespace LoginPage
 
         private void cageSearchMenuBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            using (MainPage FormMain = new MainPage())
-                FormMain.ShowDialog();
-            Show();
+            new MainPage().Show();
+            this.Close();
         }
 
         private void cageSearchExitBtn_Click(object sender, EventArgs e)
@@ -168,14 +166,30 @@ namespace LoginPage
 
         private void dataGridCages_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            // Get the row that was double-clicked.
+            int chosenRow = e.RowIndex;
+            string cageID = dataGridCages.Rows[chosenRow].Cells[0].Value.ToString();
+            string cageHeight = dataGridCages.Rows[chosenRow].Cells[3].Value.ToString();
+            string cageLength = dataGridCages.Rows[chosenRow].Cells[1].Value.ToString();
+            string cageWidth = dataGridCages.Rows[chosenRow].Cells[2].Value.ToString();
+            string cageMaterial = dataGridCages.Rows[chosenRow].Cells[4].Value.ToString();
+
+            ShowBirdsOrEditCage formShowEdit = new ShowBirdsOrEditCage();
+            formShowEdit.cageID = cageID;
+            formShowEdit.lengthCage = cageLength;
+            formShowEdit.heightCage = cageHeight;
+            formShowEdit.widthCage = cageWidth;
+            formShowEdit.materialCage = cageMaterial;
+
+            formShowEdit.Show();
+            this.Close();
+            /*// Get the row that was double-clicked.
             int chosenRow = e.RowIndex;
             string cageID = dataGridCages.Rows[chosenRow].Cells[0].Value.ToString();
 
             BirdsCage form = new BirdsCage();
 
             form.cageID = cageID;
-            form.Show();
+            form.Show();*/
 
 
 

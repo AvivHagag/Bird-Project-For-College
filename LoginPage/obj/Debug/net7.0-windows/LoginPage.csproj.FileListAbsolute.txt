@@ -327,3 +327,8 @@ C:\Users\aviv1\Desktop\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windo
 C:\Users\aviv1\Desktop\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windows\LoginPage.pdb
 C:\Users\aviv1\Desktop\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windows\LoginPage.genruntimeconfig.cache
 C:\Users\aviv1\Desktop\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windows\ref\LoginPage.dll
+C:\Users\Tomer\source\repos\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windows\LoginPage.BirdsCage.resources
+C:\Users\Tomer\source\repos\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windows\LoginPage.EditBird.resources
+C:\Users\Tomer\source\repos\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windows\LoginPage.EditOrAddChick.resources
+C:\Users\Tomer\source\repos\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windows\LoginPage.EditCage.resources
+C:\Users\Tomer\source\repos\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windows\LoginPage.ShowBirdsOrEditCage.resources

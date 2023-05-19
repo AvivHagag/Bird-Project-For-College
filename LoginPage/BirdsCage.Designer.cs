@@ -72,6 +72,7 @@
             dataGridBirds.Size = new Size(1040, 384);
             dataGridBirds.TabIndex = 5;
             dataGridBirds.TabStop = false;
+            dataGridBirds.CellContentClick += dataGridBirds_CellContentClick;
             // 
             // birdIDColumn
             // 

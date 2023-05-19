@@ -89,7 +89,7 @@ namespace LoginPage
                             dataGridBirds.Rows[rowIndex].Cells[3].Value = genderCell.Value;
                             dataGridBirds.Rows[rowIndex].Cells[4].Value = motherCell.Value;
                             dataGridBirds.Rows[rowIndex].Cells[5].Value = fatherCell.Value;
-                            dataGridBirds.Rows[rowIndex].Cells[6].Value = dateCell.Value;
+                            dataGridBirds.Rows[rowIndex].Cells[6].Value = dateCell.Value.ToShortDateString();
                             dataGridBirds.Rows[rowIndex].Cells[7].Value = cageIDCell.Value;
                             dataGridBirds.Rows[rowIndex].Cells[8].Value = userIDCell.Value;
                             dataGridBirds.Rows[rowIndex].Cells[9].Value = headcell.Value;
@@ -132,7 +132,12 @@ namespace LoginPage
 
         private void loginExitBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            new MainPage().Show();
+            this.Close();
+        }
+
+        private void dataGridBirds_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

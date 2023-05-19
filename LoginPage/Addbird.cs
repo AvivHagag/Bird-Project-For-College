@@ -127,7 +127,6 @@ namespace LoginPage
 
                     workbook.Save();
                     MessageBox.Show("Bird was added successfully");
-                    this.Hide();
 
                     SpeciescomboBox.Text = null;
                     SubspeciescomboBox.Text = null;
@@ -154,7 +153,8 @@ namespace LoginPage
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
-
+                    new MainPage().Show();
+                    this.Close();
                 }
                 else if (!(CageExist(cagenumber.Text)))
                 {
@@ -199,20 +199,25 @@ namespace LoginPage
                 }
 
             }
-            // Close the workbook and release the objects
+             // Close the workbook and release the objects
             workbook.Close();
             Marshal.ReleaseComObject(workbook);
 
             application.Quit();
             Marshal.ReleaseComObject(application);
+            Process[] pro = Process.GetProcessesByName("excel");
+
+            pro[0].Kill();
+            pro[0].WaitForExit();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
             return cageExist;
         }
         private void BackBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            using (MainPage FormMain = new MainPage())
-                FormMain.ShowDialog();
-            Show();
+           
+            new MainPage().Show();
+            this.Close();   
         }
 
         private void SubspeciescomboBox_SelectedIndexChanged(object sender, EventArgs e)
