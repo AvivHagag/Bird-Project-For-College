@@ -64,6 +64,7 @@ namespace LoginPage
                 MessageBox.Show("Invalid input");
 
             }
+            this.Hide();
             lengthBox.Text = null;
             widthBox.Text = null;
             heightBox.Text = null;
@@ -87,8 +88,7 @@ namespace LoginPage
             System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
             System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
 
-            new MainPage().Show();
-            this.Close();
+
         }
 
         private void material_SelectedIndexChanged(object sender, EventArgs e)
@@ -98,10 +98,10 @@ namespace LoginPage
 
         private void cageMainMenuBtn_Click(object sender, EventArgs e)
         {
-            
-            new MainPage().Show();
-            this.Close();
-
+            this.Hide();
+            using (MainPage FormMain = new MainPage())
+                FormMain.ShowDialog();
+            Show();
         }
 
         private void exitCageBtn_Click(object sender, EventArgs e)
@@ -115,6 +115,12 @@ namespace LoginPage
 
         }
 
-        
+        private void cageMainMenuBtn_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            using (MainPage FormMain = new MainPage())
+                FormMain.ShowDialog();
+            Show();
+        }
     }
 }

@@ -127,6 +127,7 @@ namespace LoginPage
 
                     workbook.Save();
                     MessageBox.Show("Bird was added successfully");
+                    this.Hide();
 
                     SpeciescomboBox.Text = null;
                     SubspeciescomboBox.Text = null;
@@ -153,8 +154,7 @@ namespace LoginPage
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
-                    new MainPage().Show();
-                    this.Close();
+
                 }
                 else if (!(CageExist(cagenumber.Text)))
                 {
@@ -199,7 +199,7 @@ namespace LoginPage
                 }
 
             }
-             // Close the workbook and release the objects
+            // Close the workbook and release the objects
             workbook.Close();
             Marshal.ReleaseComObject(workbook);
 
@@ -215,9 +215,10 @@ namespace LoginPage
         }
         private void BackBtn_Click(object sender, EventArgs e)
         {
-           
-            new MainPage().Show();
-            this.Close();   
+            this.Hide();
+            using (MainPage FormMain = new MainPage())
+                FormMain.ShowDialog();
+            Show();
         }
 
         private void SubspeciescomboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -277,6 +278,11 @@ namespace LoginPage
         }
 
         private void BodyColorcmb_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cagenumber_TextChanged(object sender, EventArgs e)
         {
 
         }

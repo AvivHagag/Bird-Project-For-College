@@ -96,7 +96,7 @@
             cageMainMenuBtn.TabIndex = 9;
             cageMainMenuBtn.Text = "Main menu";
             cageMainMenuBtn.UseVisualStyleBackColor = false;
-            cageMainMenuBtn.Click += cageMainMenuBtn_Click;
+            cageMainMenuBtn.Click += cageMainMenuBtn_Click_1;
             // 
             // CageAddBtn
             // 

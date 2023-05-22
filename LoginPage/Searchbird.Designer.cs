@@ -104,11 +104,11 @@
             // 
             addChickLabels.AutoSize = true;
             addChickLabels.ForeColor = SystemColors.Highlight;
-            addChickLabels.Location = new Point(562, 21);
+            addChickLabels.Location = new Point(630, 21);
             addChickLabels.Name = "addChickLabels";
-            addChickLabels.Size = new Size(390, 19);
+            addChickLabels.Size = new Size(256, 19);
             addChickLabels.TabIndex = 8;
-            addChickLabels.Text = "Double click to add chick to the bird or edit bird cage id.";
+            addChickLabels.Text = "Double click to add chick to the bird.";
             addChickLabels.Click += addChickLabels_Click;
             // 
             // exitBtn

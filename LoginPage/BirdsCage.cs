@@ -20,6 +20,11 @@ namespace LoginPage
     public partial class BirdsCage : Form
     {
         public string cageID;
+        public string lengthCage;
+        public string widthCage;
+        public string heigthCage;
+        public string materialCage;
+
         public BirdsCage()
         {
             InitializeComponent();
@@ -57,7 +62,12 @@ namespace LoginPage
             int lastRow = worksheet.UsedRange.Rows.Count + 1;
             int rowIndex = 0;
             int n = 0;
+
             dataGridBirds.Rows.Clear();
+            heightEditBox.Text = heigthCage;
+            widthEditBox.Text = widthCage;
+            lengthEditBox.Text = lengthCage;
+            materialEditBox.Text = materialCage;
 
             for (int i = 2; i <= lastRow; i++)
             { // Start from 2 to skip the header row
@@ -89,7 +99,7 @@ namespace LoginPage
                             dataGridBirds.Rows[rowIndex].Cells[3].Value = genderCell.Value;
                             dataGridBirds.Rows[rowIndex].Cells[4].Value = motherCell.Value;
                             dataGridBirds.Rows[rowIndex].Cells[5].Value = fatherCell.Value;
-                            dataGridBirds.Rows[rowIndex].Cells[6].Value = dateCell.Value.ToShortDateString();
+                            dataGridBirds.Rows[rowIndex].Cells[6].Value = dateCell.Value;
                             dataGridBirds.Rows[rowIndex].Cells[7].Value = cageIDCell.Value;
                             dataGridBirds.Rows[rowIndex].Cells[8].Value = userIDCell.Value;
                             dataGridBirds.Rows[rowIndex].Cells[9].Value = headcell.Value;
@@ -132,13 +142,82 @@ namespace LoginPage
 
         private void loginExitBtn_Click(object sender, EventArgs e)
         {
-            new MainPage().Show();
-            this.Close();
+            this.Hide();
+
         }
 
-        private void dataGridBirds_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        private void CageEditBtn_Click(object sender, EventArgs e)
         {
+            //open system runtime-app
+            string fileName = "birds.xlsx";
+            string projectDirectory = System.IO.Path.GetDirectoryName(Application.StartupPath);
+            string dataFolder = Path.Combine(projectDirectory, "Data");
+            string filePath = System.IO.Path.Combine(dataFolder, fileName);
+            bool fileExists = File.Exists(filePath);
 
+            Excel.Application application = new Excel.Application();
+            Excel.Workbook workbook;
+            Excel.Worksheet worksheet;
+            application.DisplayAlerts = false;
+            workbook = application.Workbooks.Open(filePath);
+            worksheet = workbook.Sheets[3];
+
+
+            int lastRow = worksheet.UsedRange.Rows.Count;
+            int rowIndex = 0;
+            int n = 0;
+
+            for (int i = 2; i <= lastRow; i++)
+            { // Start from 2 to skip the header row
+
+                Excel.Range cageIDCell = worksheet.Cells[i, 1];
+
+
+                if (cageIDCell.Value.ToString() == cageID)
+                {
+                    if (int.TryParse(lengthEditBox.Text, out n) && int.TryParse(widthEditBox.Text, out n) && int.TryParse(heightEditBox.Text, out n) && lengthEditBox.Text != "" && widthEditBox.Text != "" && heightEditBox.Text != "" && materialEditBox.Text != "" && int.Parse(lengthEditBox.Text) > 0 && int.Parse(widthEditBox.Text) > 0 && int.Parse(heightEditBox.Text) > 0)
+                    {
+                        worksheet.Cells[i, 2] =  lengthEditBox.Text;
+                        worksheet.Cells[i, 3] =  widthEditBox.Text;
+                        worksheet.Cells[i, 4] =  heightEditBox.Text;
+                        worksheet.Cells[i, 5] =   materialEditBox.Text;
+                        workbook.Save();
+                        MessageBox.Show("Cage details changed successfully");
+                         lengthEditBox.Text = null;
+                         widthEditBox.Text = null;
+                         heightEditBox.Text = null;
+                          materialEditBox.Text = null;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid input");
+                         lengthEditBox.Text = null;
+                         widthEditBox.Text = null;
+                         heightEditBox.Text = null;
+                          materialEditBox.Text = null;
+
+                    }
+
+
+
+                }
+
+
+
+            }
+            workbook.Close();
+            Marshal.ReleaseComObject(workbook);
+
+            application.Quit();
+            Marshal.ReleaseComObject(application);
+            Process[] pro = Process.GetProcessesByName("excel");
+
+            pro[0].Kill();
+            pro[0].WaitForExit();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+
+            this.Close();
         }
     }
 }

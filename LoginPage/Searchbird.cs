@@ -129,7 +129,7 @@ namespace LoginPage
                             dataGridBirds.Rows[rowIndex].Cells[3].Value = genderCell.Value;
                             dataGridBirds.Rows[rowIndex].Cells[4].Value = motherCell.Value;
                             dataGridBirds.Rows[rowIndex].Cells[5].Value = fatherCell.Value;
-                            dataGridBirds.Rows[rowIndex].Cells[6].Value = dateCell.Value.ToShortDateString();
+                            dataGridBirds.Rows[rowIndex].Cells[6].Value = dateCell.Value;
                             dataGridBirds.Rows[rowIndex].Cells[7].Value = cageIDCell.Value;
                             dataGridBirds.Rows[rowIndex].Cells[8].Value = userIDCell.Value;
                             dataGridBirds.Rows[rowIndex].Cells[9].Value = headcell.Value;
@@ -165,7 +165,7 @@ namespace LoginPage
                         dataGridBirds.Rows[rowIndex].Cells[3].Value = genderCell.Value;
                         dataGridBirds.Rows[rowIndex].Cells[4].Value = motherCell.Value;
                         dataGridBirds.Rows[rowIndex].Cells[5].Value = fatherCell.Value;
-                        dataGridBirds.Rows[rowIndex].Cells[6].Value = dateCell.Value.ToShortDateString();
+                        dataGridBirds.Rows[rowIndex].Cells[6].Value = dateCell.Value;
                         dataGridBirds.Rows[rowIndex].Cells[7].Value = cageIDCell.Value;
                         dataGridBirds.Rows[rowIndex].Cells[8].Value = userIDCell.Value;
                         dataGridBirds.Rows[rowIndex].Cells[9].Value = headcell.Value;
@@ -187,7 +187,7 @@ namespace LoginPage
                         dataGridBirds.Rows[rowIndex].Cells[3].Value = genderCell.Value;
                         dataGridBirds.Rows[rowIndex].Cells[4].Value = motherCell.Value;
                         dataGridBirds.Rows[rowIndex].Cells[5].Value = fatherCell.Value;
-                        dataGridBirds.Rows[rowIndex].Cells[6].Value = dateCell.Value.ToShortDateString();
+                        dataGridBirds.Rows[rowIndex].Cells[6].Value = dateCell.Value;
                         dataGridBirds.Rows[rowIndex].Cells[7].Value = cageIDCell.Value;
                         dataGridBirds.Rows[rowIndex].Cells[8].Value = userIDCell.Value;
                         dataGridBirds.Rows[rowIndex].Cells[9].Value = headcell.Value;
@@ -213,7 +213,7 @@ namespace LoginPage
                         dataGridBirds.Rows[rowIndex].Cells[3].Value = genderCell.Value;
                         dataGridBirds.Rows[rowIndex].Cells[4].Value = motherCell.Value;
                         dataGridBirds.Rows[rowIndex].Cells[5].Value = fatherCell.Value;
-                        dataGridBirds.Rows[rowIndex].Cells[6].Value = dateCell.Value.ToShortDateString();
+                        dataGridBirds.Rows[rowIndex].Cells[6].Value = dateCell.Value;
                         dataGridBirds.Rows[rowIndex].Cells[7].Value = cageIDCell.Value;
                         dataGridBirds.Rows[rowIndex].Cells[8].Value = userIDCell.Value;
                         dataGridBirds.Rows[rowIndex].Cells[9].Value = headcell.Value;
@@ -271,8 +271,10 @@ namespace LoginPage
 
         private void birdMainMenuBtn_Click(object sender, EventArgs e)
         {
-            new MainPage().Show();
-            this.Close();
+            this.Hide();
+            using (MainPage FormMain = new MainPage())
+                FormMain.ShowDialog();
+            Show();
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
@@ -300,9 +302,27 @@ namespace LoginPage
 
 
             // Create a new instance of the form that you want to send the data to.`
-            EditOrAddChick form = new EditOrAddChick();
+            Addchick form = new Addchick();
 
+            if (gender == "Male")
+            {
+                form.reciveFromFather = true;
+                form.reciveFromMothrer = false;
+                form.motherChickBox.Visible = true;
+                form.fatherChickBox.Visible = false;
+                form.motherIdLabel.Visible = true;
+                form.FatherIdLabel.Visible = false;
 
+            }
+            else
+            {
+                form.reciveFromFather = false;
+                form.reciveFromMothrer = true;
+                form.motherChickBox.Visible = false;
+                form.motherIdLabel.Visible = false;
+                form.FatherIdLabel.Visible = true;
+                form.fatherChickBox.Visible = true;
+            }
             // Set the data for the new form.
 
             form.birdID = birdID;
@@ -314,7 +334,7 @@ namespace LoginPage
             form.chestcolor = chestcolor;
             form.bodycolor = bodycolor;
             // Show the new form.
-            this.Hide();
+
             form.Show();
 
 

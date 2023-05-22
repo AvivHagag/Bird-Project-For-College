@@ -7,19 +7,10 @@
     <Compile Update="Addcage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Addchick.cs">
+    <Compile Update="AddChick.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="BirdsCage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="EditBird.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="EditCage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="EditOrAddChick.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="LoginForm.cs">
@@ -35,9 +26,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="SearchCage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="ShowBirdsOrEditCage.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

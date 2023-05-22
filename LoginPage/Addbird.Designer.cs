@@ -221,6 +221,7 @@
             cagenumber.Name = "cagenumber";
             cagenumber.Size = new Size(91, 25);
             cagenumber.TabIndex = 12;
+            cagenumber.TextChanged += cagenumber_TextChanged;
             // 
             // fatherserialnumber
             // 

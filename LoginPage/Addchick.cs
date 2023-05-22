@@ -37,7 +37,7 @@ namespace LoginPage
         public string sheadcolor;
         public string schestcolor;
         public string sbodycolor;
-
+        public string editNewCage;
 
         public Addchick()
         {
@@ -162,9 +162,7 @@ namespace LoginPage
                 worksheet.Cells[newRow, 7] = selectedDate;
                 worksheet.Cells[newRow, 8] = cageID.ToString();
                 worksheet.Cells[newRow, 9] = ((LoginForm)Application.OpenForms["LoginForm"]).getid();
-                MessageBox.Show(sheadcolor);
-                MessageBox.Show(schestcolor);
-                MessageBox.Show(sbodycolor);
+             
                 if (headcolor == sheadcolor)
                 {
                     worksheet.Cells[newRow, 10] = headcolor;
@@ -247,10 +245,12 @@ namespace LoginPage
 
                 workbook.Save();
                 MessageBox.Show("Bird was added successfully");
+                this.Hide();
             }
             else
             {
                 MessageBox.Show("Invaild input, Bird was not added");
+                this.Hide();
 
             }
 
@@ -271,8 +271,7 @@ namespace LoginPage
             pro[0].WaitForExit();
             GC.Collect();
             GC.WaitForPendingFinalizers();
-            new MainPage().Show();
-            this.Close();
+
             // Release COM objects
             System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
             System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
@@ -292,10 +291,11 @@ namespace LoginPage
             SpacieLabel.Text = species;
             subLabel.Text = subSpecies;
             genderLabel.Text = gender;
-            cageidLabel.Text = cageID;
+            cageTxt.Text = cageID;
             HeadCLabel.Text = headcolor;
             ChestCLabel.Text = chestcolor;
             bodyCLabel.Text = bodycolor;
+
         }
 
         private void subLabel_Click(object sender, EventArgs e)
@@ -315,13 +315,131 @@ namespace LoginPage
 
         private void cageMainMenuBtn_Click(object sender, EventArgs e)
         {
-            new MainPage().Show();
-                        this.Close();
+            this.Close();
 
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void cageTxt_TextChanged(object sender, EventArgs e)
+        {
+            editNewCage = cageTxt.Text;
+        }
+
+        private Boolean CageExist(string cage)
+        {
+            string fileName = "birds.xlsx";
+            string projectDirectory = System.IO.Path.GetDirectoryName(Application.StartupPath);
+            string dataFolder = Path.Combine(projectDirectory, "Data");
+            string filePath = System.IO.Path.Combine(dataFolder, fileName);
+            bool fileExists = File.Exists(filePath);
+
+            Excel.Application application = new Excel.Application();
+            Excel.Workbook workbook;
+            Excel.Worksheet worksheet;
+            application.DisplayAlerts = false;
+            workbook = application.Workbooks.Open(filePath);
+            worksheet = workbook.Sheets[3]; // Get the third worksheet in the workbook
+
+            // Get the last row number
+            int lastRow = worksheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell).Row;
+
+            bool cageExist = false;
+            for (int i = 2; i <= lastRow; i++)
+            {
+                // Start from 2 to skip the header row
+                Excel.Range cageCell = worksheet.Cells[i, 1];
+                Excel.Range userID = worksheet.Cells[i, 6];
+                if (cageCell.Value != null && cageCell.Value.ToString() == cage && userID.Value.ToString() == ((LoginForm)Application.OpenForms["LoginForm"]).getid())
+                {
+                    cageExist = true;
+                    break;
+                }
+
+            }
+            // Close the workbook and release the objects
+            workbook.Close();
+            Marshal.ReleaseComObject(workbook);
+
+            application.Quit();
+
+            return cageExist;
+        }
+
+
+        private void ChangeCage_Click(object sender, EventArgs e)
+        {
+            //open system runtime-app
+            string fileName = "birds.xlsx";
+            string projectDirectory = System.IO.Path.GetDirectoryName(Application.StartupPath);
+            string dataFolder = Path.Combine(projectDirectory, "Data");
+            string filePath = System.IO.Path.Combine(dataFolder, fileName);
+            bool fileExists = File.Exists(filePath);
+
+            Excel.Application application2 = new Excel.Application();
+            Excel.Workbook workbook2;
+            Excel.Worksheet worksheet2;
+            application2.DisplayAlerts = false;
+            workbook2 = application2.Workbooks.Open(filePath);
+            worksheet2 = workbook2.Sheets[2]; // Get the second worksheet in the workbook
+
+            string newCageID = cageTxt.Text;
+
+            int lastRow = worksheet2.UsedRange.Rows.Count;
+            int rowIndex = 0;
+            int n = 0;
+            for (int i = 2; i <= lastRow; i++)
+            { // Start from 2 to skip the header row
+                try
+                {
+                    Excel.Range birdIDCell = worksheet2.Cells[i, 1];
+
+                    if (birdIDCell.Value.ToString() == birdID)
+                    {
+                        if (CageExist(newCageID))
+                        {
+                            worksheet2.Cells[i, 8] = newCageID;
+                            workbook2.Save();
+                            MessageBox.Show("Bird cage changed successfully");
+                            break;
+                        }
+
+                        else
+                        {
+                            MessageBox.Show("Cage number is not exist, try again.");
+                            break;
+                        }
+                    }
+                }
+                catch
+                {
+                    MessageBox.Show("Error, try again.");
+                    break;
+
+                }
+
+
+            }
+            // Close the workbook and release the objects
+            workbook2.Close();
+            Marshal.ReleaseComObject(workbook2);
+
+            application2.Quit();
+            Marshal.ReleaseComObject(application2);
+            Process[] pro = Process.GetProcessesByName("excel");
+
+            pro[0].Kill();
+            pro[0].WaitForExit();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+
+            // Release COM objects
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet2);
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook2);
+            System.Runtime.InteropServices.Marshal.ReleaseComObject(application2);
 
         }
     }

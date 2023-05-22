@@ -44,7 +44,6 @@
             materialListBox = new ComboBox();
             searchBtn = new Button();
             cageSearchBox = new ComboBox();
-            editCageLabels = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridCages).BeginInit();
             searchGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -64,7 +63,7 @@
             dataGridCages.Columns.AddRange(new DataGridViewColumn[] { cageIDColumn, lengthColumn, widthColumn, heightColumn, materialColumn, UserId });
             dataGridCages.EnableHeadersVisualStyles = false;
             dataGridCages.GridColor = Color.FromArgb(200, 200, 200);
-            dataGridCages.Location = new Point(229, 41);
+            dataGridCages.Location = new Point(224, 26);
             dataGridCages.MultiSelect = false;
             dataGridCages.Name = "dataGridCages";
             dataGridCages.ReadOnly = true;
@@ -117,7 +116,6 @@
             // searchGroup
             // 
             searchGroup.BackgroundImageLayout = ImageLayout.Zoom;
-            searchGroup.Controls.Add(editCageLabels);
             searchGroup.Controls.Add(pictureBox1);
             searchGroup.Controls.Add(searchLabel);
             searchGroup.Controls.Add(cageSearchExitBtn);
@@ -131,7 +129,7 @@
             searchGroup.ForeColor = Color.FromArgb(44, 62, 80);
             searchGroup.Location = new Point(12, 18);
             searchGroup.Name = "searchGroup";
-            searchGroup.Size = new Size(813, 469);
+            searchGroup.Size = new Size(767, 417);
             searchGroup.TabIndex = 2;
             searchGroup.TabStop = false;
             searchGroup.Text = "Search Cage";
@@ -139,7 +137,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.search;
-            pictureBox1.Location = new Point(36, 41);
+            pictureBox1.Location = new Point(27, 24);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(159, 124);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -150,7 +148,7 @@
             // searchLabel
             // 
             searchLabel.AutoSize = true;
-            searchLabel.Location = new Point(54, 149);
+            searchLabel.Location = new Point(45, 132);
             searchLabel.Name = "searchLabel";
             searchLabel.Size = new Size(117, 19);
             searchLabel.TabIndex = 3;
@@ -164,7 +162,7 @@
             cageSearchExitBtn.FlatStyle = FlatStyle.Flat;
             cageSearchExitBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
             cageSearchExitBtn.ForeColor = Color.White;
-            cageSearchExitBtn.Location = new Point(54, 316);
+            cageSearchExitBtn.Location = new Point(45, 299);
             cageSearchExitBtn.Name = "cageSearchExitBtn";
             cageSearchExitBtn.Size = new Size(121, 25);
             cageSearchExitBtn.TabIndex = 6;
@@ -178,7 +176,7 @@
             cageSearchMenuBtn.FlatAppearance.BorderSize = 0;
             cageSearchMenuBtn.FlatStyle = FlatStyle.Flat;
             cageSearchMenuBtn.ForeColor = Color.White;
-            cageSearchMenuBtn.Location = new Point(54, 280);
+            cageSearchMenuBtn.Location = new Point(45, 263);
             cageSearchMenuBtn.Name = "cageSearchMenuBtn";
             cageSearchMenuBtn.Size = new Size(121, 30);
             cageSearchMenuBtn.TabIndex = 3;
@@ -188,7 +186,7 @@
             // 
             // idTextBox
             // 
-            idTextBox.Location = new Point(54, 202);
+            idTextBox.Location = new Point(45, 185);
             idTextBox.Name = "idTextBox";
             idTextBox.Size = new Size(121, 25);
             idTextBox.TabIndex = 4;
@@ -198,7 +196,7 @@
             // 
             materialListBox.FormattingEnabled = true;
             materialListBox.Items.AddRange(new object[] { "wood", "plastic", "iron" });
-            materialListBox.Location = new Point(54, 202);
+            materialListBox.Location = new Point(45, 185);
             materialListBox.Name = "materialListBox";
             materialListBox.Size = new Size(121, 25);
             materialListBox.TabIndex = 2;
@@ -211,7 +209,7 @@
             searchBtn.FlatStyle = FlatStyle.Flat;
             searchBtn.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
             searchBtn.ForeColor = Color.White;
-            searchBtn.Location = new Point(54, 244);
+            searchBtn.Location = new Point(45, 227);
             searchBtn.Name = "searchBtn";
             searchBtn.Size = new Size(121, 30);
             searchBtn.TabIndex = 1;
@@ -223,28 +221,18 @@
             // 
             cageSearchBox.FormattingEnabled = true;
             cageSearchBox.Items.AddRange(new object[] { "Cage ID", "Material" });
-            cageSearchBox.Location = new Point(54, 171);
+            cageSearchBox.Location = new Point(45, 154);
             cageSearchBox.Name = "cageSearchBox";
             cageSearchBox.Size = new Size(121, 25);
             cageSearchBox.TabIndex = 0;
             cageSearchBox.SelectedIndexChanged += cageSearchBox_SelectedIndexChanged;
-            // 
-            // editCageLabels
-            // 
-            editCageLabels.AutoSize = true;
-            editCageLabels.ForeColor = SystemColors.Highlight;
-            editCageLabels.Location = new Point(301, 19);
-            editCageLabels.Name = "editCageLabels";
-            editCageLabels.Size = new Size(354, 19);
-            editCageLabels.TabIndex = 9;
-            editCageLabels.Text = "Double click to show cage birds or edit cage details";
             // 
             // SearchCage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(837, 490);
+            ClientSize = new Size(791, 447);
             Controls.Add(searchGroup);
             Name = "SearchCage";
             Text = "SearchCage";
@@ -273,6 +261,5 @@
         private DataGridViewTextBoxColumn materialColumn;
         private DataGridViewTextBoxColumn UserId;
         private PictureBox pictureBox1;
-        private Label editCageLabels;
     }
 }
