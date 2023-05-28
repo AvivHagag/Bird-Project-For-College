@@ -1,6 +1,8 @@
 # Bird Project
 Welcome to the Bird Project! This project is built using Windows Forms and C# and aims to provide a platform for managing bird habitats. In this project, the database is stored in a local Excel file, and users can sign up to create and manage their own bird habitats. Users have the option to add cages, import birds, and even facilitate the birth of a chick through mating.
 
+![Alt](https://user-images.githubusercontent.com/114755882/241571959-0f29ea59-c744-48ca-a000-b60bab770b6d.png)
+
 ## Getting Started
 To get started with the Bird Project, please follow the instructions below:
 
