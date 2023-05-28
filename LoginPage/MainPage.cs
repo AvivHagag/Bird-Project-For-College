@@ -142,11 +142,11 @@ namespace LoginPage
             label6.Text = cageNumber();
             // Assign the plotModel to the existing PlotView control
             plotView.Model = plotModel;
-            // Close the workbook and release the objects
-            //workbook.Close();
-            //Marshal.ReleaseComObject(workbook);
-            //application.Quit();
-            //Marshal.ReleaseComObject(application);
+            //Close the workbook and release the objects
+            workbook.Close();
+            Marshal.ReleaseComObject(workbook);
+            application.Quit();
+            Marshal.ReleaseComObject(application);
             //Process[] pro = Process.GetProcessesByName("excel");
             //pro[0].Kill();
             //pro[0].WaitForExit();
@@ -187,11 +187,11 @@ namespace LoginPage
             Marshal.ReleaseComObject(workbook);
             application.Quit();
             Marshal.ReleaseComObject(application);
-            Process[] pro = Process.GetProcessesByName("excel");
-            pro[0].Kill();
-            pro[0].WaitForExit();
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
+            //Process[] pro = Process.GetProcessesByName("excel");
+            //pro[0].Kill();
+            //pro[0].WaitForExit();
+            //GC.Collect();
+            //GC.WaitForPendingFinalizers();
             return countCage.ToString();
         }
 
@@ -203,6 +203,11 @@ namespace LoginPage
         private void Exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

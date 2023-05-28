@@ -100,9 +100,9 @@ namespace WinFormsApp1
             System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
             System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
 
-            worksheet = null;
-            workbook = null;
-            application = null;
+            //worksheet = null;
+            //workbook = null;
+            //application = null;
         }
         // get user name amd password,id from the  login form 
         public String getusername()
@@ -150,10 +150,10 @@ namespace WinFormsApp1
 
         }
 
-        private void loginExitBtn_Click(object sender, EventArgs e)
+
+        private void Exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
-
         }
     }
 }

@@ -50,7 +50,7 @@ namespace LoginPage
                 SubspeciescomboBox.Items.Add("Coastal cities");
             }
         }
-        
+
 
         private void FinalAddbtn_Click(object sender, EventArgs e)
         {
@@ -234,7 +234,7 @@ namespace LoginPage
 
         private void birdExitBtn_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+
 
         }
 
@@ -286,6 +286,11 @@ namespace LoginPage
         private void cagenumber_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -64,7 +64,7 @@
             AddBbtn.FlatStyle = FlatStyle.Flat;
             AddBbtn.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             AddBbtn.ForeColor = Color.Black;
-            AddBbtn.Location = new Point(46, 254);
+            AddBbtn.Location = new Point(58, 255);
             AddBbtn.Margin = new Padding(2);
             AddBbtn.Name = "AddBbtn";
             AddBbtn.Size = new Size(95, 41);
@@ -82,7 +82,7 @@
             Addcbtn.FlatStyle = FlatStyle.Flat;
             Addcbtn.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             Addcbtn.ForeColor = Color.Black;
-            Addcbtn.Location = new Point(46, 209);
+            Addcbtn.Location = new Point(58, 208);
             Addcbtn.Margin = new Padding(2);
             Addcbtn.Name = "Addcbtn";
             Addcbtn.Size = new Size(95, 39);
@@ -100,7 +100,7 @@
             SearchBbtn.FlatStyle = FlatStyle.Flat;
             SearchBbtn.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             SearchBbtn.ForeColor = Color.Black;
-            SearchBbtn.Location = new Point(46, 299);
+            SearchBbtn.Location = new Point(57, 299);
             SearchBbtn.Margin = new Padding(2);
             SearchBbtn.Name = "SearchBbtn";
             SearchBbtn.Size = new Size(107, 39);
@@ -118,7 +118,7 @@
             SearchCbtn.FlatStyle = FlatStyle.Flat;
             SearchCbtn.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             SearchCbtn.ForeColor = Color.Black;
-            SearchCbtn.Location = new Point(46, 344);
+            SearchCbtn.Location = new Point(59, 342);
             SearchCbtn.Margin = new Padding(2);
             SearchCbtn.Name = "SearchCbtn";
             SearchCbtn.Size = new Size(107, 39);
@@ -136,6 +136,7 @@
             pictureBox2.Size = new Size(445, 453);
             pictureBox2.TabIndex = 7;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
             // 
             // Exit
             // 
@@ -185,7 +186,7 @@
             // pictureBox4
             // 
             pictureBox4.Image = Properties.Resources.search;
-            pictureBox4.Location = new Point(-1, 344);
+            pictureBox4.Location = new Point(8, 344);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(42, 39);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
@@ -195,7 +196,7 @@
             // pictureBox5
             // 
             pictureBox5.Image = Properties.Resources.search;
-            pictureBox5.Location = new Point(-1, 299);
+            pictureBox5.Location = new Point(8, 299);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(42, 39);
             pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
@@ -205,7 +206,7 @@
             // pictureBox6
             // 
             pictureBox6.Image = Properties.Resources.add3;
-            pictureBox6.Location = new Point(-1, 254);
+            pictureBox6.Location = new Point(8, 255);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(42, 39);
             pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
@@ -215,7 +216,7 @@
             // pictureBox7
             // 
             pictureBox7.Image = Properties.Resources.add3;
-            pictureBox7.Location = new Point(-1, 209);
+            pictureBox7.Location = new Point(8, 208);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(42, 39);
             pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;

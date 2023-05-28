@@ -130,7 +130,7 @@ namespace LoginPage
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
-                    
+
                     LoginForm FormLog = new LoginForm();
                     FormLog.Show();
                     this.Hide();
@@ -200,7 +200,7 @@ namespace LoginPage
 
         private void regExitBtn_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+
 
         }
 
@@ -217,6 +217,11 @@ namespace LoginPage
         private void regIdLabel_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

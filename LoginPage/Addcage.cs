@@ -122,5 +122,10 @@ namespace LoginPage
                 FormMain.ShowDialog();
             Show();
         }
+
+        private void Addcage_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

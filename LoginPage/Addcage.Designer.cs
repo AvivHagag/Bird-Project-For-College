@@ -211,6 +211,7 @@
             Margin = new Padding(2);
             Name = "Addcage";
             Text = "Addcage";
+            Load += Addcage_Load;
             Addcagegroubbox.ResumeLayout(false);
             Addcagegroubbox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
