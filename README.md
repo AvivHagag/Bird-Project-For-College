@@ -24,6 +24,11 @@ Sign up with your details to create a new account and access the bird habitat ma
 The Bird Project offers the following features:
 
 * Account Creation: Users can sign up for the project by providing their details, such as name, email, and password.
+* 
+![Alt](https://user-images.githubusercontent.com/98044440/241572273-6b063e22-ddd9-43a0-8ad5-54842f7d6fc7.png)
+
+![Alt](https://user-images.githubusercontent.com/98044440/241572256-168a3cc8-3a91-46c7-892f-3f1e01ba0eb6.png)
+
 * Bird Habitat Management: After signing up, users can create and manage their own bird habitats.
 * Cage Management: Users can add cages to their bird habitats to provide shelter and security for the birds.
 * Bird Import: Users have the option to import birds into their habitats. They can specify the species, age, gender, and other relevant information.
