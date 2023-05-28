@@ -272,9 +272,10 @@ namespace LoginPage
         private void birdMainMenuBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using (MainPage FormMain = new MainPage())
-                FormMain.ShowDialog();
-            Show();
+            MainPage FormMain = new MainPage();
+            FormMain.Show();
+            this.Close();
+            
         }
 
 
@@ -294,7 +295,7 @@ namespace LoginPage
             string headcolor = dataGridBirds.Rows[chosenRow].Cells[9].Value.ToString();
             string chestcolor = dataGridBirds.Rows[chosenRow].Cells[10].Value.ToString();
             string bodycolor = dataGridBirds.Rows[chosenRow].Cells[11].Value.ToString();
-
+            DateTime dateParent = (DateTime)dataGridBirds.Rows[chosenRow].Cells[6].Value;
 
 
             // Create a new instance of the form that you want to send the data to.`
@@ -329,6 +330,7 @@ namespace LoginPage
             form.headcolor = headcolor;
             form.chestcolor = chestcolor;
             form.bodycolor = bodycolor;
+            form.dateParent = dateParent;
             // Show the new form.
 
             form.Show();

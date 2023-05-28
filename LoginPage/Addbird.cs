@@ -107,7 +107,7 @@ namespace LoginPage
                 {
 
                     int newRow = lastRow + 1;
-                    worksheet.Cells[newRow, 1] = newRow - 1;
+                    worksheet.Cells[newRow, 1] = lastRow;
                     worksheet.Cells[newRow, 2] = SpeciescomboBox.Text;
                     worksheet.Cells[newRow, 3] = SubspeciescomboBox.Text;
                     worksheet.Cells[newRow, 4] = GendercomboBox.Text;
@@ -128,7 +128,7 @@ namespace LoginPage
 
                     workbook.Save();
                     MessageBox.Show("Bird was added successfully");
-                    this.Hide();
+                    
 
                     SpeciescomboBox.Text = null;
                     SubspeciescomboBox.Text = null;
@@ -155,7 +155,10 @@ namespace LoginPage
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
-
+                    this.Hide();
+                    MainPage FormMain = new MainPage();
+                    FormMain.Show();
+                    this.Close();
                 }
                 else if (!(CageExist(cagenumber.Text)))
                 {
@@ -217,9 +220,8 @@ namespace LoginPage
         private void BackBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using (MainPage FormMain = new MainPage())
-                FormMain.ShowDialog();
-            Show();
+            MainPage main = new MainPage();
+            main.Show();
         }
 
         private void SubspeciescomboBox_SelectedIndexChanged(object sender, EventArgs e)

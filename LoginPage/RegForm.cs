@@ -20,10 +20,12 @@ namespace LoginPage
 {
     public partial class RegForm : Form
     {
+        private LoginForm loginForm;
 
-        public RegForm()
+        public RegForm(LoginForm loginForm)
         {
             InitializeComponent();
+            this.loginForm = loginForm;
 
         }
 
@@ -31,7 +33,6 @@ namespace LoginPage
         {
             String userName = RegNameVal.Text;
             String Password = RegPassVal.Text;
-            String Id = RegIdVal.Text;
             string fileName = "birds.xlsx";
 
             string projectDirectory = System.IO.Path.GetDirectoryName(Application.StartupPath);
@@ -63,27 +64,21 @@ namespace LoginPage
                         userExists = true;
                         break;
                     }
-                    Excel.Range idCell = worksheet.Cells[i, 3];
-                    if (idCell.Value != null && idCell.Value.ToString() == Id)
-                    {
-                        userExists = true;
-                        break;
-                    }
+                    
                 }
 
-                if (!userExists)
+                if (!userExists )
                 {
                     int newRow = lastRow + 1;
                     worksheet.Cells[newRow, 1] = userName;
                     worksheet.Cells[newRow, 2] = Password;
-                    worksheet.Cells[newRow, 3] = Id;
+                    worksheet.Cells[newRow, 3] = 8000 + newRow;
                     workbook.Save();
 
                     MessageBox.Show("The user has successfully registered");
                     this.Hide();
                     RegNameVal.Text = null;
                     RegPassVal.Text = null;
-                    RegIdVal.Text = null;
 
                     // Close the workbook and release the objects
                     workbook.Close();
@@ -102,13 +97,13 @@ namespace LoginPage
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
-                    LoginForm FormLog = new LoginForm();
-                    FormLog.Show();
+
+                    this.Hide(); // Hide the registration form
+                    loginForm.Show(); // Show the login form
+                    this.Close(); // Close the registration form
 
 
-
-                    /*                    new LoginForm().Show();
-                    */
+                   
                 }
                 else
                 {

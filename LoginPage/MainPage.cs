@@ -34,33 +34,36 @@ namespace LoginPage
         private void AddBbtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using (Addbird addbird = new Addbird())
-                addbird.ShowDialog();
-            Show();
+            Addbird searchbird = new Addbird();
+            searchbird.Show();
+            this.Close();
         }
 
         private void Addcbtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using (Addcage addcage = new Addcage())
-                addcage.ShowDialog();
-            Show();
+            Addcage addcage = new Addcage();
+            addcage.Show();
+            this.Close();
         }
 
 
         private void SearchBbtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using (Searchbird searchbird = new Searchbird())
-                searchbird.ShowDialog();
-            Show();
+            Searchbird searchbird = new Searchbird();
+            searchbird.Show();
+            this.Close();
+
+
         }
         private void SearchCbtn_Click(object sender, EventArgs e)
         {
+            
             this.Hide();
-            using (SearchCage searchcage = new SearchCage())
-                searchcage.ShowDialog();
-            Show();
+            SearchCage searchbird = new SearchCage();
+            searchbird.Show();
+            this.Close();
         }
 
 
@@ -147,11 +150,11 @@ namespace LoginPage
             Marshal.ReleaseComObject(workbook);
             application.Quit();
             Marshal.ReleaseComObject(application);
-            //Process[] pro = Process.GetProcessesByName("excel");
-            //pro[0].Kill();
-            //pro[0].WaitForExit();
-            //GC.Collect();
-            //GC.WaitForPendingFinalizers();
+            Process[] pro = Process.GetProcessesByName("excel");
+            pro[0].Kill();
+            pro[0].WaitForExit();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
 
         }
         private string cageNumber()
@@ -184,10 +187,10 @@ namespace LoginPage
             }
             // Close the workbook and release the objects
             workbook.Close();
-            Marshal.ReleaseComObject(workbook);
-            application.Quit();
-            Marshal.ReleaseComObject(application);
-            //Process[] pro = Process.GetProcessesByName("excel");
+/*            Marshal.ReleaseComObject(workbook);
+*/            application.Quit();
+/*            Marshal.ReleaseComObject(application);
+*/            //Process[] pro = Process.GetProcessesByName("excel");
             //pro[0].Kill();
             //pro[0].WaitForExit();
             //GC.Collect();

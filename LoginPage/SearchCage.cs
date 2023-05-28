@@ -145,9 +145,9 @@ namespace LoginPage
         private void cageSearchMenuBtn_Click(object sender, EventArgs e)
         {
             this.Hide();
-            using (MainPage FormMain = new MainPage())
-                FormMain.ShowDialog();
-            Show();
+            MainPage FormMain = new MainPage();
+            FormMain.Show();
+            this.Close();
         }
 
         private void cageSearchExitBtn_Click(object sender, EventArgs e)

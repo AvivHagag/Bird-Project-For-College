@@ -28,9 +28,6 @@
     <Compile Update="SearchCage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="ShowBirdsOrEditCage.cs">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">

@@ -63,7 +63,7 @@ namespace WinFormsApp1
                 Excel.Range userCell = worksheet.Cells[i, 1];
                 Excel.Range PassCell = worksheet.Cells[i, 2];
                 Excel.Range idCell = worksheet.Cells[i, 3];
-                if (userCell.Value != null && userCell.Value.ToString() == userName && PassCell.Value != null && PassCell.Value.ToString() == password)
+                if (userCell.Value != null && userCell.Value.ToString() == userName && PassCell.Value != null && PassCell.Value.ToString() == password )
                 {
                     LoginSuccess = true;
                     id = idCell.Value.ToString();
@@ -73,33 +73,51 @@ namespace WinFormsApp1
             if (!LoginSuccess)
             {
                 invalidAuth.Visible = true;
-                //MessageBox.Show("שם המשתמש או הסיסמא אינם נכונים, נסה שנית"); }//שם משתמש או סיסמא אינם נכונים
+                // Close the workbook and release the objects
+                workbook.Close();
+                Marshal.ReleaseComObject(workbook);
+
+                application.Quit();
+                Marshal.ReleaseComObject(application);
+                Process[] pro = Process.GetProcessesByName("excel");
+
+                pro[0].Kill();
+                pro[0].WaitForExit();
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+
+                // Release COM objects
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
             }
             else
             {
                 // התחברת בהצלחה
                 this.Hide();
                 MessageBox.Show("User has logged in");
+
+                // Close the workbook and release the objects
+                workbook.Close();
+                Marshal.ReleaseComObject(workbook);
+
+                application.Quit();
+                Marshal.ReleaseComObject(application);
+                Process[] pro = Process.GetProcessesByName("excel");
+
+                pro[0].Kill();
+                pro[0].WaitForExit();
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+
+                // Release COM objects
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
+                System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
+
                 new MainPage().Show();
             }
-            // Close the workbook and release the objects
-            workbook.Close();
-            Marshal.ReleaseComObject(workbook);
-
-            application.Quit();
-            Marshal.ReleaseComObject(application);
-            Process[] pro = Process.GetProcessesByName("excel");
-
-            pro[0].Kill();
-            pro[0].WaitForExit();
-            GC.Collect();
-            GC.WaitForPendingFinalizers();
-
-            // Release COM objects
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
-            System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
-
+            
             //worksheet = null;
             //workbook = null;
             //application = null;
@@ -140,9 +158,9 @@ namespace WinFormsApp1
 
         private void regPage_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            RegForm formReg = new RegForm();
-            formReg.Show();
+            this.Hide(); // Hide the login form
+            RegForm formReg = new RegForm(this); // Pass the login form instance to the registration form
+            formReg.Show(); // Show the registration form
         }
 
         private void usernameBox_TextChanged_1(object sender, EventArgs e)

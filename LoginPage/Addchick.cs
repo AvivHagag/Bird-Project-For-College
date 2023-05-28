@@ -38,6 +38,7 @@ namespace LoginPage
         public string schestcolor;
         public string sbodycolor;
         public string editNewCage;
+        public DateTime dateParent;
 
         public Addchick()
         {
@@ -91,7 +92,7 @@ namespace LoginPage
             string sheadcolor = "";
             string schestcolor = "";
             string sbodycolor = "";
-
+            DateTime otherParent = DateTime.Now;
             // Get the last row number
             int lastRow = worksheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell).Row;
             if (reciveFromFather)
@@ -105,7 +106,7 @@ namespace LoginPage
                         Excel.Range GenderCell = worksheet.Cells[i, 4];
                         if (GenderCell.Value.ToString() == "Female")
                         {
-
+                            otherParent = (DateTime)worksheet.Cells[i, 7].Value;
                             sheadcolor = worksheet.Cells[i, 10].Value.ToString();
                             schestcolor = worksheet.Cells[i, 11].Value.ToString();
                             sbodycolor = worksheet.Cells[i, 12].Value.ToString();
@@ -126,6 +127,7 @@ namespace LoginPage
                         Excel.Range Gender2Cell = worksheet.Cells[i, 4];
                         if (Gender2Cell.Value.ToString() == "Male")
                         {
+                            otherParent = (DateTime)worksheet.Cells[i, 7].Value;
                             sheadcolor = worksheet.Cells[i, 10].Value.ToString();
                             schestcolor = worksheet.Cells[i, 11].Value.ToString();
                             sbodycolor = worksheet.Cells[i, 12].Value.ToString();
@@ -134,10 +136,10 @@ namespace LoginPage
                         }
                     }
                 }
-
+              
             }
 
-            if (selectedDate != null && chickGenderCombo.Text != "" && ((reciveFromFather && motherSerial) || (reciveFromMothrer && fatherSerial)))
+            if (selectedDate != null && chickGenderCombo.Text != "" && ((reciveFromFather && motherSerial) || (reciveFromMothrer && fatherSerial)) && selectedDate > dateParent && selectedDate > otherParent)
             {
 
                 int newRow = lastRow + 1;

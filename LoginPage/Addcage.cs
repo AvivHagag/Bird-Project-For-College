@@ -54,10 +54,20 @@ namespace LoginPage
                 worksheet.Cells[lastRow, 3] = widthBox.Text;
                 worksheet.Cells[lastRow, 4] = heightBox.Text;
                 worksheet.Cells[lastRow, 5] = materialBox.Text;
+                if(((LoginForm)Application.OpenForms["LoginForm"]).getid() == null)
+                {
+                    worksheet.Cells[lastRow, 6] = 0;
+                }
+                else
+                {
                 worksheet.Cells[lastRow, 6] = ((LoginForm)Application.OpenForms["LoginForm"]).getid();
+
+                }
+
 
                 workbook.Save();
                 MessageBox.Show("Cage was added successfully, the id of the cage is: " + nameCage);
+
             }
             else
             {
@@ -83,6 +93,10 @@ namespace LoginPage
             GC.Collect();
             GC.WaitForPendingFinalizers();
 
+            this.Hide();
+            MainPage main = new MainPage();
+            main.Show();
+            this.Close();
             // Release COM objects
             System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
             System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
@@ -118,9 +132,8 @@ namespace LoginPage
         private void cageMainMenuBtn_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            using (MainPage FormMain = new MainPage())
-                FormMain.ShowDialog();
-            Show();
+            MainPage main = new MainPage();
+            main.Show();
         }
 
         private void Addcage_Load(object sender, EventArgs e)
