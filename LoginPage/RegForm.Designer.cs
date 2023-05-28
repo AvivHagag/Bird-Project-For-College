@@ -47,7 +47,7 @@
             // 
             RegNameVal.BackColor = Color.LightBlue;
             RegNameVal.BorderStyle = BorderStyle.FixedSingle;
-            RegNameVal.Location = new Point(432, 201);
+            RegNameVal.Location = new Point(293, 170);
             RegNameVal.Name = "RegNameVal";
             RegNameVal.Size = new Size(114, 25);
             RegNameVal.TabIndex = 1;
@@ -57,7 +57,7 @@
             // 
             RegPassVal.BackColor = Color.LightBlue;
             RegPassVal.BorderStyle = BorderStyle.FixedSingle;
-            RegPassVal.Location = new Point(432, 232);
+            RegPassVal.Location = new Point(293, 201);
             RegPassVal.Name = "RegPassVal";
             RegPassVal.Size = new Size(114, 25);
             RegPassVal.TabIndex = 2;
@@ -66,7 +66,7 @@
             // regNameLabel
             // 
             regNameLabel.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            regNameLabel.Location = new Point(296, 200);
+            regNameLabel.Location = new Point(157, 169);
             regNameLabel.Name = "regNameLabel";
             regNameLabel.Size = new Size(114, 26);
             regNameLabel.TabIndex = 4;
@@ -76,7 +76,7 @@
             // regPassLabel
             // 
             regPassLabel.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            regPassLabel.Location = new Point(296, 232);
+            regPassLabel.Location = new Point(157, 201);
             regPassLabel.Name = "regPassLabel";
             regPassLabel.Size = new Size(114, 26);
             regPassLabel.TabIndex = 4;
@@ -88,24 +88,23 @@
             alert1.AutoSize = true;
             alert1.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
             alert1.ForeColor = Color.Red;
-            alert1.Location = new Point(172, 273);
+            alert1.Location = new Point(33, 242);
             alert1.Name = "alert1";
-            alert1.Size = new Size(517, 28);
+            alert1.Size = new Size(521, 28);
             alert1.TabIndex = 6;
-            alert1.Text = "User name need to be between 6-8 chars and at most 2 digits";
+            alert1.Text = "User name need to be between 6-8 chars and at most 2 digits.\r\n";
             alert1.Visible = false;
             alert1.Click += alert1_Click;
             // 
             // alert2
             // 
-            alert2.AutoSize = true;
             alert2.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
             alert2.ForeColor = Color.Red;
-            alert2.Location = new Point(3, 273);
+            alert2.Location = new Point(70, 235);
             alert2.Name = "alert2";
-            alert2.Size = new Size(819, 28);
+            alert2.Size = new Size(433, 67);
             alert2.TabIndex = 7;
-            alert2.Text = "The password should contain 8-10 characters and at least one number, letter and special character";
+            alert2.Text = "The password should contain 8-10 characters and at least one number, letter and special character.\r\n";
             alert2.Visible = false;
             alert2.Click += alert2_Click;
             // 
@@ -113,7 +112,7 @@
             // 
             pictureBox2.Cursor = Cursors.Hand;
             pictureBox2.Image = Properties.Resources.signup;
-            pictureBox2.Location = new Point(306, 301);
+            pictureBox2.Location = new Point(167, 293);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(225, 114);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
@@ -126,7 +125,7 @@
             BackBtn.BackColor = Color.LightBlue;
             BackBtn.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
             BackBtn.ForeColor = Color.Black;
-            BackBtn.Location = new Point(691, 369);
+            BackBtn.Location = new Point(440, 366);
             BackBtn.Name = "BackBtn";
             BackBtn.Size = new Size(131, 35);
             BackBtn.TabIndex = 10;
@@ -137,7 +136,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources.register;
-            pictureBox1.Location = new Point(149, -118);
+            pictureBox1.Location = new Point(10, -126);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(540, 413);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -149,7 +148,7 @@
             // 
             Exit.Cursor = Cursors.Hand;
             Exit.Image = Properties.Resources.standby;
-            Exit.Location = new Point(787, 3);
+            Exit.Location = new Point(535, 5);
             Exit.Name = "Exit";
             Exit.Size = new Size(40, 36);
             Exit.SizeMode = PictureBoxSizeMode.Zoom;
@@ -162,7 +161,7 @@
             AutoScaleDimensions = new SizeF(8F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.LightBlue;
-            ClientSize = new Size(829, 416);
+            ClientSize = new Size(578, 408);
             Controls.Add(Exit);
             Controls.Add(BackBtn);
             Controls.Add(pictureBox2);

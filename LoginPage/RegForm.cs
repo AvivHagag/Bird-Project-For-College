@@ -64,10 +64,10 @@ namespace LoginPage
                         userExists = true;
                         break;
                     }
-                    
+
                 }
 
-                if (!userExists )
+                if (!userExists)
                 {
                     int newRow = lastRow + 1;
                     worksheet.Cells[newRow, 1] = userName;
@@ -103,7 +103,7 @@ namespace LoginPage
                     this.Close(); // Close the registration form
 
 
-                   
+
                 }
                 else
                 {
