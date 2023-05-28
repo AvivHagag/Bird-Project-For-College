@@ -35,7 +35,5 @@ If you are interested in contributing to the Bird Project, please follow these g
 * Commit your changes and push them to your fork.
 * Submit a pull request, explaining the purpose and details of your changes.
 
-#### Acknowledgments
-We would like to thank the contributors and open-source community for their valuable contributions and support to the Bird Project.
 
 #### Happy bird habitat management!
