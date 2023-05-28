@@ -209,12 +209,12 @@ namespace LoginPage
 
             application.Quit();
             Marshal.ReleaseComObject(application);
-            Process[] pro = Process.GetProcessesByName("excel");
+       /*     Process[] pro = Process.GetProcessesByName("excel");
 
             pro[0].Kill();
             pro[0].WaitForExit();
             GC.Collect();
-            GC.WaitForPendingFinalizers();
+            GC.WaitForPendingFinalizers();*/
             return cageExist;
         }
         private void BackBtn_Click(object sender, EventArgs e)
