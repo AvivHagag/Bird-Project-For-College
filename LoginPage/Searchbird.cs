@@ -277,11 +277,7 @@ namespace LoginPage
             Show();
         }
 
-        private void exitBtn_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
 
-        }
 
         private void dataGridBirds_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -356,6 +352,11 @@ namespace LoginPage
         private void SpecieBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

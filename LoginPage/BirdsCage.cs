@@ -177,24 +177,24 @@ namespace LoginPage
                 {
                     if (int.TryParse(lengthEditBox.Text, out n) && int.TryParse(widthEditBox.Text, out n) && int.TryParse(heightEditBox.Text, out n) && lengthEditBox.Text != "" && widthEditBox.Text != "" && heightEditBox.Text != "" && materialEditBox.Text != "" && int.Parse(lengthEditBox.Text) > 0 && int.Parse(widthEditBox.Text) > 0 && int.Parse(heightEditBox.Text) > 0)
                     {
-                        worksheet.Cells[i, 2] =  lengthEditBox.Text;
-                        worksheet.Cells[i, 3] =  widthEditBox.Text;
-                        worksheet.Cells[i, 4] =  heightEditBox.Text;
-                        worksheet.Cells[i, 5] =   materialEditBox.Text;
+                        worksheet.Cells[i, 2] = lengthEditBox.Text;
+                        worksheet.Cells[i, 3] = widthEditBox.Text;
+                        worksheet.Cells[i, 4] = heightEditBox.Text;
+                        worksheet.Cells[i, 5] = materialEditBox.Text;
                         workbook.Save();
                         MessageBox.Show("Cage details changed successfully");
-                         lengthEditBox.Text = null;
-                         widthEditBox.Text = null;
-                         heightEditBox.Text = null;
-                          materialEditBox.Text = null;
+                        lengthEditBox.Text = null;
+                        widthEditBox.Text = null;
+                        heightEditBox.Text = null;
+                        materialEditBox.Text = null;
                     }
                     else
                     {
                         MessageBox.Show("Invalid input");
-                         lengthEditBox.Text = null;
-                         widthEditBox.Text = null;
-                         heightEditBox.Text = null;
-                          materialEditBox.Text = null;
+                        lengthEditBox.Text = null;
+                        widthEditBox.Text = null;
+                        heightEditBox.Text = null;
+                        materialEditBox.Text = null;
 
                     }
 
@@ -218,6 +218,11 @@ namespace LoginPage
             GC.WaitForPendingFinalizers();
 
             this.Close();
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

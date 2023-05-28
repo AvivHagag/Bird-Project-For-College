@@ -162,7 +162,7 @@ namespace LoginPage
                 worksheet.Cells[newRow, 7] = selectedDate;
                 worksheet.Cells[newRow, 8] = cageID.ToString();
                 worksheet.Cells[newRow, 9] = ((LoginForm)Application.OpenForms["LoginForm"]).getid();
-             
+
                 if (headcolor == sheadcolor)
                 {
                     worksheet.Cells[newRow, 10] = headcolor;
@@ -441,6 +441,11 @@ namespace LoginPage
             System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook2);
             System.Runtime.InteropServices.Marshal.ReleaseComObject(application2);
 
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

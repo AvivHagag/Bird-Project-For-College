@@ -48,7 +48,6 @@
             IdLabel = new Label();
             chickGenderCombo = new ComboBox();
             dateChickBox = new DateTimePicker();
-            exitChickBtn = new Button();
             addChickBtn = new Button();
             motherChickBox = new TextBox();
             fatherChickBox = new TextBox();
@@ -57,13 +56,15 @@
             chickGenderLabel = new Label();
             dateChickLabel = new Label();
             pictureBox1 = new PictureBox();
+            Exit = new PictureBox();
             chickGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Exit).BeginInit();
             SuspendLayout();
             // 
             // chickGroup
             // 
-            chickGroup.BackColor = Color.White;
+            chickGroup.BackColor = Color.LightBlue;
             chickGroup.Controls.Add(ChangeCage);
             chickGroup.Controls.Add(cageTxt);
             chickGroup.Controls.Add(bodyCLabel);
@@ -83,7 +84,6 @@
             chickGroup.Controls.Add(IdLabel);
             chickGroup.Controls.Add(chickGenderCombo);
             chickGroup.Controls.Add(dateChickBox);
-            chickGroup.Controls.Add(exitChickBtn);
             chickGroup.Controls.Add(addChickBtn);
             chickGroup.Controls.Add(motherChickBox);
             chickGroup.Controls.Add(fatherChickBox);
@@ -91,8 +91,8 @@
             chickGroup.Controls.Add(motherIdLabel);
             chickGroup.Controls.Add(chickGenderLabel);
             chickGroup.Controls.Add(dateChickLabel);
-            chickGroup.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            chickGroup.ForeColor = Color.FromArgb(44, 62, 80);
+            chickGroup.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            chickGroup.ForeColor = Color.Black;
             chickGroup.Location = new Point(12, 12);
             chickGroup.Name = "chickGroup";
             chickGroup.Padding = new Padding(10);
@@ -102,10 +102,11 @@
             // 
             // ChangeCage
             // 
-            ChangeCage.BackColor = Color.FromArgb(44, 62, 80);
+            ChangeCage.BackColor = Color.LightBlue;
             ChangeCage.FlatAppearance.BorderColor = Color.White;
-            ChangeCage.FlatStyle = FlatStyle.Flat;
-            ChangeCage.ForeColor = Color.White;
+            ChangeCage.FlatStyle = FlatStyle.Popup;
+            ChangeCage.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            ChangeCage.ForeColor = Color.Black;
             ChangeCage.Location = new Point(193, 216);
             ChangeCage.Name = "ChangeCage";
             ChangeCage.Size = new Size(141, 31);
@@ -118,7 +119,7 @@
             // 
             cageTxt.Location = new Point(125, 218);
             cageTxt.Name = "cageTxt";
-            cageTxt.Size = new Size(56, 29);
+            cageTxt.Size = new Size(56, 30);
             cageTxt.TabIndex = 29;
             cageTxt.TextChanged += cageTxt_TextChanged;
             // 
@@ -251,7 +252,7 @@
             chickGenderCombo.Items.AddRange(new object[] { "Male", "Female" });
             chickGenderCombo.Location = new Point(411, 73);
             chickGenderCombo.Name = "chickGenderCombo";
-            chickGenderCombo.Size = new Size(200, 29);
+            chickGenderCombo.Size = new Size(200, 31);
             chickGenderCombo.TabIndex = 11;
             // 
             // dateChickBox
@@ -259,34 +260,17 @@
             dateChickBox.Format = DateTimePickerFormat.Short;
             dateChickBox.Location = new Point(411, 26);
             dateChickBox.Name = "dateChickBox";
-            dateChickBox.Size = new Size(200, 29);
+            dateChickBox.Size = new Size(200, 30);
             dateChickBox.TabIndex = 10;
-            // 
-            // exitChickBtn
-            // 
-            exitChickBtn.AutoEllipsis = true;
-            exitChickBtn.BackColor = Color.FromArgb(192, 57, 43);
-            exitChickBtn.Cursor = Cursors.Hand;
-            exitChickBtn.FlatAppearance.BorderSize = 0;
-            exitChickBtn.FlatStyle = FlatStyle.Flat;
-            exitChickBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            exitChickBtn.ForeColor = Color.White;
-            exitChickBtn.Location = new Point(471, 270);
-            exitChickBtn.Name = "exitChickBtn";
-            exitChickBtn.Size = new Size(104, 33);
-            exitChickBtn.TabIndex = 8;
-            exitChickBtn.Text = "Exit";
-            exitChickBtn.UseVisualStyleBackColor = false;
-            exitChickBtn.Click += exitChickBtn_Click;
             // 
             // addChickBtn
             // 
-            addChickBtn.BackColor = Color.FromArgb(44, 62, 80);
+            addChickBtn.BackColor = Color.LightBlue;
             addChickBtn.Cursor = Cursors.Hand;
             addChickBtn.FlatAppearance.BorderSize = 0;
-            addChickBtn.FlatStyle = FlatStyle.Flat;
-            addChickBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            addChickBtn.ForeColor = Color.White;
+            addChickBtn.FlatStyle = FlatStyle.Popup;
+            addChickBtn.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            addChickBtn.ForeColor = Color.Black;
             addChickBtn.Location = new Point(471, 162);
             addChickBtn.Name = "addChickBtn";
             addChickBtn.Size = new Size(140, 33);
@@ -299,7 +283,7 @@
             // 
             motherChickBox.Location = new Point(411, 118);
             motherChickBox.Name = "motherChickBox";
-            motherChickBox.Size = new Size(200, 29);
+            motherChickBox.Size = new Size(200, 30);
             motherChickBox.TabIndex = 7;
             motherChickBox.TextChanged += textBox1_TextChanged;
             // 
@@ -307,7 +291,7 @@
             // 
             fatherChickBox.Location = new Point(411, 118);
             fatherChickBox.Name = "fatherChickBox";
-            fatherChickBox.Size = new Size(200, 29);
+            fatherChickBox.Size = new Size(200, 30);
             fatherChickBox.TabIndex = 6;
             fatherChickBox.Visible = false;
             // 
@@ -316,7 +300,7 @@
             FatherIdLabel.AutoSize = true;
             FatherIdLabel.Location = new Point(288, 121);
             FatherIdLabel.Name = "FatherIdLabel";
-            FatherIdLabel.Size = new Size(83, 21);
+            FatherIdLabel.Size = new Size(77, 23);
             FatherIdLabel.TabIndex = 3;
             FatherIdLabel.Text = "Father ID:";
             FatherIdLabel.Visible = false;
@@ -326,7 +310,7 @@
             motherIdLabel.AutoSize = true;
             motherIdLabel.Location = new Point(288, 121);
             motherIdLabel.Name = "motherIdLabel";
-            motherIdLabel.Size = new Size(91, 21);
+            motherIdLabel.Size = new Size(80, 23);
             motherIdLabel.TabIndex = 2;
             motherIdLabel.Text = "Mother ID:";
             motherIdLabel.Visible = false;
@@ -336,7 +320,7 @@
             chickGenderLabel.AutoSize = true;
             chickGenderLabel.Location = new Point(288, 76);
             chickGenderLabel.Name = "chickGenderLabel";
-            chickGenderLabel.Size = new Size(70, 21);
+            chickGenderLabel.Size = new Size(63, 23);
             chickGenderLabel.TabIndex = 1;
             chickGenderLabel.Text = "Gender:";
             // 
@@ -345,7 +329,7 @@
             dateChickLabel.AutoSize = true;
             dateChickLabel.Location = new Point(288, 32);
             dateChickLabel.Name = "dateChickLabel";
-            dateChickLabel.Size = new Size(117, 21);
+            dateChickLabel.Size = new Size(104, 23);
             dateChickLabel.TabIndex = 0;
             dateChickLabel.Text = "Date of hatch:";
             dateChickLabel.Click += dateChickLabel_Click;
@@ -354,28 +338,45 @@
             // 
             pictureBox1.BackgroundImageLayout = ImageLayout.Center;
             pictureBox1.ErrorImage = null;
+            pictureBox1.Image = Properties.Resources.eggs;
+            pictureBox1.InitialImage = Properties.Resources.eggs;
             pictureBox1.Location = new Point(629, 12);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(315, 303);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
+            // 
+            // Exit
+            // 
+            Exit.Cursor = Cursors.Hand;
+            Exit.Image = Properties.Resources.standby;
+            Exit.Location = new Point(900, 1);
+            Exit.Name = "Exit";
+            Exit.Size = new Size(40, 36);
+            Exit.SizeMode = PictureBoxSizeMode.Zoom;
+            Exit.TabIndex = 31;
+            Exit.TabStop = false;
+            Exit.Click += Exit_Click;
             // 
             // Addchick
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.LightBlue;
             ClientSize = new Size(939, 360);
+            Controls.Add(Exit);
             Controls.Add(pictureBox1);
             Controls.Add(chickGroup);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Addchick";
             Text = "Edit";
             Load += Addchick_Load;
             chickGroup.ResumeLayout(false);
             chickGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Exit).EndInit();
             ResumeLayout(false);
         }
 
@@ -384,7 +385,6 @@
         private GroupBox chickGroup;
         private Label chickGenderLabel;
         private Label dateChickLabel;
-        private Button exitChickBtn;
         private Button addChickBtn;
         private DateTimePicker dateChickBox;
         public TextBox motherChickBox;
@@ -410,5 +410,6 @@
         private PictureBox pictureBox1;
         private Button ChangeCage;
         private TextBox cageTxt;
+        private PictureBox Exit;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dataGridCages = new DataGridView();
             cageIDColumn = new DataGridViewTextBoxColumn();
             lengthColumn = new DataGridViewTextBoxColumn();
@@ -36,9 +37,9 @@
             materialColumn = new DataGridViewTextBoxColumn();
             UserId = new DataGridViewTextBoxColumn();
             searchGroup = new GroupBox();
+            Exit = new PictureBox();
             pictureBox1 = new PictureBox();
             searchLabel = new Label();
-            cageSearchExitBtn = new Button();
             cageSearchMenuBtn = new Button();
             idTextBox = new TextBox();
             materialListBox = new ComboBox();
@@ -46,6 +47,7 @@
             cageSearchBox = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridCages).BeginInit();
             searchGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)Exit).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -55,15 +57,22 @@
             dataGridCages.AllowUserToDeleteRows = false;
             dataGridCages.AllowUserToResizeRows = false;
             dataGridCages.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridCages.BackgroundColor = Color.White;
-            dataGridCages.BorderStyle = BorderStyle.Fixed3D;
+            dataGridCages.BackgroundColor = Color.LightBlue;
             dataGridCages.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridCages.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridCages.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridCages.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridCages.Columns.AddRange(new DataGridViewColumn[] { cageIDColumn, lengthColumn, widthColumn, heightColumn, materialColumn, UserId });
             dataGridCages.EnableHeadersVisualStyles = false;
-            dataGridCages.GridColor = Color.FromArgb(200, 200, 200);
-            dataGridCages.Location = new Point(224, 26);
+            dataGridCages.GridColor = Color.Black;
+            dataGridCages.Location = new Point(224, 51);
             dataGridCages.MultiSelect = false;
             dataGridCages.Name = "dataGridCages";
             dataGridCages.ReadOnly = true;
@@ -71,7 +80,7 @@
             dataGridCages.RowTemplate.Height = 30;
             dataGridCages.ScrollBars = ScrollBars.Vertical;
             dataGridCages.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridCages.Size = new Size(543, 391);
+            dataGridCages.Size = new Size(543, 378);
             dataGridCages.TabIndex = 5;
             dataGridCages.TabStop = false;
             dataGridCages.CellContentClick += dataGridCages_CellContentClick;
@@ -116,23 +125,35 @@
             // searchGroup
             // 
             searchGroup.BackgroundImageLayout = ImageLayout.Zoom;
+            searchGroup.Controls.Add(Exit);
             searchGroup.Controls.Add(pictureBox1);
             searchGroup.Controls.Add(searchLabel);
-            searchGroup.Controls.Add(cageSearchExitBtn);
             searchGroup.Controls.Add(cageSearchMenuBtn);
             searchGroup.Controls.Add(idTextBox);
             searchGroup.Controls.Add(materialListBox);
             searchGroup.Controls.Add(searchBtn);
             searchGroup.Controls.Add(cageSearchBox);
             searchGroup.Controls.Add(dataGridCages);
-            searchGroup.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            searchGroup.ForeColor = Color.FromArgb(44, 62, 80);
-            searchGroup.Location = new Point(12, 18);
+            searchGroup.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            searchGroup.ForeColor = Color.Black;
+            searchGroup.Location = new Point(12, 0);
             searchGroup.Name = "searchGroup";
-            searchGroup.Size = new Size(767, 417);
+            searchGroup.Size = new Size(779, 435);
             searchGroup.TabIndex = 2;
             searchGroup.TabStop = false;
             searchGroup.Text = "Search Cage";
+            // 
+            // Exit
+            // 
+            Exit.Cursor = Cursors.Hand;
+            Exit.Image = Properties.Resources.standby;
+            Exit.Location = new Point(739, 2);
+            Exit.Name = "Exit";
+            Exit.Size = new Size(40, 36);
+            Exit.SizeMode = PictureBoxSizeMode.Zoom;
+            Exit.TabIndex = 34;
+            Exit.TabStop = false;
+            Exit.Click += Exit_Click;
             // 
             // pictureBox1
             // 
@@ -148,35 +169,20 @@
             // searchLabel
             // 
             searchLabel.AutoSize = true;
-            searchLabel.Location = new Point(45, 132);
+            searchLabel.Location = new Point(49, 158);
             searchLabel.Name = "searchLabel";
-            searchLabel.Size = new Size(117, 19);
+            searchLabel.Size = new Size(113, 23);
             searchLabel.TabIndex = 3;
             searchLabel.Text = "Choose to filter:";
             // 
-            // cageSearchExitBtn
-            // 
-            cageSearchExitBtn.BackColor = Color.FromArgb(192, 57, 43);
-            cageSearchExitBtn.Cursor = Cursors.Hand;
-            cageSearchExitBtn.FlatAppearance.BorderSize = 0;
-            cageSearchExitBtn.FlatStyle = FlatStyle.Flat;
-            cageSearchExitBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            cageSearchExitBtn.ForeColor = Color.White;
-            cageSearchExitBtn.Location = new Point(45, 299);
-            cageSearchExitBtn.Name = "cageSearchExitBtn";
-            cageSearchExitBtn.Size = new Size(121, 25);
-            cageSearchExitBtn.TabIndex = 6;
-            cageSearchExitBtn.Text = "Exit";
-            cageSearchExitBtn.UseVisualStyleBackColor = false;
-            cageSearchExitBtn.Click += cageSearchExitBtn_Click;
-            // 
             // cageSearchMenuBtn
             // 
-            cageSearchMenuBtn.BackColor = Color.FromArgb(44, 62, 80);
+            cageSearchMenuBtn.BackColor = Color.LightBlue;
             cageSearchMenuBtn.FlatAppearance.BorderSize = 0;
-            cageSearchMenuBtn.FlatStyle = FlatStyle.Flat;
-            cageSearchMenuBtn.ForeColor = Color.White;
-            cageSearchMenuBtn.Location = new Point(45, 263);
+            cageSearchMenuBtn.FlatStyle = FlatStyle.Popup;
+            cageSearchMenuBtn.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            cageSearchMenuBtn.ForeColor = Color.Black;
+            cageSearchMenuBtn.Location = new Point(45, 328);
             cageSearchMenuBtn.Name = "cageSearchMenuBtn";
             cageSearchMenuBtn.Size = new Size(121, 30);
             cageSearchMenuBtn.TabIndex = 3;
@@ -186,9 +192,9 @@
             // 
             // idTextBox
             // 
-            idTextBox.Location = new Point(45, 185);
+            idTextBox.Location = new Point(45, 237);
             idTextBox.Name = "idTextBox";
-            idTextBox.Size = new Size(121, 25);
+            idTextBox.Size = new Size(121, 30);
             idTextBox.TabIndex = 4;
             idTextBox.Visible = false;
             // 
@@ -196,20 +202,20 @@
             // 
             materialListBox.FormattingEnabled = true;
             materialListBox.Items.AddRange(new object[] { "wood", "plastic", "iron" });
-            materialListBox.Location = new Point(45, 185);
+            materialListBox.Location = new Point(45, 236);
             materialListBox.Name = "materialListBox";
-            materialListBox.Size = new Size(121, 25);
+            materialListBox.Size = new Size(121, 31);
             materialListBox.TabIndex = 2;
             materialListBox.Visible = false;
             // 
             // searchBtn
             // 
-            searchBtn.BackColor = Color.FromArgb(44, 62, 80);
+            searchBtn.BackColor = Color.LightBlue;
             searchBtn.FlatAppearance.BorderSize = 0;
-            searchBtn.FlatStyle = FlatStyle.Flat;
-            searchBtn.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
-            searchBtn.ForeColor = Color.White;
-            searchBtn.Location = new Point(45, 227);
+            searchBtn.FlatStyle = FlatStyle.Popup;
+            searchBtn.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            searchBtn.ForeColor = Color.Black;
+            searchBtn.Location = new Point(45, 283);
             searchBtn.Name = "searchBtn";
             searchBtn.Size = new Size(121, 30);
             searchBtn.TabIndex = 1;
@@ -221,9 +227,9 @@
             // 
             cageSearchBox.FormattingEnabled = true;
             cageSearchBox.Items.AddRange(new object[] { "Cage ID", "Material" });
-            cageSearchBox.Location = new Point(45, 154);
+            cageSearchBox.Location = new Point(45, 189);
             cageSearchBox.Name = "cageSearchBox";
-            cageSearchBox.Size = new Size(121, 25);
+            cageSearchBox.Size = new Size(121, 31);
             cageSearchBox.TabIndex = 0;
             cageSearchBox.SelectedIndexChanged += cageSearchBox_SelectedIndexChanged;
             // 
@@ -231,14 +237,16 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.LightBlue;
             ClientSize = new Size(791, 447);
             Controls.Add(searchGroup);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "SearchCage";
             Text = "SearchCage";
             ((System.ComponentModel.ISupportInitialize)dataGridCages).EndInit();
             searchGroup.ResumeLayout(false);
             searchGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)Exit).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
@@ -252,7 +260,6 @@
         private Button searchBtn;
         private ComboBox cageSearchBox;
         private Button cageSearchMenuBtn;
-        private Button cageSearchExitBtn;
         private Label searchLabel;
         private DataGridViewTextBoxColumn cageIDColumn;
         private DataGridViewTextBoxColumn lengthColumn;
@@ -261,5 +268,6 @@
         private DataGridViewTextBoxColumn materialColumn;
         private DataGridViewTextBoxColumn UserId;
         private PictureBox pictureBox1;
+        private PictureBox Exit;
     }
 }

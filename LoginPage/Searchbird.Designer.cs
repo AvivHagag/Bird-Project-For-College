@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             searchGroup = new GroupBox();
+            Exit = new PictureBox();
             pictureBox1 = new PictureBox();
             searchLabel = new Label();
             addChickLabels = new Label();
-            exitBtn = new Button();
             birdMainMenuBtn = new Button();
             idTextBox = new TextBox();
             datePicker = new DateTimePicker();
@@ -54,16 +55,18 @@
             ChestColor = new DataGridViewTextBoxColumn();
             BodyColor = new DataGridViewTextBoxColumn();
             searchGroup.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)Exit).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridBirds).BeginInit();
             SuspendLayout();
             // 
             // searchGroup
             // 
+            searchGroup.BackColor = Color.LightBlue;
+            searchGroup.Controls.Add(Exit);
             searchGroup.Controls.Add(pictureBox1);
             searchGroup.Controls.Add(searchLabel);
             searchGroup.Controls.Add(addChickLabels);
-            searchGroup.Controls.Add(exitBtn);
             searchGroup.Controls.Add(birdMainMenuBtn);
             searchGroup.Controls.Add(idTextBox);
             searchGroup.Controls.Add(datePicker);
@@ -71,15 +74,27 @@
             searchGroup.Controls.Add(searchBtn);
             searchGroup.Controls.Add(birdSearchBox);
             searchGroup.Controls.Add(dataGridBirds);
-            searchGroup.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            searchGroup.ForeColor = Color.FromArgb(44, 62, 80);
-            searchGroup.Location = new Point(12, 12);
+            searchGroup.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            searchGroup.ForeColor = Color.Black;
+            searchGroup.Location = new Point(12, -1);
             searchGroup.Name = "searchGroup";
-            searchGroup.Size = new Size(1251, 436);
+            searchGroup.Size = new Size(1258, 449);
             searchGroup.TabIndex = 1;
             searchGroup.TabStop = false;
             searchGroup.Text = "Search bird";
             searchGroup.Enter += searchGroup_Enter;
+            // 
+            // Exit
+            // 
+            Exit.Cursor = Cursors.Hand;
+            Exit.Image = Properties.Resources.standby;
+            Exit.Location = new Point(1217, 2);
+            Exit.Name = "Exit";
+            Exit.Size = new Size(40, 36);
+            Exit.SizeMode = PictureBoxSizeMode.Zoom;
+            Exit.TabIndex = 33;
+            Exit.TabStop = false;
+            Exit.Click += Exit_Click;
             // 
             // pictureBox1
             // 
@@ -94,9 +109,11 @@
             // searchLabel
             // 
             searchLabel.AutoSize = true;
-            searchLabel.Location = new Point(45, 185);
+            searchLabel.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            searchLabel.ForeColor = Color.Black;
+            searchLabel.Location = new Point(51, 181);
             searchLabel.Name = "searchLabel";
-            searchLabel.Size = new Size(117, 19);
+            searchLabel.Size = new Size(113, 23);
             searchLabel.TabIndex = 9;
             searchLabel.Text = "Choose to filter:";
             // 
@@ -106,38 +123,22 @@
             addChickLabels.ForeColor = SystemColors.Highlight;
             addChickLabels.Location = new Point(630, 21);
             addChickLabels.Name = "addChickLabels";
-            addChickLabels.Size = new Size(256, 19);
+            addChickLabels.Size = new Size(234, 21);
             addChickLabels.TabIndex = 8;
             addChickLabels.Text = "Double click to add chick to the bird.";
             addChickLabels.Click += addChickLabels_Click;
             // 
-            // exitBtn
-            // 
-            exitBtn.BackColor = Color.FromArgb(192, 57, 43);
-            exitBtn.Cursor = Cursors.Hand;
-            exitBtn.FlatAppearance.BorderSize = 0;
-            exitBtn.FlatStyle = FlatStyle.Flat;
-            exitBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            exitBtn.ForeColor = Color.White;
-            exitBtn.Location = new Point(60, 339);
-            exitBtn.Name = "exitBtn";
-            exitBtn.Size = new Size(95, 25);
-            exitBtn.TabIndex = 6;
-            exitBtn.Text = "Exit";
-            exitBtn.UseVisualStyleBackColor = false;
-            exitBtn.Click += exitBtn_Click;
-            // 
             // birdMainMenuBtn
             // 
-            birdMainMenuBtn.BackColor = Color.FromArgb(44, 62, 80);
+            birdMainMenuBtn.BackColor = Color.LightBlue;
             birdMainMenuBtn.Cursor = Cursors.Hand;
             birdMainMenuBtn.FlatAppearance.BorderSize = 0;
-            birdMainMenuBtn.FlatStyle = FlatStyle.Flat;
-            birdMainMenuBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            birdMainMenuBtn.ForeColor = Color.White;
-            birdMainMenuBtn.Location = new Point(60, 308);
+            birdMainMenuBtn.FlatStyle = FlatStyle.Popup;
+            birdMainMenuBtn.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            birdMainMenuBtn.ForeColor = Color.Black;
+            birdMainMenuBtn.Location = new Point(54, 308);
             birdMainMenuBtn.Name = "birdMainMenuBtn";
-            birdMainMenuBtn.Size = new Size(95, 25);
+            birdMainMenuBtn.Size = new Size(111, 27);
             birdMainMenuBtn.TabIndex = 2;
             birdMainMenuBtn.Text = "Main menu";
             birdMainMenuBtn.UseVisualStyleBackColor = false;
@@ -147,7 +148,7 @@
             // 
             idTextBox.Location = new Point(45, 240);
             idTextBox.Name = "idTextBox";
-            idTextBox.Size = new Size(126, 25);
+            idTextBox.Size = new Size(126, 29);
             idTextBox.TabIndex = 4;
             idTextBox.Visible = false;
             idTextBox.TextChanged += idTextBox_TextChanged;
@@ -168,22 +169,22 @@
             SpecieBox.FormattingEnabled = true;
             SpecieBox.Location = new Point(45, 240);
             SpecieBox.Name = "SpecieBox";
-            SpecieBox.Size = new Size(126, 25);
+            SpecieBox.Size = new Size(126, 29);
             SpecieBox.TabIndex = 2;
             SpecieBox.Visible = false;
             SpecieBox.SelectedIndexChanged += SpecieBox_SelectedIndexChanged;
             // 
             // searchBtn
             // 
-            searchBtn.BackColor = Color.FromArgb(44, 62, 80);
+            searchBtn.BackColor = Color.LightBlue;
             searchBtn.Cursor = Cursors.Hand;
             searchBtn.FlatAppearance.BorderSize = 0;
-            searchBtn.FlatStyle = FlatStyle.Flat;
-            searchBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            searchBtn.ForeColor = Color.White;
-            searchBtn.Location = new Point(60, 277);
+            searchBtn.FlatStyle = FlatStyle.Popup;
+            searchBtn.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            searchBtn.ForeColor = Color.Black;
+            searchBtn.Location = new Point(53, 275);
             searchBtn.Name = "searchBtn";
-            searchBtn.Size = new Size(95, 25);
+            searchBtn.Size = new Size(111, 27);
             searchBtn.TabIndex = 1;
             searchBtn.Text = "Search";
             searchBtn.UseVisualStyleBackColor = false;
@@ -195,7 +196,7 @@
             birdSearchBox.Items.AddRange(new object[] { "Bird ID", "Species", "Hatch date", "Gender" });
             birdSearchBox.Location = new Point(45, 207);
             birdSearchBox.Name = "birdSearchBox";
-            birdSearchBox.Size = new Size(126, 25);
+            birdSearchBox.Size = new Size(126, 29);
             birdSearchBox.TabIndex = 0;
             birdSearchBox.SelectedIndexChanged += searchBox_SelectedIndexChanged;
             // 
@@ -205,14 +206,21 @@
             dataGridBirds.AllowUserToDeleteRows = false;
             dataGridBirds.AllowUserToResizeRows = false;
             dataGridBirds.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridBirds.BackgroundColor = SystemColors.ControlLightLight;
-            dataGridBirds.BorderStyle = BorderStyle.Fixed3D;
+            dataGridBirds.BackgroundColor = Color.LightBlue;
             dataGridBirds.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridBirds.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.Font = new Font("Segoe Print", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridBirds.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridBirds.ColumnHeadersHeight = 42;
             dataGridBirds.Columns.AddRange(new DataGridViewColumn[] { birdIDColumn, birdSpeciceColumn, subSpecieColumn, genderColumn, motherColumn, fatherColumn, dateColumn, cageColumn, userColumn, HeadColor, ChestColor, BodyColor });
             dataGridBirds.EnableHeadersVisualStyles = false;
-            dataGridBirds.GridColor = SystemColors.ScrollBar;
+            dataGridBirds.GridColor = Color.Black;
             dataGridBirds.Location = new Point(211, 46);
             dataGridBirds.MultiSelect = false;
             dataGridBirds.Name = "dataGridBirds";
@@ -317,14 +325,16 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            BackColor = Color.LightBlue;
             ClientSize = new Size(1269, 450);
             Controls.Add(searchGroup);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Searchbird";
             Text = "Searchbird";
             Load += Searchbird_Load;
             searchGroup.ResumeLayout(false);
             searchGroup.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)Exit).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridBirds).EndInit();
             ResumeLayout(false);
@@ -340,7 +350,6 @@
         private TextBox idTextBox;
         private DataGridView dataGridBirds;
         private Button birdMainMenuBtn;
-        private Button exitBtn;
         private Label addChickLabels;
         private Label searchLabel;
         private DataGridViewTextBoxColumn birdIDColumn;
@@ -356,5 +365,6 @@
         private DataGridViewTextBoxColumn ChestColor;
         private DataGridViewTextBoxColumn BodyColor;
         private PictureBox pictureBox1;
+        private PictureBox Exit;
     }
 }

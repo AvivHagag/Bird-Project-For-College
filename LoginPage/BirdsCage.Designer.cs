@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dataGridBirds = new DataGridView();
             birdIDColumn = new DataGridViewTextBoxColumn();
             birdSpeciceColumn = new DataGridViewTextBoxColumn();
@@ -42,7 +43,6 @@
             ChestColor = new DataGridViewTextBoxColumn();
             BodyColor = new DataGridViewTextBoxColumn();
             chosenCageLable = new Label();
-            loginExitBtn = new Button();
             label1 = new Label();
             materialCage1Label = new Label();
             widthCage1Label = new Label();
@@ -54,7 +54,9 @@
             editCageLabel = new Label();
             materialEditBox = new ComboBox();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            Exit = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)dataGridBirds).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)Exit).BeginInit();
             SuspendLayout();
             // 
             // dataGridBirds
@@ -63,14 +65,21 @@
             dataGridBirds.AllowUserToDeleteRows = false;
             dataGridBirds.AllowUserToResizeRows = false;
             dataGridBirds.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridBirds.BackgroundColor = SystemColors.ControlLightLight;
-            dataGridBirds.BorderStyle = BorderStyle.Fixed3D;
+            dataGridBirds.BackgroundColor = Color.LightBlue;
             dataGridBirds.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dataGridBirds.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dataGridBirds.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dataGridBirds.ColumnHeadersHeight = 42;
             dataGridBirds.Columns.AddRange(new DataGridViewColumn[] { birdIDColumn, birdSpeciceColumn, subSpecieColumn, genderColumn, motherColumn, fatherColumn, dateColumn, cageColumn, userColumn, HeadColor, ChestColor, BodyColor });
             dataGridBirds.EnableHeadersVisualStyles = false;
-            dataGridBirds.GridColor = SystemColors.ScrollBar;
+            dataGridBirds.GridColor = Color.Black;
             dataGridBirds.Location = new Point(253, 54);
             dataGridBirds.MultiSelect = false;
             dataGridBirds.Name = "dataGridBirds";
@@ -172,78 +181,65 @@
             // chosenCageLable
             // 
             chosenCageLable.AutoSize = true;
-            chosenCageLable.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            chosenCageLable.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
             chosenCageLable.Location = new Point(527, 9);
             chosenCageLable.Name = "chosenCageLable";
-            chosenCageLable.Size = new Size(165, 21);
+            chosenCageLable.Size = new Size(176, 28);
             chosenCageLable.TabIndex = 7;
             chosenCageLable.Text = "Birds in chosen cage";
-            // 
-            // loginExitBtn
-            // 
-            loginExitBtn.BackColor = Color.FromArgb(192, 57, 43);
-            loginExitBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            loginExitBtn.ForeColor = Color.White;
-            loginExitBtn.Location = new Point(564, 444);
-            loginExitBtn.Name = "loginExitBtn";
-            loginExitBtn.Size = new Size(103, 41);
-            loginExitBtn.TabIndex = 9;
-            loginExitBtn.Text = "Exit";
-            loginExitBtn.UseVisualStyleBackColor = false;
-            loginExitBtn.Click += loginExitBtn_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             label1.Location = new Point(9, 163);
             label1.Name = "label1";
-            label1.Size = new Size(97, 21);
+            label1.Size = new Size(93, 23);
             label1.TabIndex = 24;
             label1.Text = "Length cage:";
             // 
             // materialCage1Label
             // 
             materialCage1Label.AutoSize = true;
-            materialCage1Label.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            materialCage1Label.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             materialCage1Label.Location = new Point(9, 269);
             materialCage1Label.Name = "materialCage1Label";
-            materialCage1Label.Size = new Size(106, 21);
+            materialCage1Label.Size = new Size(104, 23);
             materialCage1Label.TabIndex = 23;
             materialCage1Label.Text = "Material cage:";
             // 
             // widthCage1Label
             // 
             widthCage1Label.AutoSize = true;
-            widthCage1Label.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            widthCage1Label.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             widthCage1Label.Location = new Point(9, 217);
             widthCage1Label.Name = "widthCage1Label";
-            widthCage1Label.Size = new Size(91, 21);
+            widthCage1Label.Size = new Size(88, 23);
             widthCage1Label.TabIndex = 22;
             widthCage1Label.Text = "Width cage:";
             // 
             // heightCage1Label
             // 
             heightCage1Label.AutoSize = true;
-            heightCage1Label.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            heightCage1Label.Font = new Font("Segoe Print", 9.75F, FontStyle.Bold, GraphicsUnit.Point);
             heightCage1Label.Location = new Point(9, 111);
             heightCage1Label.Name = "heightCage1Label";
-            heightCage1Label.Size = new Size(95, 21);
+            heightCage1Label.Size = new Size(90, 23);
             heightCage1Label.TabIndex = 21;
             heightCage1Label.Text = "Height cage:";
             // 
             // CageEditBtn
             // 
-            CageEditBtn.BackColor = Color.FromArgb(44, 62, 80);
+            CageEditBtn.BackColor = Color.LightBlue;
             CageEditBtn.Cursor = Cursors.Hand;
             CageEditBtn.FlatAppearance.BorderSize = 0;
-            CageEditBtn.FlatStyle = FlatStyle.Flat;
-            CageEditBtn.Font = new Font("Arial", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            CageEditBtn.ForeColor = Color.White;
+            CageEditBtn.FlatStyle = FlatStyle.Popup;
+            CageEditBtn.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            CageEditBtn.ForeColor = Color.Black;
             CageEditBtn.Location = new Point(57, 340);
             CageEditBtn.Margin = new Padding(2);
             CageEditBtn.Name = "CageEditBtn";
-            CageEditBtn.Size = new Size(117, 25);
+            CageEditBtn.Size = new Size(121, 39);
             CageEditBtn.TabIndex = 25;
             CageEditBtn.Text = "Submit";
             CageEditBtn.UseVisualStyleBackColor = false;
@@ -273,10 +269,10 @@
             // editCageLabel
             // 
             editCageLabel.AutoSize = true;
-            editCageLabel.Font = new Font("Segoe UI", 16F, FontStyle.Regular, GraphicsUnit.Point);
+            editCageLabel.Font = new Font("Segoe Print", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             editCageLabel.Location = new Point(73, 54);
             editCageLabel.Name = "editCageLabel";
-            editCageLabel.Size = new Size(101, 30);
+            editCageLabel.Size = new Size(105, 33);
             editCageLabel.TabIndex = 30;
             editCageLabel.Text = "Edit cage";
             // 
@@ -290,12 +286,25 @@
             materialEditBox.Size = new Size(100, 23);
             materialEditBox.TabIndex = 31;
             // 
+            // Exit
+            // 
+            Exit.Cursor = Cursors.Hand;
+            Exit.Image = Properties.Resources.standby;
+            Exit.Location = new Point(1265, 1);
+            Exit.Name = "Exit";
+            Exit.Size = new Size(40, 36);
+            Exit.SizeMode = PictureBoxSizeMode.Zoom;
+            Exit.TabIndex = 32;
+            Exit.TabStop = false;
+            Exit.Click += Exit_Click;
+            // 
             // BirdsCage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
-            ClientSize = new Size(1305, 490);
+            BackColor = Color.LightBlue;
+            ClientSize = new Size(1305, 462);
+            Controls.Add(Exit);
             Controls.Add(materialEditBox);
             Controls.Add(editCageLabel);
             Controls.Add(widthEditBox);
@@ -306,13 +315,14 @@
             Controls.Add(materialCage1Label);
             Controls.Add(widthCage1Label);
             Controls.Add(heightCage1Label);
-            Controls.Add(loginExitBtn);
             Controls.Add(chosenCageLable);
             Controls.Add(dataGridBirds);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "BirdsCage";
             Text = "BirdsCage";
             Load += BirdsCage_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridBirds).EndInit();
+            ((System.ComponentModel.ISupportInitialize)Exit).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -333,7 +343,6 @@
         private DataGridViewTextBoxColumn ChestColor;
         private DataGridViewTextBoxColumn BodyColor;
         private Label chosenCageLable;
-        private Button loginExitBtn;
         private Label label1;
         private Label materialCage1Label;
         private Label widthCage1Label;
@@ -345,5 +354,6 @@
         private Label editCageLabel;
         private ComboBox materialEditBox;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private PictureBox Exit;
     }
 }

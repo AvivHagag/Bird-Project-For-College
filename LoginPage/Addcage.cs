@@ -106,7 +106,7 @@ namespace LoginPage
 
         private void exitCageBtn_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+
 
         }
 
@@ -126,6 +126,11 @@ namespace LoginPage
         private void Addcage_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

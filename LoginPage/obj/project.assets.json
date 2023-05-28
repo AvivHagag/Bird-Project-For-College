@@ -87,11 +87,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aviv1\\Source\\Repos\\Bird-Project-For-College\\LoginPage\\LoginPage.csproj",
+      "projectUniqueName": "C:\\Users\\aviv1\\source\\repos\\Bird-Project-For-College\\LoginPage\\LoginPage.csproj",
       "projectName": "LoginPage",
-      "projectPath": "C:\\Users\\aviv1\\Source\\Repos\\Bird-Project-For-College\\LoginPage\\LoginPage.csproj",
+      "projectPath": "C:\\Users\\aviv1\\source\\repos\\Bird-Project-For-College\\LoginPage\\LoginPage.csproj",
       "packagesPath": "C:\\Users\\aviv1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aviv1\\Source\\Repos\\Bird-Project-For-College\\LoginPage\\obj\\",
+      "outputPath": "C:\\Users\\aviv1\\source\\repos\\Bird-Project-For-College\\LoginPage\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\aviv1\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -144,7 +144,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   }

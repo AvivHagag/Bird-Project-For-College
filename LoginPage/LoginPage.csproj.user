@@ -13,15 +13,6 @@
     <Compile Update="BirdsCage.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="EditBird.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="EditCage.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="EditOrAddChick.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Update="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
