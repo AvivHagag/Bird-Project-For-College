@@ -25,7 +25,7 @@ The Bird Project offers the following features:
 
 * Account Creation: Users can sign up for the project by providing their details, such as name, email, and password.
 * 
-![Alt](https://user-images.githubusercontent.com/98044440/241572273-6b063e22-ddd9-43a0-8ad5-54842f7d6fc7.png)
+![Alt](https://user-images.githubusercontent.com/98044440/241576969-0fe8066b-ff81-4ca3-b8e9-edbd0e5e05db.png)
 
 ![Alt](https://user-images.githubusercontent.com/98044440/241572256-168a3cc8-3a91-46c7-892f-3f1e01ba0eb6.png)
 
