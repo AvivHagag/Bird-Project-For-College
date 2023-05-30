@@ -285,6 +285,7 @@
             motherChickBox.Name = "motherChickBox";
             motherChickBox.Size = new Size(200, 30);
             motherChickBox.TabIndex = 7;
+            motherChickBox.Visible = false;
             motherChickBox.TextChanged += textBox1_TextChanged;
             // 
             // fatherChickBox

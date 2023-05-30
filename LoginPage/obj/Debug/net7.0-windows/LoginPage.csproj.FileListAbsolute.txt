@@ -368,13 +368,9 @@ C:\Users\aviv1\Source\Repos\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-
 C:\Users\aviv1\Source\Repos\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windows\LoginPage.Addcage.resources
 C:\Users\aviv1\Source\Repos\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windows\LoginPage.Addchick.resources
 C:\Users\aviv1\Source\Repos\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windows\LoginPage.BirdsCage.resources
-C:\Users\aviv1\Source\Repos\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windows\LoginPage.EditBird.resources
-C:\Users\aviv1\Source\Repos\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windows\LoginPage.EditCage.resources
-C:\Users\aviv1\Source\Repos\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windows\LoginPage.EditOrAddChick.resources
 C:\Users\aviv1\Source\Repos\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windows\LoginPage.Properties.Resources.resources
 C:\Users\aviv1\Source\Repos\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windows\LoginPage.Searchbird.resources
 C:\Users\aviv1\Source\Repos\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windows\LoginPage.SearchCage.resources
-C:\Users\aviv1\Source\Repos\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windows\LoginPage.ShowBirdsOrEditCage.resources
 C:\Users\aviv1\Source\Repos\Bird-Project-For-College\LoginPage\bin\Debug\net7.0-windows\OxyPlot.dll
 C:\Users\aviv1\Source\Repos\Bird-Project-For-College\LoginPage\bin\Debug\net7.0-windows\OxyPlot.WindowsForms.dll
 C:\Users\aviv1\Source\Repos\Bird-Project-For-College\LoginPage\obj\Debug\net7.0-windows\LoginPage.csproj.CopyComplete

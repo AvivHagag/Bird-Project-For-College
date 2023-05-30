@@ -103,7 +103,8 @@ namespace LoginPage
                         }
                     }
                 }
-                if (selectedDate != null && cagenumber.Text != null && CageExist(cagenumber.Text))
+                Boolean CExist = CageExist(cagenumber.Text);
+                if (cagenumber.Text != null && CExist)
                 {
 
                     int newRow = lastRow + 1;
@@ -128,7 +129,7 @@ namespace LoginPage
 
                     workbook.Save();
                     MessageBox.Show("Bird was added successfully");
-                    
+
 
                     SpeciescomboBox.Text = null;
                     SubspeciescomboBox.Text = null;
@@ -160,13 +161,27 @@ namespace LoginPage
                     FormMain.Show();
                     this.Close();
                 }
-                else if (!(CageExist(cagenumber.Text)))
+                else
                 {
                     MessageBox.Show("Cage number is not exist, try again.");
+                    // Close the workbook and release the objects
+                    workbook.Close();
+                    Marshal.ReleaseComObject(workbook);
 
+                    application.Quit();
+                    Marshal.ReleaseComObject(application);
+                    Process[] pro = Process.GetProcessesByName("excel");
+
+                    pro[0].Kill();
+                    pro[0].WaitForExit();
+                    GC.Collect();
+                    GC.WaitForPendingFinalizers();
+
+                    // Release COM objects
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(worksheet);
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(workbook);
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(application);
                 }
-                else
-                    MessageBox.Show("Bird was added successfully");
             }
             else
                 MessageBox.Show("Bird was not added, Invalid input!");

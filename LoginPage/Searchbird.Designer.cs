@@ -120,12 +120,13 @@
             // addChickLabels
             // 
             addChickLabels.AutoSize = true;
-            addChickLabels.ForeColor = SystemColors.Highlight;
-            addChickLabels.Location = new Point(630, 21);
+            addChickLabels.Font = new Font("Segoe Print", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            addChickLabels.ForeColor = Color.Black;
+            addChickLabels.Location = new Point(523, 17);
             addChickLabels.Name = "addChickLabels";
-            addChickLabels.Size = new Size(234, 21);
+            addChickLabels.Size = new Size(390, 26);
             addChickLabels.TabIndex = 8;
-            addChickLabels.Text = "Double click to add chick to the bird.";
+            addChickLabels.Text = "Double click to add chick to the bird or edit cage.";
             addChickLabels.Click += addChickLabels_Click;
             // 
             // birdMainMenuBtn

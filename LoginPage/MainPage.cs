@@ -24,8 +24,7 @@ namespace LoginPage
     public partial class MainPage : Form
     {
         public MainPage()
-        {
-            //MessageBox.Show(((LoginForm)Application.OpenForms["LoginForm"]).getid() + " was logged in! "); // get the id from the login form 
+        {  
 
             InitializeComponent();
         }
@@ -104,7 +103,7 @@ namespace LoginPage
             int count2 = 0;
             int count3 = 0;
             int count4 = 0;
-            for (int i = 2; i < lastRow; i++)
+            for (int i = 2; i <= lastRow; i++)
             {
                 Excel.Range userIDCell = worksheet.Cells[i, 9];
                 Excel.Range speciesCell = worksheet.Cells[i, 2];
@@ -135,9 +134,9 @@ namespace LoginPage
                 StartAngle = 0
             };
 
-            pieSeries.Slices.Add(new PieSlice("American Gouldian", count1));
-            pieSeries.Slices.Add(new PieSlice("European Gouldian", count2));
-            pieSeries.Slices.Add(new PieSlice("Australian Gouldian", count3));
+            pieSeries.Slices.Add(new PieSlice("American Gouldian", count1) { Fill = OxyColors.LightSkyBlue });
+            pieSeries.Slices.Add(new PieSlice("European Gouldian", count2) { Fill = OxyColors.MediumSpringGreen });
+            pieSeries.Slices.Add(new PieSlice("Australian Gouldian", count3) { Fill = OxyColors.MediumSlateBlue });
 
             PlotModel plotModel = new PlotModel();
             plotModel.Series.Add(pieSeries);
@@ -145,6 +144,7 @@ namespace LoginPage
             label6.Text = cageNumber();
             // Assign the plotModel to the existing PlotView control
             plotView.Model = plotModel;
+
             //Close the workbook and release the objects
             workbook.Close();
             Marshal.ReleaseComObject(workbook);
@@ -187,14 +187,10 @@ namespace LoginPage
             }
             // Close the workbook and release the objects
             workbook.Close();
-/*            Marshal.ReleaseComObject(workbook);
-*/            application.Quit();
-/*            Marshal.ReleaseComObject(application);
-*/            //Process[] pro = Process.GetProcessesByName("excel");
-            //pro[0].Kill();
-            //pro[0].WaitForExit();
-            //GC.Collect();
-            //GC.WaitForPendingFinalizers();
+            Marshal.ReleaseComObject(workbook);
+            application.Quit();
+            Marshal.ReleaseComObject(application);
+
             return countCage.ToString();
         }
 

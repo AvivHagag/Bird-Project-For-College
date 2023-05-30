@@ -97,6 +97,8 @@ namespace LoginPage
             int lastRow = worksheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell).Row;
             if (reciveFromFather)
             {
+                motherChickBox.Visible = true;
+                fatherChickBox.Visible = false;
                 for (int i = 2; i <= lastRow; i++)
                 {
                     // Start from 2 to skip the header row
@@ -118,6 +120,8 @@ namespace LoginPage
             }
             else
             {
+                fatherChickBox.Visible = true;
+                motherChickBox.Visible = false;
                 for (int i = 2; i <= lastRow; i++)
                 {
                     // Start from 2 to skip the header row
@@ -136,10 +140,10 @@ namespace LoginPage
                         }
                     }
                 }
-              
+
             }
 
-            if (selectedDate != null && chickGenderCombo.Text != "" && ((reciveFromFather && motherSerial) || (reciveFromMothrer && fatherSerial)) && selectedDate > dateParent && selectedDate > otherParent)
+            if (selectedDate != null && chickGenderCombo.Text != "" && ((reciveFromFather && motherSerial) || (reciveFromMothrer && fatherSerial)) && selectedDate >= dateParent && selectedDate >= otherParent)
             {
 
                 int newRow = lastRow + 1;
@@ -367,7 +371,7 @@ namespace LoginPage
             Marshal.ReleaseComObject(workbook);
 
             application.Quit();
-
+            Marshal.ReleaseComObject(application);
             return cageExist;
         }
 
