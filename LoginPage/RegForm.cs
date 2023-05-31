@@ -15,6 +15,7 @@ using Excel = Microsoft.Office.Interop.Excel;
 using System.Reflection;
 using System.IO;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 namespace LoginPage
 {
@@ -33,6 +34,8 @@ namespace LoginPage
         {
             String userName = RegNameVal.Text;
             String Password = RegPassVal.Text;
+            String idNumber = idNumberBox.Text;
+
             string fileName = "birds.xlsx";
 
             string projectDirectory = System.IO.Path.GetDirectoryName(Application.StartupPath);
@@ -43,7 +46,7 @@ namespace LoginPage
             Excel.Workbook workbook;
             Excel.Worksheet worksheet;
             application.DisplayAlerts = false;
-            if (CheckReg(userName, Password))
+            if (CheckReg(userName, Password, idNumber))
             {
 
                 workbook = application.Workbooks.Open(filePath);
@@ -138,9 +141,15 @@ namespace LoginPage
         {
 
         }
-        private Boolean CheckReg(String name, String password)
+        private bool IsNumeric(string input)
         {
-            if (name.Length < 6 || name.Length > 8) { alert1.Visible = true; alert2.Visible = false; return false; }
+            Regex regex = new Regex("^[0-9]+$");
+            return regex.IsMatch(input) && !input.StartsWith("-");
+        }
+
+        private Boolean CheckReg(String name, String password, String id)
+        {
+            if (name.Length < 6 || name.Length > 8) { alert3.Visible = false; alert1.Visible = true; alert2.Visible = false; return false; }
             int sum = 0;
             for (int i = 0; i < name.Length; i++)
             {
@@ -148,7 +157,7 @@ namespace LoginPage
                     sum++;
             }
             if (sum > 2) { alert1.Visible = true; alert2.Visible = false; return false; };
-            if (password.Length < 8 || password.Length > 10) { alert1.Visible = false; alert2.Visible = true; ; return false; }
+            if (password.Length < 8 || password.Length > 10) { alert3.Visible = false; alert1.Visible = false; alert2.Visible = true; ; return false; }
             int charSum = 0, digitSum = 0, spacielSum = 0;
             for (int i = 0; i < password.Length; i++)
             {
@@ -163,7 +172,8 @@ namespace LoginPage
                 else
                     spacielSum++;
             }
-            if (charSum == 0 || digitSum == 0 || spacielSum == 0) { alert1.Visible = false; alert2.Visible = true; ; return false; }
+            if (charSum == 0 || digitSum == 0 || spacielSum == 0) { alert3.Visible = true; alert1.Visible = false; alert2.Visible = true; ; return false; }
+            if (id.Length < 8 || id.Length > 9 || !IsNumeric(id)) { alert3.Visible = true; alert1.Visible = false; alert2.Visible = false; return false; }
             return true;
         }
 

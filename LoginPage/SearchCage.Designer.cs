@@ -37,6 +37,7 @@
             materialColumn = new DataGridViewTextBoxColumn();
             UserId = new DataGridViewTextBoxColumn();
             searchGroup = new GroupBox();
+            editCageLabels = new Label();
             Exit = new PictureBox();
             pictureBox1 = new PictureBox();
             searchLabel = new Label();
@@ -125,6 +126,7 @@
             // searchGroup
             // 
             searchGroup.BackgroundImageLayout = ImageLayout.Zoom;
+            searchGroup.Controls.Add(editCageLabels);
             searchGroup.Controls.Add(Exit);
             searchGroup.Controls.Add(pictureBox1);
             searchGroup.Controls.Add(searchLabel);
@@ -142,6 +144,17 @@
             searchGroup.TabIndex = 2;
             searchGroup.TabStop = false;
             searchGroup.Text = "Search Cage";
+            // 
+            // editCageLabels
+            // 
+            editCageLabels.AutoSize = true;
+            editCageLabels.Font = new Font("Segoe Print", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
+            editCageLabels.ForeColor = Color.Black;
+            editCageLabels.Location = new Point(303, 22);
+            editCageLabels.Name = "editCageLabels";
+            editCageLabels.Size = new Size(364, 26);
+            editCageLabels.TabIndex = 9;
+            editCageLabels.Text = "Double click edit cage and see the birds inside.\r\n";
             // 
             // Exit
             // 
@@ -269,5 +282,6 @@
         private DataGridViewTextBoxColumn UserId;
         private PictureBox pictureBox1;
         private PictureBox Exit;
+        private Label editCageLabels;
     }
 }
